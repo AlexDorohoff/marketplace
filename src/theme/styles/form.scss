@@ -1,0 +1,97 @@
+.input {
+  width: 100%;
+
+  .input__box {
+    background-color: $input-bg;
+    border: 0 none !important;
+    height: $input-height;
+    padding: $input-pad;
+  }
+
+  .input__control {
+    background-color: $input-bg !important;
+    color: $input-color;
+    @include fonts($input-size, $input-family);
+
+    @include placeholder() {
+      color: $grey;
+    }
+
+    &:-webkit-autofill {
+      box-shadow: none;
+    }
+  }
+
+  &.input_invalid {
+    .input__sub {
+      color: $form-error-message-text;
+      padding: 6px 13px 0;
+      @include fonts($form-error-message-size, $form-error-message-family);
+      text-align: left;
+    }
+  }
+
+  &_secondary {
+
+    .input__inner {
+      background: #FFFFFF;
+      border: 1px solid #979797;
+      padding-left:12px;
+    }
+
+    .input__control {
+      padding: 5px 0;
+    }
+
+  }
+
+  &_code {
+    width: 150px;
+  }
+}
+
+.textarea {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.radio {
+  .checkbox__text {
+    @include fonts($input-size, $input-family);
+  }
+}
+
+.checkbox {
+  .checkbox__text {
+    @include fonts($input-size, $input-family);
+  }
+}
+
+.checkbox_secondary {
+  .checkbox__text {
+    @include fonts($size-xs, $font-family-base);
+  }
+}
+
+.form-field {
+  margin: 10px 0px;
+}
+
+.form-text {
+  @include fonts($size-xxs, $font-family-base);
+}
+
+.form-social {
+  margin-top: 10px;
+  img {
+    margin: 0 7px;
+  }
+  &-title {
+    margin: 10px 0;
+  }
+}
+
+.form-buttons {
+  margin: 10px 0 20px 0;
+}

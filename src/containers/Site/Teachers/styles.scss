@@ -1,0 +1,32 @@
+.select-subject {
+  font-size: 14px;
+  font-weight: 600;
+  padding-bottom: 20px;
+}
+.select-subject-img {
+  margin-left: 8px;
+  margin-bottom: 2px;
+}
+.button-center {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.teachers-more-popup{
+  li{
+    cursor: pointer;
+    transition: background-color 0.2s ease-in;
+  }
+  li:hover {
+    background-color: #B4B4B4;
+  }
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+}

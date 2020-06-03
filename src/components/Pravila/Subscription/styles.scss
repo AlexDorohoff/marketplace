@@ -1,0 +1,55 @@
+@import '../../../theme/styles/settings.scss';
+
+.subscr-container {
+  height: 100%;
+  margin-bottom: 132px;
+
+}
+
+.subscr {
+  width: 766px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+
+}
+
+.subscr-title {
+  font-size: 30px;
+  font-weight: 600;
+  margin: 0;
+
+}
+
+.subscr-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.subscr-email {
+  width: 749px;
+  height: 74px;
+  border: 1px solid #E3E6E9;
+  border-radius: 4px;
+  padding-left: 21px;
+  margin-top: 21px;
+}
+
+#subscr-submit {
+  width: 294px;
+  height: 55px;
+  background: none;
+  background-color: #4F3D6D;
+  border-radius: 30px;
+  font-size: 18px;
+  color: white;
+  font-weight: 900;
+
+}
+
+.subscr-oftitle {
+  margin-top: 30px;
+  font-size: 19px;
+}

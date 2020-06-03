@@ -1,0 +1,32 @@
+.appbar {
+  .top-links-wrap {
+    background: #f6f6f6;
+    min-height: 56px;
+    padding: 14px 0 10px;
+  }
+  .top-links {
+    max-width: 770px;
+    margin: 0 auto;
+  }
+  .top-links ul li {
+    display: inline-block;
+    margin-right: 32px;
+  }
+  .top-links ul li:last-child {
+    margin-right: 0;
+  }
+  .top-links ul li .link_size_m{
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .top-links ul img{
+    width: 15px;
+    margin-bottom:-2px;
+    margin-right: 9px;
+  }
+  @media screen and (max-width: 770px) {
+    .top-links {
+      padding: 0 12px;
+    }
+  }
+}

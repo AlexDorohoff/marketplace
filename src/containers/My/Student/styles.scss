@@ -1,0 +1,76 @@
+@import '../../../theme/styles/settings';
+
+.student {
+  min-height: 496px;
+}
+.student-title {
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 34px;
+  color: #FC8A15;
+  margin: 0;
+}
+.right-poz {
+  text-align: right;
+}
+.student-pencil {
+  display: inline-block;
+  margin-top: 26px;
+}
+.student-pencil img {
+  margin: 0 4px -10px 0;
+}
+.student-refresh {
+  display: inline-block;
+  // margin-top: 26px;
+}
+
+.student-hr {
+  border: none;
+  color: #FC8A15;
+  background-color: #FC8A15;
+  height: 2px;
+  margin-top: 31px;
+}
+.course-create-title {
+  margin-top: 0;
+  padding-top: 0;
+  &-controls {
+    display: inline;
+    margin-left: 140px;
+    img {
+      margin: 0 10px;
+    }
+  }
+  &-teachers {
+    display: inline;
+    margin-left: 40px;
+    img {
+      margin: 0 10px;
+    }
+  }
+}
+.course-create-teachers {
+  margin: 0 0 13px 0;
+}
+.course-create-h2 {
+  margin: 0 0 13px 0;
+}
+.course-create {
+  border: 1px solid #B4B4B4;
+  padding: 6px 21px;
+  &-list li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+}
+.no-course {
+  color: #C4C4C4;
+}
+.course-create .form-field {
+  margin: 0;
+}
+
+.course-create-btn {
+  float: right;
+}

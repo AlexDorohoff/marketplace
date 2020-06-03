@@ -1,0 +1,77 @@
+@import '../../../../../theme/styles/settings.scss';
+
+a {font-size:16px}
+a:hover {font-size:16px; font-weight:bold}
+
+.menu_link {
+  margin-left: 25px;
+  text-decoration: none;
+  display: block;
+}
+
+.main-sections {
+   &-item {
+    padding: 20px;
+    height: 100%;
+    min-height: 165px;
+    p {
+      margin-top: 0;
+    }
+    &.pol1 {
+	  background: url(../../../../../theme/images/pravila/sellers.jpg) no-repeat;
+    border: 1px solid #1B60FF;
+    height:173px;    
+    }
+    &.pol2 {
+	background: url(../../../../../theme/images/pravila/buyers.jpg) no-repeat;
+    border: 1px solid #1B60FF;
+    height:173px;
+    }
+    &.pol3 {
+	background: url(../../../../../theme/images/pravila/politic.jpg) no-repeat bottom right #ffffff;
+  	border: 1px solid #1B60FF;
+    height:173px;
+    }
+    &.pol4 {
+	background: url(../../../../../theme/images/pravila/condition.jpg) no-repeat bottom right #ffffff;
+  	border: 1px solid #1B60FF;
+    height:173px;
+    }
+    &.pol5 {
+	background: url(../../../../../theme/images/pravila/partners.jpg) no-repeat;
+  	border: 1px solid #1B60FF;
+    height:173px;
+    }
+    &.pol6 {
+	background: url(../../../../../theme/images/pravila/filecookie.jpg) no-repeat;
+  	border: 1px solid #1B60FF;
+    height:173px;
+    }
+  }
+  &-lesson {
+    @include fonts($size-xs, $font-family-secondary);
+    margin-bottom: 4px;
+  }
+  &-heading {
+    @include fonts($size-larger, $font-family-secondary);
+    margin-bottom: 0;
+  }
+  &-description {
+    @include fonts($size-small, $font-family-base);
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 840px) {
+  .main-sections {
+    &-item {
+      padding: 10px;
+    }
+    &-heading {
+      font-size: 16px;
+      word-break: break-all;
+    }
+  }
+}
+
+

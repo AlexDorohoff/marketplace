@@ -1,0 +1,73 @@
+@import '../../../../theme/styles/settings';
+
+.studentmessage-modal {
+  min-width: 766px;
+  min-height: 550px;
+
+  &-student-pic {
+    display: inline-block;
+    vertical-align: top;
+    width: 72px;
+  }
+  &-student-title {
+    margin-right: 6px;
+    font-weight: normal;
+    font-size: 18px;
+    display: inline-block;
+    vertical-align: top;
+  }
+  &-student-date {
+    font-weight: normal;
+    font-size: 12px;
+  }
+  &-about {
+    margin: 19px 0;
+  }
+
+  &-theme {
+    display: inline-block;
+    width: 48px;
+    vertical-align: middle;
+    font-weight: normal;
+    font-size: 18px;
+    color: #979797;
+  }
+  &-subject {
+    font-weight: normal;
+    display: inline-block;
+    margin-right: 5px;
+    position: relative;
+    margin-left: 24px;
+    font-weight: 600;
+    font-size: 18px;
+    vertical-align: middle;
+    color: #000000;
+    &:before {
+      content: '• ';
+      font-family: 'slick';
+      font-size: 10px;
+      line-height: 30px;
+      text-align: center;
+      color: #fc8a15;
+      position: absolute;
+      left: -18px;
+      top: -2px;
+    }
+  }
+  .discipline-textarea {
+    margin-top: 18px;
+  }
+  .discipline-textarea textarea {
+    min-height: 370px;
+    width: 100%;
+  }
+  &-button {
+    margin: 18px 0;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .studentmessage-modal {
+    min-width: 100%
+  }
+}

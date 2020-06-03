@@ -1,0 +1,108 @@
+@import '../../../../theme/styles/settings';
+
+.teachercard-modal {
+  min-width: 766px;
+  min-height: 170px;
+
+  &-top {
+    @include fonts($size-xs, $font-family-third);
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  &-lesson-theme {
+    font-weight: normal;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 14px;
+    color: #979797;
+  }
+  &-lesson-theme1 {
+    font-weight: normal;
+    display: inline-block;
+    margin-right: 5px;
+    position: relative;
+    margin-left: 26px;
+    font-size: 14px;
+    vertical-align: middle;
+    &:before {
+      content: '• ';
+      font-family: 'slick';
+      font-size: 10px;
+      line-height: 30px;
+      text-align: center;
+      color: #fc8a15;
+      position: absolute;
+      left: -18px;
+      top: -2px;
+    }
+  }
+
+  &-card {
+    margin: 10px 0;
+    text-align: left;
+  }
+
+  &-card-number {
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  &-card-number1, &-sum-sum2 {
+    display: inline-block;
+    margin-right: 5px;
+    position: relative;
+    margin-left: 31px;
+    font-weight: 600;
+    font-size: 18px;
+    vertical-align: middle;
+    color: #000000;
+    &:before {
+      content: '• ';
+      font-family: 'slick';
+      font-size: 10px;
+      line-height: 30px;
+      text-align: center;
+      color: #fc8a15;
+      position: absolute;
+      left: -22px;
+      top: 0;
+    }
+  }
+  &-sum-sum1 {
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: normal;
+    font-size: 14px;
+  }
+  &-sum-sum2 {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 18px;
+    color: #000000;
+  }
+  &-sum-sum2 span {
+    font-weight: normal;
+    font-size: 10px;
+    color: #979797;
+  }
+  &-button {
+    text-align: center;
+    margin-top: 25px;
+  }
+  &-button .button {
+    margin: 0 50px;
+  }
+
+
+}
+
+@media screen and (max-width: 780px) {
+  .teachercard-modal {
+    min-width: 100%
+  }
+}

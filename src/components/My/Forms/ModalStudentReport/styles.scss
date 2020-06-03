@@ -1,0 +1,100 @@
+@import '../../../../theme/styles/settings';
+
+.studentreport-modal {
+  min-height: 550px;
+
+  .form-field  {
+    margin: 5px 0;
+  }
+  &-date {
+    font-weight: normal;
+    font-size: 18px;
+    color: #FC8A15;
+    text-align: right;
+  }
+  &-lesson-theme {
+    font-weight: normal;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 14px;
+    color: #979797;
+  }
+  &-grade1 {
+    font-weight: normal;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 14px;
+  }
+  &-lesson-theme1, &-grade2, &-lesson-theme0 {
+    font-weight: normal;
+    display: inline-block;
+    margin-right: 5px;
+    position: relative;
+    margin-left: 26px;
+    font-size: 14px;
+    vertical-align: middle;
+    &:before {
+      content: '• ';
+      font-family: 'slick';
+      font-size: 10px;
+      line-height: 30px;
+      text-align: center;
+      color: #fc8a15;
+      position: absolute;
+      left: -18px;
+      top: -2px;
+    }
+  }
+  &-lesson-theme0 {
+    color: #979797;
+  }
+  &-table {
+    border-collapse: collapse;
+    font-size: 12px;
+    min-width: 100%;
+  }
+  &-table, &-table th, &-table td {
+    border: 1px solid rgba(196, 196, 196, 0.4);
+    padding: 4px 10px;
+    text-align: center;
+  }
+  &-table tr {
+    height: 48px;
+  }
+  &-table-head {
+    font-size: 14px;
+    text-align: center;
+  }
+  &-table p {
+    margin: 0;
+  }
+  &-table-date {
+    width: 88px;
+  }
+  &-table-value {
+    width: 98px;
+  }
+  &-table-picsort {
+    margin: 0 0 2px 3px;
+  }
+  &-table-grade {
+    color: #FC8A15;
+  }
+  &-table-theme {
+    width: 240px;
+  }
+  &-table td.studentreport-modal-table-author,
+  &-table td.studentreport-modal-table-task {
+    text-align: left;
+  }
+  &-table-taskimg {
+    text-align: center;
+  }
+
+}
+
+@media screen and (max-width: 780px) {
+  .studentreport-modal {
+    min-width: 100%
+  }
+}

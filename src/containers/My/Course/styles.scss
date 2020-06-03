@@ -1,0 +1,26 @@
+@import '../../../theme/styles/settings';
+
+.course {
+  min-height: 496px;
+}
+.course-title {
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 34px;
+  color: #fc8a15;
+  margin: 0;
+}
+.right-poz {
+  text-align: right;
+}
+.course-pencil {
+  display: inline-block;
+  margin-top: 26px;
+}
+.course-pencil svg {
+  margin: 0 20px -10px 0;
+}
+.course-refresh {
+  display: inline-block;
+  // margin-top: 26px;
+}

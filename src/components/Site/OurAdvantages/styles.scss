@@ -1,0 +1,26 @@
+@import '../../../theme/styles/settings';
+
+.our-advantages {
+  &-item {
+    img {
+      width: 68px;
+      height: 68px;
+    }
+    &-heading {
+      @include fonts($size-larger, $font-family-secondary);
+    }
+    &-description {
+      @include fonts($size-small, $font-family-base);
+    }
+  }
+  &-item a:hover {
+    img {
+      opacity: .6;
+      transition: .6s;
+    }
+  }
+}
+.our-advantages-img-6 img {
+  width: 54px;
+  height: 68px;
+}

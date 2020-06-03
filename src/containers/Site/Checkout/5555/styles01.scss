@@ -1,0 +1,135 @@
+.course01 {
+  background-image: url(../../../theme/images/course-top01.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &-wrap {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.21;
+    padding: 12px 138px 12px 120px;
+  }
+
+  &-h1 {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.21;
+    margin: 30px 0 16px;
+  }
+  &-h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 24px 0 16px;
+  }
+
+  &-intro {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  &-expir {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: normal;
+    padding-bottom: 8px;
+  }
+
+  &-txt{
+    font-weight: 500;
+    margin: 24px 0 22px;
+  }
+
+  &-image {
+    width: 100%;
+    height: auto;
+  }
+
+}
+.course01-inner {
+  max-width: 540px;
+}
+
+.course01-txt p{
+  font-size: 18px;
+  margin: 4px 0;
+}
+.course01-teacher-image {
+  width: 178px;
+}
+.course01-about p {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.course01-ol {
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+.course01-ol li {
+  margin-bottom: 16px;
+}
+
+.course01-ul {
+  margin-left: 15px;
+  list-style-image: url(../../../theme/images/oval2.svg);
+  padding-right: 10px;
+  font-size: 14px;
+  line-height: 1.8;
+}
+.course01-ul li {
+  padding-bottom: 24px;
+  position: relative;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.22;
+}
+.course01-ul li span {
+  margin-right: 25px;
+}
+.course01-ul li span:before{
+  content:'';
+  position:absolute;
+  border-left:1px solid #fc8a15;;
+  left:-13px;
+  top:10px;
+  bottom:0;
+  z-index:-1;
+  height:100%;
+}
+.course01-ul li:last-child span:before{
+  content:none;
+}
+.course01-ul li:last-child{
+  padding-bottom:0;
+}
+.course01-teacher-h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+}
+.course01-teacher-content p {
+  line-height: normal;
+  margin: 0 0 24px 0;
+}
+.course01-btn {
+  margin-bottom: 38px;
+}
+.course01-btn button.button {
+  padding: 9px 28px;
+}
+.sertif {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 24px;
+}
+@media (max-width: 991px) {
+  .course01-wrap {
+    padding: 12px 48px 36px;
+  }
+}
+@media (max-width: 767px) {
+  .course01-wrap {
+    padding: 12px 12px 36px;
+  }
+}

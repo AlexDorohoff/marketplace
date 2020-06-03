@@ -1,0 +1,124 @@
+@import '../../../../../theme/styles/settings.scss';
+
+
+//**************
+
+
+.main-sections {
+  &-item {
+    padding: 20px;
+    height: 100%;
+    min-height: 165px;
+
+    p {
+      margin-top: 0;
+    }
+
+    &.pol1 {
+      background-color: #FFBE61;
+    }
+    &.pol1_1 {
+      background-color: #FF7400;
+height:173px;
+    }
+    &.pol2 {
+      background-color: #FFD300;
+    }
+    &.pol2_1 {
+      background-color: #FFD300;
+height:173px;
+    }
+    &.pol3 {
+      background-color: #9C67F0;
+    }
+    &.item3_1 {
+      background: url(../../../../../theme/images/section2-bg.jpg) bottom right#ffdd83;
+height:173px;
+    }
+    &.pol4 {
+      background-color: #FF7400;
+    }
+    &.pol4_1 {
+      background: url(../../../../../theme/images/section1-bg.jpg) bottom right #978bff;
+height:173px;
+    }
+    &.pol5 {
+      background-color: #B2EFFE;
+    }
+    &.pol5_1 {
+      background-color: #4980FF;
+height:173px;
+    }
+    &.pol6 {
+      background-color: #7ba0ad;
+    }
+    &.pol6_1 {
+      background-color: #FF9033;
+height:173px;
+    }
+  }
+
+
+
+
+  &-lesson {
+    @include fonts($size-xs, $font-family-secondary);
+    margin-bottom: 4px;
+  }
+
+  &-heading {
+    @include fonts($size-larger, $font-family-secondary);
+    margin-bottom: 0;
+  }
+
+  &-description {
+    @include fonts($size-small, $font-family-base);
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 840px) {
+  .main-sections {
+    &-item {
+      padding: 10px;
+    }
+    &-heading {
+      font-size: 16px;
+      word-break: break-all;
+    }
+  }
+}
+
+
+.main-sections1 {
+  &-item {
+    padding: 20px;
+    height: 100%;
+    min-height: 165px;
+
+	    p {
+	      margin-top: 0;
+	    }
+	    h2 {
+	      margin-top: 30px;
+	    }
+	    &.item1_1 {
+	      background-color: #FF7400;
+	    }
+	    &.item2_1 {
+	      background-color: #FFD300;
+	    }
+	    &.item3_1 {
+	      background: url(../../../../../theme/images/section2-bg.jpg) bottom right#ffdd83;
+	    }
+	    &.item4_1 {
+	      background: url(../../../../../theme/images/section1-bg.jpg) bottom right #978bff;
+	    }
+	    &.item5_1 {
+	      background-color: #4980FF;
+	    }
+	    &.item6_1 {
+ 	     background-color: #FF9033;
+	    }
+  }
+}

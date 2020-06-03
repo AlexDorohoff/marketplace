@@ -1,0 +1,21 @@
+@import '../../../theme/styles/settings';
+
+.timer-wrap {
+  width: 210px;
+  &-values {
+    @include fonts($size-xs, $font-family-third);
+    font-weight: 800;
+    font-size: 28px;
+  }
+  &-separator {
+    margin: 0 18px 0 8px;
+  }
+  &-description {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+  }
+  &-description img {
+    margin: 0 12px;
+  }
+}

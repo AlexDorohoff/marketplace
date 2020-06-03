@@ -1,0 +1,118 @@
+@import '../../../../theme/styles/settings';
+
+.studenthistory-modal {
+  min-height: 550px;
+
+  &-date {
+    font-weight: normal;
+    font-size: 18px;
+    color: #FC8A15;
+    text-align: right;
+  }
+
+  &-header-theme {
+    font-weight: 600;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 14px;
+    color: #979797;
+  }
+  &-header-theme1 {
+    font-weight: normal;
+    display: inline-block;
+    margin-right: 5px;
+    position: relative;
+    margin-left: 26px;
+    font-size: 14px;
+    vertical-align: middle;
+    &:before {
+      content: '• ';
+      font-family: 'slick';
+      font-size: 10px;
+      line-height: 30px;
+      text-align: center;
+      color: #fc8a15;
+      position: absolute;
+      left: -18px;
+      top: -2px;
+    }
+  }
+
+  &-title {
+    font-weight: normal;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 9px;
+  }
+  &-table {
+    border-collapse: collapse;
+    font-size: 12px;
+    min-width: 100%;
+  }
+  &-table, &-table th, &-table td {
+    border: 1px solid rgba(196, 196, 196, 0.4);
+    padding: 4px 10px;
+    text-align: center;
+  }
+  &-table-head {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  &-table-lname img {
+    margin: 0 15px;
+  }
+
+  &-table-picname img {
+    float: left;
+    margin: 0 5px 0 0;
+  }
+  &-table-picname a.link {
+    font-size: 12px;
+    color: #000000;
+  }
+
+  &-table-picname a.link:hover {
+    color: #352fb9;
+  }
+  &-table-success {
+    min-width: 76px;
+  }
+  &-table p {
+    margin: 0;
+  }
+  &-table-cntr {
+    text-align: center;
+  }
+
+  &-table td.studenthistory-modal-table-picname {
+    text-align: left;
+  }
+
+  &-table-rating {
+    width: 95px;
+  }
+  &-table-rating img {
+    display: inline-block;
+    margin-right: 5px;
+    margin-bottom: -10px;
+  }
+  &-table-ratingblock {
+    display: inline-block;
+    width: 34px;
+    height: 15px;
+    background: #FFDA17;
+    border: 1px solid #979797;
+    text-align: center;
+    font-size: 12px;
+    line-height: 16px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+}
+
+@media screen and (max-width: 780px) {
+  .studenthistory-modal {
+    min-width: 100%
+  }
+}

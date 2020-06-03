@@ -1,0 +1,317 @@
+.teacheracadem {
+  .expansion-panel-title .link .link__icon {
+    top: 0;
+  }
+
+  &-item {
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+
+  &-calendar a {
+    width: 40px;
+  }
+
+  &-calendar-title {
+    margin-right: 60px;
+    font-weight: 600;
+    font-size: 18px;
+    display: inline-block;
+    width: 250px;
+  }
+
+  &-calendar-waiting {
+    font-weight: normal;
+    display: inline-block;
+    width: 190px;
+  }
+
+  &-calendar-amount {
+    font-weight: normal;
+    display: inline-block;
+    margin-right: 5px;
+    position: relative;
+    margin-left: 24px;
+
+    &:before {
+      content: '• ';
+      font-family: 'slick';
+      font-size: 10px;
+      line-height: 30px;
+      text-align: center;
+      color: #fc8a15;
+      position: absolute;
+      left: -16px;
+      top: -2px;
+    }
+  }
+
+  &-calendar-pic {
+    display: inline-block;
+  }
+
+  &-calendar img {
+    margin-bottom: -18px;
+    margin-left: 10px;
+  }
+
+  &-lesson-title {
+    font-weight: 600;
+    font-size: 18px;
+    display: inline-block;
+    width: 98px;
+    vertical-align: middle;
+  }
+
+  &-lesson-theme {
+    font-weight: normal;
+    display: inline-block;
+    width: 48px;
+    vertical-align: middle;
+  }
+
+  &-lesson-subject {
+    font-weight: normal;
+    display: inline-block;
+    margin-right: 5px;
+    position: relative;
+    margin-left: 24px;
+    font-weight: 600;
+    font-size: 18px;
+    color: #979797;
+    vertical-align: middle;
+    &:before {
+      content: '• ';
+      font-family: 'slick';
+      font-size: 10px;
+      line-height: 30px;
+      text-align: center;
+      color: #fc8a15;
+      position: absolute;
+      left: -18px;
+      top: -2px;
+    }
+  }
+
+  &-request-title {
+    margin-right: 4px;
+    font-weight: 600;
+    font-size: 18px;
+    display: inline-block;
+    width: 77px;
+  }
+
+  &-request-amount {
+    font-weight: normal;
+    font-size: 14px;
+    display: inline-block;
+    width: 34px;
+    margin-right: 4px;
+  }
+
+  &-request-theme {
+    font-weight: normal;
+    display: inline-block;
+    width: 54px;
+  }
+
+  &-request-literature {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  &-request-literature ul li {
+    display: inline-block;
+    margin-right: 5px;
+    position: relative;
+    margin-left: 24px;
+    font-weight: 600;
+    font-size: 18px;
+    color: #979797;
+    &:before {
+      content: '• ';
+      font-family: 'slick';
+      font-size: 10px;
+      line-height: 30px;
+      text-align: center;
+      color: #fc8a15;
+      position: absolute;
+      left: -18px;
+      top: -2px;
+    }
+  }
+
+  &-lesson-nearest {
+    font-weight: 600;
+    font-size: 18px;
+    color: #fc8a15;
+    margin-bottom: 14px;
+  }
+  &-lesson-header {
+    font-size: 18px;
+    color: #979797;
+    margin: 14px 0 16px;
+  }
+  &-lesson-schedule {
+    font-weight: 600;
+    font-size: 18px;
+    color: #000000;
+    margin-bottom: 14px;
+  }
+
+  &-lesson-theme1 {
+    font-weight: normal;
+    display: inline-block;
+    width: 48px;
+    vertical-align: middle;
+    font-size: 18px;
+    color: #979797;
+  }
+
+  &-lesson-subject1 {
+    display: inline-block;
+    margin-right: 5px;
+    position: relative;
+    margin-left: 24px;
+    vertical-align: middle;
+    font-weight: 600;
+    font-size: 18px;
+    color: #000000;
+    &:before {
+      content: '• ';
+      font-family: 'slick';
+      font-size: 10px;
+      line-height: 30px;
+      text-align: center;
+      color: #fc8a15;
+      position: absolute;
+      left: -18px;
+      top: -2px;
+    }
+  }
+
+  &-lesson-detail-title {
+    font-size: 18px;
+    color: #979797;
+    margin-bottom: 14px;
+  }
+  &-lesson-detail-data {
+    font-weight: 600;
+    font-size: 14px;
+    color: #000000;
+    margin-bottom: 16px;
+  }
+
+  &-lesson-detail {
+    &-1 {
+      width: 41px;
+      display: inline-block;
+      vertical-align: top;
+    }
+    &-2 {
+      width: 148px;
+      display: inline-block;
+      vertical-align: top;
+    }
+    &-3 {
+      width: 220px;
+      display: inline-block;
+      vertical-align: top;
+    }
+    &-avatar {
+      float: left;
+      margin: 0 5px 5px 0;
+      width: 40px;
+      height: auto;
+    }
+    &-4 {
+      width: 150px;
+      display: inline-block;
+      vertical-align: top;
+    }
+    &-5 {
+      width: 82px;
+      display: inline-block;
+      vertical-align: top;
+    }
+    &-6 {
+      width: 76px;
+      display: inline-block;
+      vertical-align: top;
+    }
+  }
+
+  &-lesson-detail-data .teacheracadem-lesson-detail-2,
+  &-lesson-detail-data .teacheracadem-lesson-detail-6 {
+    color: #09cc3f;
+  }
+  &-reguest-detail-data .teacheracadem-lesson-detail-6 {
+    color: #979797;
+  }
+  &-reguest-detail-dataheader .teacheracadem-lesson-detail-2 {
+    width: calc(100% - 50px);
+  }
+  &-lesson-buttons {
+    text-align: center;
+  }
+  &-lesson-buttons .button {
+    margin: 0 40px 35px;
+  }
+
+  &-lessons-button {
+    margin: 30px 0 20px;
+    display: block;
+    text-align: center;
+  }
+
+  &-request-detail {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  &-reguest-detail-data {
+    margin-bottom: 14px;
+  }
+
+  &-reguest-detail-dataheader {
+    margin-bottom: 14px;
+  }
+  &-reguest-detail-dataheader .teacheracadem-lesson-subject1 span {
+    color: #979797;
+  }
+
+  &-lesson-timer {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 15px;
+    margin-right: 21px;
+  }
+  &-lesson-button {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+.teacheracadem-button {
+  margin-top: 20px;
+}
+.teacheracadem-button button.button {
+  padding: 9px 28px;
+}
+.teacheracadem-h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.expansion-panel-title a,
+.expansion-panel-title a:link,
+.expansion-panel-title a:hover,
+.expansion-panel-title a:active {
+  color: #000000;
+  font-size: 18px;
+  font-weight: 600;
+}
+.teacheracadem-request,
+.teacheracadem-lesson {
+  margin-top: 8px;
+}

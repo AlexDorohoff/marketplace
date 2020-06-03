@@ -1,0 +1,143 @@
+@import '../../../../theme/styles/settings';
+
+.studentassessment-modal {
+  min-height: 550px;
+
+  &-date {
+    font-weight: normal;
+    font-size: 18px;
+    color: #FC8A15;
+    text-align: right;
+  }
+
+  &-header-theme {
+    font-weight: 600;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 14px;
+    color: #979797;
+  }
+  &-header-theme1 {
+    font-weight: normal;
+    display: inline-block;
+    margin-right: 5px;
+    position: relative;
+    margin-left: 26px;
+    font-size: 14px;
+    vertical-align: middle;
+    &:before {
+      content: '• ';
+      font-family: 'slick';
+      font-size: 10px;
+      line-height: 30px;
+      text-align: center;
+      color: #fc8a15;
+      position: absolute;
+      left: -18px;
+      top: -2px;
+    }
+  }
+
+  &-lesson-theme {
+    font-weight: normal;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 14px;
+    color: #979797;
+  }
+  &-lesson-theme1, &-lesson-theme0 {
+    font-weight: normal;
+    display: inline-block;
+    margin-right: 5px;
+    position: relative;
+    margin-left: 26px;
+    font-size: 14px;
+    vertical-align: middle;
+    &:before {
+      content: '• ';
+      font-family: 'slick';
+      font-size: 10px;
+      line-height: 30px;
+      text-align: center;
+      color: #fc8a15;
+      position: absolute;
+      left: -18px;
+      top: -2px;
+    }
+  }
+  &-lesson-theme0 {
+    color: #979797;
+  }
+
+  &-table {
+    border-collapse: collapse;
+    font-size: 12px;
+    min-width: 100%;
+    margin-top: 16px;
+  }
+  &-table, &-table th, &-table td {
+    border: 1px solid rgba(196, 196, 196, 0.4);
+    padding: 4px 10px;
+    text-align: center;
+  }
+  &-table-head {
+    font-size: 14px;
+    text-align: center;
+  }
+  &-table p {
+    margin: 0;
+  }
+  &-table-picsort {
+    margin: 0 0 2px 3px;
+  }
+  &-table-theme {
+    width: 240px;
+  }
+
+  &-table-comment {
+    width: 134px;
+  }
+  &-table tr.studentassessment-modal-table-head td {
+    color: #000000;
+  }
+  &-table td.studentassessment-modal-table-grade {
+    color: #FC8A15;
+  }
+  &-table td.studentassessment-modal-table-delivered {
+    color: #000000;
+  }
+
+  &-table td.studentassessment-modal-table-author {
+    text-align: left;
+  }
+
+  &-table-edit {
+    width: 210px;
+  }
+
+  &-table-comment1 {
+    display: inline-block;
+    vertical-align: top;
+    width: calc(100% - 25px);
+    text-align: left;
+  }
+  &-table-comment2 {
+    display: inline-block;
+    vertical-align: middle;
+    width: 24px;
+  }
+  &-table-comment3 {
+    display: inline-block;
+    margin-right: 4px;
+    vertical-align: top;
+  }
+  &-table-comment4 {
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .studentassessment-modal {
+    min-width: 100%
+  }
+}

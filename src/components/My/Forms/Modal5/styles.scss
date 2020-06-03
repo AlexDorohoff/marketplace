@@ -1,0 +1,64 @@
+@import '../../../../theme/styles/settings';
+
+.modal5_form {
+  .modal-name {
+    font-size: 22px;
+    margin: 26px 0 14px;
+  }
+  &-subhead {
+    font-weight: 600;
+    font-size: 14px;
+    &:after {
+      content: '•';
+      font-family: 'slick';
+      font-size: 10px;
+      line-height: 30px;
+      text-align: center;
+      color: #fc8a15;
+      margin-left: 8px;
+      top: -1px;
+    }
+  }
+  &-doctxt {
+    margin: 38px 0 129px 0;
+    color: #C4C4C4;
+    font-size: 14px;
+  }
+  &-hr {
+    border: none;
+    color: #FC8A15;
+    background-color: #FC8A15;
+    height: 2px;
+    margin-top: 46px;
+  }
+  &-material {
+    font-size: 14px;
+  }
+  .discipline-dot {
+    margin: 0 9px;
+  }
+  &-grey {
+    color: #C4C4C4;
+  }
+  &-material2 {
+    margin: 11px 0 0 18px;
+    font-size: 14px;
+  }
+  .materialtxt-textarea {
+    margin-top: 8px;
+  }
+  .materialtxt-textarea textarea{
+    width: 100%;
+    min-height: 72px;
+  }
+  .material-button {
+    margin: 118px 0 37px 0;
+  }
+}
+
+
+
+
+
+
+

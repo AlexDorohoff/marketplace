@@ -1,0 +1,81 @@
+@import '../../../../theme/styles/settings';
+
+.modal1-form {
+   @include respond-to(mobile) {
+     padding-left: 12px;
+     padding-right: 12px;
+   }
+  .discipline-name {
+    font-size: 22px;
+    margin: 26px 0 14px;
+  }
+  .discipline {
+    background: #E3F8FF;
+    padding: 12px 0 18px;
+    margin-bottom: 18px;
+    font-size: 18px;
+  }
+  .discipline-left {
+    float: left;
+  }
+  .discipline-right {
+    float: right;
+  }
+  .discipline-right img {
+    margin-bottom: -11px;
+  }
+  .discipline-dot {
+    margin: 0 9px;
+  }
+  .closemodal-pic {
+    margin-left: 51px;
+  }
+  .about-discipline {
+    min-height: 240px;
+    font-size: 14px;
+    margin-bottom: 18px;
+  }
+
+  .orange-stripe {
+    border-top: 2px solid #FC8A15;
+    border-bottom: 2px solid #FC8A15;
+    padding: 19px 0;
+    margin-bottom: 8px;
+  }
+  .orange-time, .orange-price {
+      position: relative;
+      margin-left: 20px;
+      &:before {
+        content: '• ';
+        font-family: 'slick';
+        font-size: 10px;
+        line-height: 30px;
+        text-align: center;
+        color: #fc8a15;
+        position: absolute;
+        left: -20px;
+        top: -1px;
+      }
+  }
+  .orange-time {
+    float: left;
+  }
+  .orange-price {
+    float: right;
+    margin-right: 75px;
+  }
+  .clear-both {
+    clear: both;
+  }
+  .discipline-button {
+   padding: 10px 0 18px;
+  }
+ }
+
+
+
+
+
+
+
+

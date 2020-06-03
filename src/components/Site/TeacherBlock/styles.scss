@@ -1,0 +1,49 @@
+@import '../../../theme/styles/settings';
+
+.teacher-block {
+  margin-bottom: 30px;
+  height: 560px;
+  @include respond-to(medium, $type: max) {
+    min-height: 540px;
+  }
+}
+
+.teacher-block, .teacher_skills p {
+  font-size: 12px;
+}
+
+.plate {
+  width: 100%;
+//  height: 160px;
+&__content {
+   min-height: 100%;
+  }
+}
+
+.teacher_skills {
+  &-wrap {
+    padding: 16px;
+  }
+  &-name {
+    font-size: 12px;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+  }
+  &-subject {
+    font-weight: 600;
+    color: #fc8a15;
+    margin: 10px 0 0 0;
+  }
+}
+// Размер квадрата 231*231. Соотношение размеров сторон прямоугольника  1,12 (231*206). Высота может быть больше
+.teacher-block {
+  img {
+   width: 231px;
+    height: 206px;
+//    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: contain;
+  }
+}
+

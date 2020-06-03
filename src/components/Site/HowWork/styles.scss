@@ -1,0 +1,17 @@
+.how_work {
+  &-title {
+    text-align: center;
+  }
+  &-image {
+    max-width: 319px;
+    height: auto;
+    margin-left: -19px;
+//    margin-right: auto;
+  }
+  &-content {
+    padding-top:60px;
+  }
+  &-imgage {
+    max-width: 300px;
+  }
+}

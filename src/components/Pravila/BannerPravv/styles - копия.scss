@@ -1,0 +1,85 @@
+@import '../../../theme/styles/settings.scss';
+
+.banner-containers {
+  width: 100%;
+  max-width: 766px;
+  height: 496px;
+  position: relative;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.banner-container__try {
+  background-image: url("../../../theme/images/pravila/Banners.png");
+  background-repeat: no-repeat;
+  width: 50%;
+}
+
+.banner-title {
+  font-size: 1.866666666666667rem;
+  font-weight: 800;
+  margin: 0;
+  margin-top: 10.66333333333333rem;
+}
+
+.banner-optitle {
+  font-weight: 800;
+  font-size: 1.2rem;
+  margin: 1.1333rem 0;
+}
+
+.banner-description {
+  font-weight: 600;
+  font-size: 0.9333333333333333rem;
+  margin: 0;
+  width: 23.6rem;
+}
+
+.searchf {
+
+  width: 700px;
+  border: 1px solid #979797;
+  min-height: 54px;
+  font-size: 14px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 48px;
+  right: 40px;
+}
+
+input[type="searchf"] {
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  width: 660px;
+  vertical-align: middle;
+}
+
+input[type=text]::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+input[type=text]::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+input[type="searchf"]::-webkit-search-decoration,
+input[type="searchf"]::-webkit-search-cancel-button,
+input[type="searchf"]::-webkit-search-results-button,
+input[type="searchf"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+input[type="submit"] {
+  width: 20px;
+  height: 20px;
+  border: none;
+  background: url(../../../theme/images/pravila/searchBanner.svg) no-repeat 50% 50%;
+}

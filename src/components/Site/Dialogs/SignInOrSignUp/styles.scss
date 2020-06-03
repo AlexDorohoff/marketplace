@@ -1,0 +1,31 @@
+.dialog_sign {
+
+  text-align: center;
+
+  .dialog-body {
+    padding: 10px 50px;
+  }
+
+  .tabs__content {
+    display: flex;
+    flex-direction: row;
+    border: 0;
+    &:after {
+      border: 0;
+    }
+  }
+
+  .tab-item {
+    border: 0;
+    margin: 0;
+    width: 50%;
+    background-color: #979797;
+    color: #FFFFFF;
+
+    &_checked {
+      background-color: #FFFFFF;
+      color: #1B60FF;
+    }
+  }
+
+}

@@ -1,0 +1,183 @@
+@import '../../../theme/styles/settings';
+
+.teacherreview {
+  &-rule {
+    float: right;
+    margin-left: 50px;
+    position: relative;
+    &:before {
+      background: url("../../../theme/images/account/pic-attantion1.svg") no-repeat center center;
+      content: '';
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 3px;
+      left: -32px;
+    }
+  }
+  h1 {
+    font-weight: 800;
+    font-size: 28px;
+    margin-top: 0;
+  }
+  &-rating {
+    @include fonts($size-xs, $font-family-third);
+    font-weight: 800;
+    font-size: 72px;
+    line-height: 1;
+    display: inline-block;
+    width: 140px;
+    vertical-align: top;
+  }
+  &-graph{
+    font-size: 18px;
+    line-height: 20px;
+    display: inline-block;
+    width: calc(100% - 150px);
+    vertical-align: top;
+  }
+
+  progress {
+    border:0;
+    width: 100%;
+    height: 20px;
+    background: #f1f1f1;
+  }
+  progress::-webkit-progress-bar {
+    width: 100%;
+    height: 20px;
+    background: #f1f1f1;
+  }
+  &-graph-5 {
+    progress::-webkit-progress-value {
+      background: #09CC3F;
+    }
+    progress::-moz-progress-bar {
+      background: #09CC3F;
+    }
+  }
+  &-graph-4 {
+    progress::-webkit-progress-value {
+      background: #75A3FD;
+    }
+    progress::-moz-progress-bar {
+      background: #75A3FD;
+    }
+  }
+  &-graph-3 {
+    progress::-webkit-progress-value {
+      background: #FFDD83;
+    }
+    progress::-moz-progress-bar {
+      background: #FFDD83;
+    }
+  }
+  &-graph-2 {
+    progress::-webkit-progress-value {
+      background: #FC8A15;
+    }
+    progress::-moz-progress-bar {
+      background: #FC8A15;
+    }
+  }
+  &-graph-1 {
+    progress::-webkit-progress-value {
+      background: #FF0404;
+    }
+    progress::-moz-progress-bar {
+      background: #FF0404;
+    }
+  }
+
+  &-graph-value {
+    display: inline-block;
+    width: 20px;
+  }
+  progress {
+    display: inline-block;
+    width: calc(100% - 30px);
+  }
+
+
+  &-task-wrap {
+    margin: 12px 0 20px;
+  }
+  &-task {
+    font-weight: normal;
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 600;
+    font-size: 18px;
+  }
+  &-task1 {
+    display: inline-block;
+    margin-right: 5px;
+    position: relative;
+    margin-left: 26px;
+    vertical-align: middle;
+    font-weight: 600;
+    font-size: 18px;
+    &:before {
+      content: '• ';
+      font-family: 'slick';
+      font-size: 10px;
+      line-height: 30px;
+      text-align: center;
+      color: #fc8a15;
+      position: absolute;
+      left: -18px;
+      top: -2px;
+    }
+  }
+
+  .grid-col_gutter-mobile-s_16 {
+    margin: 0;
+    padding: 0;
+  }
+
+  &-message-avatar {
+    margin-right: 8px;
+  }
+  &-message-userdata {
+    font-weight: bold;
+    margin-right: 12px;
+  }
+  &-message-heart {
+    margin: 0 10px;
+  }
+  &-message-dots {
+    float: right;
+  }
+  &-detail{
+    margin-bottom: 32px;
+  }
+  &-detail a.link {
+    font-weight: 800;
+    color: #29266A;
+    font-weight: 800;
+  }
+}
+
+.teacherreview-task1 a {
+  font-weight: 600;
+  font-size: 18px;
+  color: #352FB6;
+  text-decoration: none;
+}
+.teacherreview-task1 a:hover, .teacherreview-task1 a:visited {
+  color: #0800AC;
+}
+
+.teachercourse-detail-btn {
+  float: right;
+}
+.teachercourse-detail-btn a {
+  text-decoration: none;
+}
+
+
+@media screen and (max-width: 780px) {
+  .teacherreview {
+    min-width: 100%
+  }
+}

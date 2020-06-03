@@ -1,0 +1,74 @@
+@import '../../../../theme/styles/settings';
+
+.teacher-form {
+   @include respond-to(mobile) {
+     padding-left: 12px;
+     padding-right: 12px;
+   }
+
+  .input .input__inner {
+    background: #FFFFFF;
+    border: 1px solid #979797;
+    padding-left:12px;
+  }
+
+  .input .input__control {
+    padding: 5px 0;
+  }
+
+  .photo-input {
+    width: 512px;
+    margin: 0 auto;
+  }
+
+  textarea {
+    width: 100%;
+  }
+  .edo-textarea textarea {
+    min-height: 136px;
+  }
+  .yourself textarea {
+    min-height: 223px;
+  }
+  .experience-input {
+    margin-bottom: 18px;
+  }
+
+  &-controls {
+    text-align: right;
+    margin-top: 20px;
+    a {
+      display: inline;
+    }
+
+    img {
+      margin: 0 5px;
+    }
+  }
+
+  .experience-input .input {
+    width: 90px;
+  }
+  .soc-pic {
+    display: inline-block;
+    width: 20px;
+    margin-right: 10px;
+  }
+  .soc-input .input {
+    width: calc(100% - 30px);
+    display: inline-block;
+  }
+
+  &-action {
+    text-align: center;
+    margin-top: 24px;
+  }
+
+ }
+
+
+
+
+
+
+

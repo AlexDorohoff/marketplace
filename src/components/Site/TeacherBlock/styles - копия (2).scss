@@ -1,0 +1,46 @@
+@import '../../../theme/styles/settings';
+
+.teacher-block {
+  margin-bottom: 30px;
+  min-height: 470px;
+  @include respond-to(medium, $type: max) {
+    min-height: 540px;
+  }
+}
+
+.teacher-block, .teacher_skills p {
+  font-size: 12px;
+}
+
+.teacher-skill {
+  min-height: 39px;
+}
+.skills-price li {
+  margin: 0 0 8px 0;
+}
+.skills-price p {
+  margin: 0 0 4px 0;
+}
+
+.teacher_skills {
+  &-wrap {
+    padding: 16px;
+  }
+  &-name {
+    font-size: 12px;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+  }
+  &-subject {
+    font-weight: 600;
+    color: #979797;
+    margin: 10px 0 0 0;
+  }
+  &-price {
+    @include fonts($size-xs, $font-family-secondary);
+    font-size: 12px;
+    font-weight: 600;
+  }
+}
+
+

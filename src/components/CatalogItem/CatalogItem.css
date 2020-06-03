@@ -1,0 +1,16 @@
+.CatalogItem 
+.add-to-cart
+
+{
+
+  margin: 1em;
+
+  padding: 1em;
+
+  background-color: blue;
+  font-size: 2em;
+
+  cursor: pointer;
+
+}
+

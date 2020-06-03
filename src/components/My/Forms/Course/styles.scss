@@ -1,0 +1,140 @@
+@import '../../../../theme/styles/settings';
+
+.course-form {
+  @include respond-to(mobile) {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .title-textarea {
+    margin-bottom: 10px;
+  }
+
+  .input .input__inner,
+  .textarea .textarea__inner {
+    background: #ffffff;
+    border: 1px solid #979797;
+    padding-left: 12px;
+  }
+
+  .textarea .textarea__control {
+    border: none;
+  }
+
+  .textarea_theme_alfa-on-white.textarea_focused .textarea__control {
+    box-shadow: none;
+  }
+
+  .input .input__control {
+    padding: 5px 0;
+    color: #333333;
+  }
+  .input .input__control::placeholder {
+    color: #aeb9bf;
+  }
+
+  .input .input__control[placeholder] {
+    color: #333333;
+  }
+
+  .photo-input {
+    width: 512px;
+    margin: 0 auto;
+  }
+
+  .course-place-input {
+    display: inline-block;
+  }
+
+  .course-place-input__block_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .course-place-input__block {
+    width: calc(100% - 57px);
+  }
+
+  .course-place-map {
+    display: inline-block;
+    width: 56px;
+    text-align: right;
+  }
+
+  .scope-input .input {
+    width: 90px;
+  }
+
+  .course-add {
+    margin: 10px 0 24px;
+  }
+  .course-add img {
+    margin: 0 0 -9px 20px;
+  }
+  .course-teacherfio {
+    display: inline-block;
+    width: 58px;
+  }
+  .course-teacherfoto {
+    margin: 5px 0 23px 0;
+  }
+  .course-teacherpic {
+    float: left;
+    margin-bottom: 8px;
+  }
+  .course-teacherpic .image-upload-field-wrapper {
+    min-height: 190px;
+    width: 179px;
+  }
+  .course-teachername {
+    margin-bottom: 15px;
+    display: inline-block;
+    width: calc(100% - 60px);
+  }
+  #teacherabout {
+    min-height: 190px;
+  }
+
+  &-action {
+    text-align: center;
+  }
+
+  .modal-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.mycourse-ul li {
+  display: inline-block;
+  max-width: 49%;
+}
+.mycourse-ul li span {
+  margin-right: 10px;
+  vertical-align: top;
+}
+.mycourse-ul li span {
+  &:before {
+    position: relative;
+    content: '•  ';
+    font-family: 'slick';
+    font-size: 10px;
+    line-height: 30px;
+    text-align: center;
+    color: #fc8a15;
+    top: -2px;
+    left: 7px;
+    width: 20px;
+  }
+}
+.mycourse-ul li textarea {
+  width: calc(100% - 30px);
+}
+.course-hr {
+  border: none;
+  color: #fc8a15;
+  background-color: #fc8a15;
+  height: 2px;
+  margin-top: 31px;
+}

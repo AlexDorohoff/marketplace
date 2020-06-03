@@ -1,0 +1,40 @@
+.expansion-panel-r {
+  border: 1px solid #b4b4b4;
+  padding: 10px 20px 10px 20px;
+  margin-bottom: 10px;
+  min-height: 44px;
+
+  .link {
+    display: block;
+    position: relative;
+
+    .link__icon {
+      position: absolute;
+      right: -10px;
+      z-index: 1;
+
+      &-close {
+        transform: rotate(0deg);
+        transition: all 0.2s linear;
+      }
+
+      &-open {
+        transform: rotate(180deg);
+        transition: all 0.2s linear;
+      }
+
+    }
+  }
+
+  &-title {
+
+  }
+
+  &-content {
+    &-open {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+
+}

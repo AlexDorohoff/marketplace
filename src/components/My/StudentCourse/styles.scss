@@ -1,0 +1,126 @@
+@import '../../../theme/styles/settings';
+.studentcourse {
+
+  .expansion-panel-title .link .link__icon {
+    top: 0;
+  }
+
+  &-create-list {
+    @include fonts($size-xs, $font-family-third);
+    font-weight: 800;
+    font-size: 22px;
+    display: inline-block;
+    margin-bottom: 11px;
+  }
+  &-create-date {
+    font-weight: normal;
+    font-size: 18px;
+    float: right;
+    color: #FC8A15;
+  }
+  &-create-teacher {
+    font-weight: 600;
+    font-size: 14px;
+    color: #979797;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  &-create-lname {
+    display: inline-block;
+    margin-right: 5px;
+    position: relative;
+    margin-left: 24px;
+    font-weight: 600;
+    font-size: 14px;
+    &:before {
+      content: '• ';
+      font-family: 'slick';
+      font-size: 10px;
+      line-height: 30px;
+      text-align: center;
+      color: #fc8a15;
+      position: absolute;
+      left: -16px;
+      top: -2px;
+    }
+
+  }
+
+  &-create-sum {
+    float: right;
+    min-width: 145px;
+  }
+  &-create-total {
+    display: inline-block;
+    font-weight: normal;
+    font-size: 14px;
+  }
+  &-create-amount {
+    display: inline-block;
+    margin-right: 5px;
+    position: relative;
+    margin-left: 24px;
+    font-weight: normal;
+    font-size: 14px;
+    &:before {
+      content: '• ';
+      font-family: 'slick';
+      font-size: 10px;
+      line-height: 30px;
+      text-align: center;
+      color: #fc8a15;
+      position: absolute;
+      left: -16px;
+      top: -2px;
+    }
+  }
+
+  &-create-title {
+    margin-top: 0;
+    padding-top: 0;
+    &-controls {
+      display: inline;
+      margin-left: 140px;
+      img {
+        margin: 0 10px;
+      }
+    }
+  }
+  &-pencil {
+    margin-right: 8px;
+    margin-bottom: -4px;
+  }
+
+  &-create-btn {
+    float: right;
+    margin-right: 16px;
+  }
+
+  &-table {
+    border-collapse: collapse;
+    font-size: 12px;
+    min-width: 100%;
+  }
+  &-table, &-table th, &-table td {
+    border: 1px solid rgba(196, 196, 196, 0.4);
+    padding: 4px 10px;
+  }
+  &-table-edit {
+    min-width: 100px;
+  }
+  &-table-head {
+    font-size: 14px;
+    text-align: center;
+  }
+  &-table p {
+    margin: 0;
+  }
+  &-table-cntr {
+    text-align: center;
+  }
+  &-table-picsort {
+    margin: 0 0 2px 8px;
+  }
+
+}
+

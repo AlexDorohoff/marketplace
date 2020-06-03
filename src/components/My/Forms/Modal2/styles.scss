@@ -1,0 +1,29 @@
+@import '../../../../theme/styles/settings';
+
+.modal-name {
+  font-size: 22px;
+  margin: 26px 0 14px;
+}
+.modal_err {
+  font-weight: 600;
+  font-size: 18px;
+  margin-left: 65px;
+  &-pic{
+       display: inline-block;
+       width: 56px;
+       vertical-align: top;
+    }
+  &-pic img{
+    margin-top: -10px;
+    }
+  &-txt{
+    display: inline-block;
+    width: calc(100% - 130px);
+    }
+}
+
+
+
+
+
+

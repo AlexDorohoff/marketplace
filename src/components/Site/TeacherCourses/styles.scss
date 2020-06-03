@@ -1,0 +1,61 @@
+.teacherc{
+  &-item {
+    margin-bottom: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+.teacherc-button {
+  margin-top: 20px;
+}
+.teacherc-button button.button {
+  padding: 9px 28px;
+}
+.teacherc-h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+.ul-without li {
+  padding-bottom: 10px;
+  line-height: 1.43;
+}
+
+.teacherc-ul {
+  margin-left: 15px;
+  list-style-image: url(../../../theme/images/oval2.svg);
+  padding-right: 10px;
+  line-height: 1.8;
+}
+.teacherc-ul li {
+  padding-bottom: 10px;
+  position: relative;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.43;
+}
+.teacherc-ul li span {
+  margin-right: 25px;
+}
+.teacherc-ul li span:before{
+  content:'';
+  position:absolute;
+  border-left:1px solid #fc8a15;;
+  left:-13px;
+  top:10px;
+  bottom:0;
+  z-index:-1;
+  height:100%;
+}
+.teacherc-ul li:last-child span:before{
+  content:none;
+}
+.teacherc-ul li:last-child{
+  padding-bottom:0;
+}
+
+.expansion-panel-title a, .expansion-panel-title a:link, .expansion-panel-title a:hover, .expansion-panel-title a:active  {
+  color: #000000;
+  font-size: 18px;
+  font-weight: 600;
+}

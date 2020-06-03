@@ -1,0 +1,66 @@
+@import '../../../../theme/styles/settings';
+
+.request-form {
+  z-index: 1;
+
+  @include respond-to(mobile) {
+//    &-wrapper {
+      padding-left: 12px;
+      padding-right: 12px;
+//    }
+  }
+
+  h2 {
+    margin-top: 0;
+    margin-bottom: 7px;
+  }
+
+  &-container {
+    max-width: 458px;
+  }
+
+  &-wrapper {
+    padding: 24px 138px 12px 120px;
+    z-index: 2;
+  }
+
+  &-course {
+    background-image: url("../../../../theme/images/course-top.jpg");
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .request-form-wrapper {
+      background-color: rgba(255, 221, 131, 0.66);
+    }
+  }
+
+  &-teacher {
+    background-color: rgb(182, 175, 157);
+    background-image: url("../../../../theme/images/backgrounds/signup_to_teacher.png");
+    background-position: right bottom;
+    background-repeat: no-repeat;
+//    max-height: auto;
+  }
+  .link_agree {
+    font-size: 14px;
+    color: #322aed;
+  }
+  .link_agree:hover {
+    font-size: 14px;
+    color: #352fb9;
+  }
+  .name-explanation {
+    font-size: 14px;
+    margin: 4px 0 0 10px;
+  }
+  .input__control {
+    padding: 10px;
+  }
+  .textarea__control {
+    //background-color: #FFFFFF;
+  }
+}
+
+.form-textarea{
+  background-color: #FFFFFF;  
+}

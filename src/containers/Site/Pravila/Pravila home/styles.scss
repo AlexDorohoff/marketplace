@@ -1,0 +1,28 @@
+@import '../../../../theme/styles/settings';
+
+.regul {
+  background-image: url(../../../../theme/images/pravila/sh.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 260px;
+  width: 100%;
+}
+
+input[type=text1] {
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  border: 1px solid #979797;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('../../../../theme/images/pravila/search-pic.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  margin: 10px 0px;
+  justify-content: center;
+  align-items: center;
+//  vertical-align: middle;
+}

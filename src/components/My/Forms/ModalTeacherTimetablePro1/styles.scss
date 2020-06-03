@@ -1,0 +1,74 @@
+@import '../../../../theme/styles/settings';
+
+.teacherpro1-modal {
+  min-width: 766px;
+  min-height: 550px;
+
+  &-date {
+    font-weight: normal;
+    font-size: 18px;
+    color: #FC8A15;
+    text-align: right;
+    margin-bottom: 10px;
+  }
+  &-about {
+    text-align: center;
+    font-weight: normal;
+    font-size: 18px;
+  }
+  &-lesson-edit {
+    text-align: right;
+    vertical-align: middle;
+  }
+  &-picplus {
+    margin-left: 10px;
+  }
+
+  &-table {
+    border-collapse: collapse;
+    font-size: 12px;
+    min-width: 100%;
+    margin-bottom: 15px;
+  }
+  &-table, &-table th, &-table td {
+    border: 1px solid rgba(196, 196, 196, 0.4);
+    padding: 4px 10px;
+    text-align: center;
+  }
+  &-table-head {
+    font-size: 14px;
+    text-align: center;
+  }
+  &-table p {
+    margin: 0;
+  }
+  &-table-day {
+    writing-mode: tb-rl;
+    transform: rotate(-90deg);
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #656565;
+  }
+  .td-yellow {
+    background: #FFDD83;
+  }
+  .td-violet {
+    background: #978BFF;
+  }
+  .td-green {
+    background: #84E59F;
+  }
+  .td-grey {
+    background: #D5D5D5;
+  }
+
+}
+
+@media screen and (max-width: 780px) {
+  .teacherpro1-modal {
+    min-width: 100%
+  }
+}

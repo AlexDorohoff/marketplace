@@ -1,0 +1,136 @@
+@import '../../../../../theme/styles/settings.scss';
+
+
+//**************
+
+
+.main-sections {
+  &-item {
+    padding: 20px;
+    height: 100%;
+    min-height: 165px;
+
+    p {
+      margin-top: 0;
+    }
+
+    &.client1 {
+//	background: url(../../../../../theme/images/pravila/sellers.jpg) bottom right#ffdd83;
+        background-color: #FFFFFF;
+  	border: 1px solid #1B60FF;
+    }
+    &.client1_1 {
+      background-color: #FF7400;
+height:173px;
+    }
+    &.client2 {
+//	background: url(../../../../../theme/images/pravila/buyers.jpg) bottom right#ffdd83;
+        background-color: #FFFFFF;
+  	border: 1px solid #1B60FF;
+    }
+    &.client2_1 {
+      background-color: #FFD300;
+height:173px;
+    }
+    &.client3 {
+///	background: url(../../../../../theme/images/pravila/politic.jpg) bottom right#ffdd83;
+        background-color: #FFFFFF;
+  	border: 1px solid #1B60FF;
+    }
+    &.client3_1 {
+      background: url(../../../../../theme/images/section2-bg.jpg) bottom right#ffdd83;
+height:173px;
+    }
+    &.client4 {
+//	background: url(../../../../../theme/images/pravila/condition.jpg) bottom right#ffdd83;
+        background-color: #FFFFFF;
+  	border: 1px solid #1B60FF;
+    }
+    &.client4_1 {
+      background: url(../../../../../theme/images/section1-bg.jpg) bottom right #978bff;
+height:173px;
+    }
+    &.client5 {
+//	background: url(../../../../../theme/images/pravila/partners.jpg) bottom right#ffdd83;
+        background-color: #FFFFFF;
+  	border: 1px solid #1B60FF;
+    }
+    &.client5_1 {
+      background-color: #4980FF;
+height:173px;
+    }
+    &.client6 {
+//	background: url(../../../../../theme/images/pravila/filecookie.jpg) bottom right#ffdd83;
+        background-color: #FFFFFF;
+  	border: 1px solid #1B60FF;
+    }
+    &.client6_1 {
+      background-color: #FF9033;
+height:173px;
+    }
+  }
+
+
+
+
+  &-lesson {
+    @include fonts($size-xs, $font-family-secondary);
+    margin-bottom: 4px;
+  }
+
+  &-heading {
+    @include fonts($size-larger, $font-family-secondary);
+    margin-bottom: 0;
+  }
+
+  &-description {
+    @include fonts($size-small, $font-family-base);
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 840px) {
+  .main-sections {
+    &-item {
+      padding: 10px;
+    }
+    &-heading {
+      font-size: 16px;
+      word-break: break-all;
+    }
+  }
+}
+
+
+.main-sections1 {
+  &-item {
+    padding: 20px;
+    height: 100%;
+    min-height: 165px;
+
+	    p {
+	      margin-top: 0;
+	    }
+	    h2 {
+	      margin-top: 30px;
+	    }
+	    &.item1_1 {
+	      background-color: #FF7400;
+	    }
+	    &.item2_1 {
+	      background-color: #FFD300;
+	    }
+	    &.item3_1 {
+	      background: url(../../../../../theme/images/section2-bg.jpg) bottom right#ffdd83;
+	    }
+	    &.item4_1 {
+	      background: url(../../../../../theme/images/section1-bg.jpg) bottom right #978bff;
+	    }
+	    &.item5_1 {
+	      background-color: #4980FF;
+	    }
+	    &.item6_1 {
+ 	     background-color: #FF9033;
+	    }
+  }
+}

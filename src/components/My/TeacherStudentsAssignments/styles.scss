@@ -1,0 +1,107 @@
+@import "../../../theme/styles/settings";
+
+.teachertask-block {
+  h3 {
+    margin: 0;
+    padding: 0;
+  }
+
+  &-title {
+    margin: 40px 0 20px 0;
+  }
+
+  &-task-list {
+    font-size: 18px;
+    margin-bottom: 22px;
+  }
+  &-task-wrap {
+    float: right;
+    width: 200px;
+    margin-bottom: 22px;
+  }
+
+  &-task {
+    font-weight: normal;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 14px;
+  }
+
+  &-task1 {
+    font-weight: normal;
+    display: inline-block;
+    margin-right: 5px;
+    position: relative;
+    margin-left: 26px;
+    font-size: 14px;
+    vertical-align: middle;
+    &:before {
+      content: "• ";
+      font-family: "slick";
+      font-size: 10px;
+      line-height: 30px;
+      text-align: center;
+      color: #fc8a15;
+      position: absolute;
+      left: -18px;
+      top: -2px;
+    }
+  }
+
+  &-task1 img {
+    margin-left: 5px;
+  }
+
+  &-task1 .link {
+    display: inline-block;
+  }
+
+  &-table {
+    border-collapse: collapse;
+    font-size: 12px;
+    min-width: 100%;
+    margin-top: 10px;
+  }
+  &-table,
+  &-table th,
+  &-table td {
+    border: 1px solid rgba(196, 196, 196, 0.4);
+    padding: 4px 10px;
+  }
+  &-table-head {
+    font-size: 14px;
+    text-align: center;
+  }
+  &-table p {
+    margin: 0;
+  }
+
+  &-table-lname .link,
+  &-table-date .link {
+    display: inline-block;
+    margin: 0 16px;
+  }
+
+  &-table-picname {
+    vertical-align: middle;
+  }
+
+  &-table-picname img {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 5px 0 0;
+  }
+
+  &-table td.teachertask-modal-table-date {
+    text-align: center;
+  }
+}
+.shaded-td {
+  color: #979797;
+}
+
+@media screen and (max-width: 780px) {
+  .teachertask-modal {
+    min-width: 100%;
+  }
+}

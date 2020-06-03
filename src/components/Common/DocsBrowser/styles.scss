@@ -1,0 +1,33 @@
+.docs-browser {
+
+  &-controls {
+    display: inline;
+    margin-left: 40px;
+
+    img {
+      margin: 0 10px;
+    }
+  }
+
+  &-carousel-wrapper {
+    border: 1px solid #B4B4B4;
+    padding: 20px 40px;
+    position: relative;
+  }
+
+  &-carousel {
+    min-height: 200px;
+    
+    .slick-slide {
+      padding: 0 6px;
+      height: 200px;
+      cursor: pointer;
+    }
+    .slick-next, .slick-prev {
+      &:before {
+        color: gray;
+      }
+    }
+  }
+
+}

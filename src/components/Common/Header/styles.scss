@@ -1,0 +1,257 @@
+@import '../../../theme/styles/settings';
+
+.appbar {
+  background-color: #FFFFFF;
+
+  .section_menu {
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 12px;
+  }
+}
+
+.menu-button {
+  margin-left: 40px;
+  position: relative;
+  &:before {
+    background: url("../../../theme/images/menu/open.svg") no-repeat center center;
+    content: '';
+    width: 16px;
+    height: 12px;
+    position: absolute;
+    top: 3px;
+    left: -22px;
+  }
+  &_close {
+    &:before {
+      background-image: url("../../../theme/images/menu/close.svg");
+    }
+  }
+  &.menu-button-mobile {
+//    margin: auto;
+    &:before {
+      width: 32px;
+      height: 32px;
+      background-size: 32px 32px;
+//      background: url("../../../theme/images/menu/open_orange.svg") no-repeat center center;
+      background: url("../../../theme/images/menu/open.svg") no-repeat center center;
+      top: -16px;
+//     left: -5px;
+    }
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 120px;
+  height: 64px;
+
+  @include respond-to(mobile) {
+    width: 90px;
+    height: 48px;
+  }
+}
+
+.login {
+  height: 100%;
+  display: flex;
+  align-items: center;
+//  justify-content: flex-end;
+  justify-content: flex-start;
+
+  &-links {
+    padding-left: 10px;
+    a {
+      display: block;
+      font-size: 12px;
+    }
+
+    &-lk {
+      &:after {
+        position: relative;
+        content: '•';
+        font-family: 'slick';
+        font-size: 9px;
+        text-align: center;
+        color: #fc8a15;
+        margin-left: 2px;
+        top: -6px;
+      }
+    }
+
+    &-course {
+      margin-right: 11px;
+    }
+
+    &-enter {
+      &.link {
+        font-size: 15px;
+        font-weight: 600;
+       color: #1B60FF;
+//        color: rgb(255, 27, 152);
+      }
+    }
+  }
+
+  .icon-menu {
+    cursor: pointer;
+    padding: 10px;
+    img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+.top-controls {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &-menu, &-search {
+    padding: 5px 10px;
+    width: 50%;
+  }
+
+  &-menu {
+    text-align: start;
+//    text-align: end;
+  }
+
+  &-salebasket {
+    padding: 5px 10px;
+    margin-right:10px;
+  }  
+
+  &-search {
+    text-align: start;
+    width: 100%;
+    margin-left: -5px;
+    input {
+      border: none;
+      width: 75%;
+      
+      &::placeholder {
+        color: black;
+      }
+
+      &:focus {
+        outline: none;
+        border-bottom: 1px solid #333333;
+        &::placeholder {
+          color: #aeb9bf;
+        }
+      }
+    }
+  }
+}
+
+.salebasket-pic {
+  width: 27px;
+  height: 27px;
+}
+/*
+.login-txts {
+  //margin-top: 25px;
+}
+.login-txts a.link {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fc8a15;
+  //margin-top: 25px;
+}
+.login-txts a.link:hover {
+  color: #e27a14;
+}
+
+.login-pic {
+  display: inline-block;
+  margin: 18px 17px 0 0;
+}
+.login-txta {
+  display: inline-block;
+  margin-top: 18px;
+  vertical-align: top;
+  font-size: 12px;
+  font-weight: normal;
+}
+.login-txta a {
+  font-size: 12px;
+  font-weight: normal;
+}
+.login-txta-lk {
+  &:after {
+    position: relative;
+    content: '•';
+    font-family: 'slick';
+    font-size: 9px;
+    text-align: center;
+    color: #fc8a15;
+    margin-left: 2px;
+    top: -6px;
+  }
+}
+.login-txta-course {
+  margin-right: 11px;
+}
+*/
+
+
+//.top-menu, .top-search {
+//  display: inline-block;
+  //margin-top: 25px;
+  //margin-left: 20px;
+//}
+//.top-menu {
+//  margin-right: 28px;
+//}
+.menu-pic {
+  width: 16px;
+  height: 12px;
+  //margin-left: 53px;
+}
+.menu-txts {
+  font-size: 14px;
+  font-weight: 600;
+  color: black;
+}
+.search-pic {
+  width: 16px;
+  height: 16px;
+  color: #1B60FF;
+  margin-right: 3px;
+//  text-align: start;
+}
+.search-txts  {
+  font-size: 14px;
+  //vertical-align: middle;
+}
+
+
+
+.choice {
+  font-size: 14px;
+  margin-top: 21px;
+}
+.radio-2 {
+  display: inline-block;
+  margin-left: 38px;
+}
+.radio-3 {
+  display: inline-block;
+  margin-left: 0px;
+}
+
+.mheader {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}

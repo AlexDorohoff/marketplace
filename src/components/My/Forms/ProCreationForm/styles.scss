@@ -1,0 +1,77 @@
+@import '../../../../theme/styles/settings';
+
+.procreate-form {
+   @include respond-to(mobile) {
+     padding-left: 12px;
+     padding-right: 12px;
+   }
+  .grid-col {
+    margin-bottom: 0;
+  }
+  .titleblock {
+    @include fonts($size-xs, $font-family-third);
+    font-weight: 800;
+    font-size: 22px;
+    margin: 0;
+  }
+  .titleblock img, .titleblockdays img {
+    margin: 0 0 -8px 20px;
+  }
+  .titleblockdays {
+    @include fonts($size-xs, $font-family-third);
+    font-weight: 800;
+    font-size: 22px;
+    margin-top: 12px;
+  }
+  &-table {
+    border-collapse: collapse;
+    font-size: 12px;
+    min-width: 100%;
+    margin-bottom: 15px;
+  }
+  &-table, &-table th, &-table td {
+    border: 1px solid rgba(196, 196, 196, 0.4);
+    padding: 4px 10px;
+    text-align: center;
+  }
+  &-table-head {
+    font-size: 14px;
+    text-align: center;
+  }
+  .tablestring td {
+    text-align: left;
+    vertical-align: middle;
+  }
+  .tablestring .center-poz {
+    text-align: center;
+  }
+  .teacherdata {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .teacherdata img {
+    margin-right: 12px;
+  }
+
+  .input .input__inner {
+    background: #FFFFFF;
+    border: 1px solid #979797;
+    padding-left:12px;
+  }
+
+  .input .input__control {
+    padding: 5px 0;
+  }
+
+  textarea {
+    width: 100%;
+  }
+
+ }
+
+
+
+
+
+
+

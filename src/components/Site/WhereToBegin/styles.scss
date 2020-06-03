@@ -1,0 +1,16 @@
+@import '../../../theme/styles/settings';
+
+.where-to-begin {
+  &-item {
+    img {
+      width: 68px;
+      height: 68px;
+    }
+    &-heading {
+      @include fonts($size-larger, $font-family-secondary);
+    }
+    &-description {
+      @include fonts($size-small, $font-family-base);
+    }
+  }
+}

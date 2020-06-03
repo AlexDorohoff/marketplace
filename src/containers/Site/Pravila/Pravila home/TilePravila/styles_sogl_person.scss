@@ -1,0 +1,191 @@
+/* number4 */
+
+ol.wsnumber4{
+        display: block;
+        counter-reset: wslist3;
+//        color:#444;
+//        color:#FC8A15;
+        color:#000000;
+
+}
+
+ol.wsnumber4 li {
+        list-style: none;
+        margin: 0 0 0em 1.35em;
+        position:relative;
+}
+
+
+ol.wsnumber4 > li::before{
+    background:#e3e3e3 ;
+    border-radius:50%;
+//    color: #000000;    
+    color: #333;
+    content: counter(wslist3) ".";
+    counter-increment: wslist3;
+    display: inline-block;
+    height: 27px;
+    left: -40px;
+    line-height: 22px;
+    padding: 5px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    transition: all 0.3s ease 0s;
+    width: 27px;
+}
+
+/*вложенный список ol */
+
+ol.wsnumber4 ol{
+        display: block;
+        counter-reset: wslists;
+        color:#777;
+        border-left: 1px solid #e3e3e3;
+        padding-left:15px;
+        transition: all 0.3s ease 0s;
+}
+
+ol.wsnumber4 ol li{
+        margin: 1em 0 0em 3em;
+        list-style: none;
+        position:relative;
+        transition: all 0.3s ease 0s;
+}
+
+//*********ОПЫТ  с маркерами
+ol.wsnumber4 li ul li::before{
+    background: #e27a14;
+    border-radius:50%;
+//    color: #333;
+    color: #ffffff;
+counter-reset: wslist2, wslists, wslist3;
+//-- что-то не скидывает счетчик
+    display: inline-block;
+    height: 5px;
+    left: -40px;
+    line-height: 32px;
+    padding: 1px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    transition: all 0.3s ease 0s;
+    width: 5px;
+}
+
+
+//*** тоже работает
+ul.wsnumber4 li:before{
+    background: #e27a14;
+    border-radius:10%;
+    color: #333;
+    display: inline-block;
+    height: 1px;
+    left: -40px;
+    line-height: 22px;
+    padding: 5px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    transition: all 0.3s ease 0s;
+    width: 1px;
+}
+
+//******************************
+ol.wsnumber4 ul{
+//    color:#FB456C;
+    color:#777;
+
+}
+
+
+ol.wsnumber4 p {
+//  margin-left: 80px;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 22px;
+    color:#777;
+    padding: 5px;
+}
+
+ol.wsnumber4 li li{
+    font-size: 16px;
+    font-weight: normal
+}
+
+
+
+ol.wsnumber4 ol li::before{
+    background: #e3e3e3;
+    border-radius:50%;
+    color: #333;
+    content: counter(wslist3) "." counter(wslists) ".";
+    counter-increment: wslists;
+    display: inline-block;
+    height: 27px;
+    left: -40px;
+    line-height: 22px;
+    padding: 5px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    transition: all 0.3s ease 0s;
+    width: 27px;
+}
+
+
+/*end вложенный список ol */
+
+/*вложенный список ol ol*/
+
+ol.wsnumber4 ol ol{
+    counter-reset: wslists2;
+}
+
+ol.wsnumber4 ol ol li::before{
+    content: counter(wslist3) "." counter(wslists) "." counter(wslists2);
+    counter-increment: wslists2;
+    font-size:14px;
+}
+
+
+/*end вложенный список ol ol*/
+//****цвет линии вертикальной
+ol.wsnumber4 ol:hover{
+    border-left: 1px solid #1B60FF;
+//        border-left: 1px solid #e27a14;
+}
+
+
+ol.wsnumber4 li li:hover{
+//  color:#333;
+  color:#000000;
+}
+ol.wsnumber4 li:hover:before {
+//  background: #e27a14;
+  background: #1B60FF;
+//  background: #FB456C;
+//  background: #fc8a15C;
+  color:#fff;
+}
+
+
+ol.wsnumber4 ul:hover{
+  color:#333;
+}
+
+
+ol.wsnumber4 p:hover{
+//  color:#333;
+  color:#000000;
+}
+
+ol.wsnumber4 li:hover:before {
+//  background: #e27a14;
+  background: #1B60FF;
+//  background: #FB456C;
+//  background: #fc8a15C;
+  color:#fff;
+}
+
+

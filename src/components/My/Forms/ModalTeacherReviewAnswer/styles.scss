@@ -1,0 +1,58 @@
+@import '../../../../theme/styles/settings';
+
+.ReviewAnswer {
+  min-width: 766px;
+  min-height: 170px;
+
+  .review-data {
+    background: #F6F6F6;
+    border: 1px solid #979797;
+    padding: 15px;
+  }
+  .review-data-pic {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 12px;
+  }
+  .review-data-user {
+    display: inline-block;
+    vertical-align: top;
+    color: #979797;
+  }
+  .review-data-user span {
+    font-weight: bold;
+  }
+  .review-data-txt {
+    color: #979797;
+  }
+  .review-answer-title {
+    font-weight: bold;
+    font-size: 18px;
+    margin: 15px 0 10px;
+    position: relative;
+    margin-right: 42px;
+    width: 58px;
+    &:after {
+      content: '• ';
+      font-family: 'slick';
+      font-size: 10px;
+      line-height: 30px;
+      text-align: center;
+      color: #fc8a15;
+      position: absolute;
+      right: -18px;
+      top: -2px;
+    }
+
+
+  }
+
+
+  textarea {
+    width: 100%;
+  }
+  .review-textarea textarea {
+    min-height: 136px;
+  }
+
+}

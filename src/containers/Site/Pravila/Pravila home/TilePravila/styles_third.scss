@@ -1,0 +1,60 @@
+@import '../../../../../theme/styles/settings.scss';
+
+.main-sections {
+  &-item {
+    padding: 20px;
+    height: 100%;
+    min-height: 165px;
+    p {
+      margin-top: 0;
+    }
+    &.third1 {
+    background-color: #FFFFFF;
+    border: 1px solid #1B60FF;
+    height:173px;
+    }
+    &.third2 {
+    background-color: #FFFFFF;
+    border: 1px solid #1B60FF;
+    height:173px;
+    }
+    &.third3 {
+    background-color: #FFFFFF;
+    border: 1px solid #1B60FF;
+    height:173px;
+    }
+    &.third4 {
+    background-color: #FFFFFF;
+    border: 1px solid #1B60FF;
+    height:173px;
+    }
+    &.third5 {
+    background-color: #FFFFFF;
+    border: 1px solid #1B60FF;
+    height:173px;
+    }
+  }
+  &-lesson {
+    @include fonts($size-xs, $font-family-secondary);
+    margin-bottom: 4px;
+  }
+  &-heading {
+    @include fonts($size-larger, $font-family-secondary);
+    margin-bottom: 0;
+  }
+  &-description {
+    @include fonts($size-small, $font-family-base);
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 840px) {
+  .main-sections {
+    &-item {
+      padding: 10px;
+    }
+    &-heading {
+      font-size: 16px;
+      word-break: break-all;
+    }
+  }
+}

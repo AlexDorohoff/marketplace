@@ -1,0 +1,224 @@
+@import '../../../theme/styles/settings';
+
+.teacher-settings {
+  //background-image: url(../../../theme/images/shutterstock153454142.jpg);
+  //background-position: center center;
+  //background-repeat: no-repeat;
+  //background-size: cover;
+  min-height: 496px;
+
+  .teacher-about-settings {
+    margin: 20px 0 0 0px;
+    text-align: right;
+    padding-right: 138px;
+  }
+  .teacher-about-settings img {
+    margin: 0 6px -6px 0;
+  }
+
+  .teacher-online {
+    margin-bottom: 6px;
+    font-size: 14px;
+    img {
+      margin-right: 11px;
+    }
+    button {
+      margin-left: 8px;
+    }
+    .teacher-online-status {
+      margin: 0 0 -5px 0px;
+    }
+  }
+  .teacher-online-1 {
+    display: inline-block;
+    min-width: 218px;
+  }
+  .teacher-online-2 {
+    display: inline-block;
+    min-width: 175px;
+  }
+  .teacher-balance {
+    @include fonts($size-xs, $font-family-third);
+    font-weight: 800;
+    font-size: 18px;
+    margin-left: 11px;
+  }
+  .teacher-more {
+    margin-bottom: 7px;
+  }
+  .teacher-timer-description {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    display: inline-block;
+    min-width: 175px;
+    vertical-align: middle;
+    margin-top: 5px;
+  }
+  .teacher-timer-block {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .teacher-subjects ul li {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: #fc8a15;
+    display: inline-block;
+    width: 200px;
+    margin: 0 12px 12px 0;
+  }
+  .teacher-data {
+    margin-bottom: 9px;
+  }
+  .teacher-data-contact {
+    display: inline-block;
+    min-width: 175px;
+  }
+  .teacher-data-soc {
+    display: inline-block;
+    width: 310px;
+  }
+  .teacher-data-contact,
+  .teacher-data-soc {
+    vertical-align: top;
+    margin-top: 19px;
+    font-size: 14px;
+  }
+  .teacher-data-contact-title {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 7px;
+  }
+  .teacher-data-soc-title {
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 7px;
+  }
+  .teacher-data-soc img {
+    margin: 0 3px;
+  }
+
+  @media screen and (max-width: 599px) {
+    .teacher-about {
+      padding: 0 20px 0 30%;
+    }
+  }
+
+}
+
+.teacher-settings .teacher-about-h1 {
+  font-size: 28px;
+  margin: 14px 0;
+}
+// .popup__container{
+//   height: 85px !important;
+// }
+// .popup .teacher-online-list ul li {
+//   font-size: 14px;
+//   line-height: 20px;
+//   padding-left: 33px;
+//   min-height: 25px;
+// }
+.popup .teacher-online-list ul li.active {
+  background: url('../../../theme/images/account/check1.svg') no-repeat left top;
+}
+
+.section .teacher-star {
+  margin-top: 24px;
+  text-align: right;
+}
+.teacher-stats-wrap img {
+  max-width: 100%;
+}
+
+.right-poz {
+  text-align: right;
+}
+
+.course-create-title {
+  margin-top: 0;
+  padding-top: 0;
+  &-controls {
+    display: inline;
+    margin-left: 140px;
+    img {
+      margin: 0 10px;
+    }
+  }
+}
+
+.teachers-students-control {
+  display: inline;
+  margin-left: 50px;
+  img {
+    margin: 0 10px;
+  }
+}
+
+.teachers-students-tasks {
+  display: inline;
+  margin-left: 50px;
+  @include fonts($size-xs, $font-family-base);
+  font-size: 18px;
+}
+.teachers-students-tasks-amount {
+  display: inline;
+  @include fonts($size-xs, $font-family-base);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 800;
+  margin-right: 17px;
+  position: relative;
+  margin-left: 28px;
+  &:before {
+    content: '• ';
+    font-family: 'slick';
+    font-size: 10px;
+    line-height: 30px;
+    text-align: center;
+    color: #fc8a15;
+    position: absolute;
+    left: -19px;
+    top: -2px;
+  }
+}
+.teacher-settings-h2 {
+  margin: 0 0 13px 0;
+}
+
+.course-create {
+  border: 1px solid #b4b4b4;
+  padding: 6px 21px;
+}
+
+.course-create-btn {
+  float: right;
+}
+
+.poster {
+  position: relative;
+  width: 25%;
+}
+.descr {
+  display: none;
+  padding: 10px;
+  margin-top: 17px;
+  background: #f3f3f3;
+  height: 150px;
+  -webkit-box-shadow: 0 5px 5px rgb(255, 255, 255);
+  box-shadow: 0 5px 5px rgb(255, 255, 255);
+  border-radius: 8px;
+}
+.poster:hover .descr {
+  display: block;
+  position: absolute;
+  z-index: 9999;
+  width: 450px;
+  top: -180px;
+}
+.online-profile {
+  border: none;
+  outline: none;
+}

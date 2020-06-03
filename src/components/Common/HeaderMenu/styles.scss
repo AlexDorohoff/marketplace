@@ -1,0 +1,77 @@
+@import '../../../theme/styles/settings';
+
+.header-menu {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 136px;
+  left: auto;
+  right: 0;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.18);
+  z-index: 1;
+  overflow: auto;
+
+  &-wrapper {
+    background-color: rgba(255, 255, 255, 1);
+    z-index: 2;
+    min-height: 472px;
+  }
+
+  &-open {
+    // left: 2px;
+    // width: auto;
+    // border: 1px solid #FC8A15;
+    display: block;
+  }
+
+  &-menu {
+    @include fonts($size-small, $font-family-secondary);
+    li {
+      margin: 12px 0;
+    }
+  }
+
+  &-submenu {
+    @include fonts($size-small, $font-family-base);
+    padding-left: 10px;
+    li {
+      margin: 8px 0;
+    }
+  }
+}
+
+.header-menu-mobiles {
+  width: auto;
+  height: auto;
+  position: fixed;
+  top: 166px;
+  left: 0px;
+  right: 0px;
+  display: none;
+  // background-color: rgba(0, 0, 0, 0.18);
+  background-color: #ffffff;
+  z-index: 1;
+  padding: 2px 2px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid rgba(0, 110, 194, 0.18);
+
+  &-open {
+    display: block;
+  }
+
+  &-wrapper {
+    background-color: rgba(255, 255, 255, 1);
+    z-index: 2;
+  }
+
+  &-sub-menu {
+    display: none;
+  }
+
+  &-sub-menu-open {
+    display: block;
+  }
+
+}

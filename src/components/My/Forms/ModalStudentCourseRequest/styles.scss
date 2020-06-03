@@ -1,0 +1,41 @@
+@import '../../../../theme/styles/settings';
+
+.StudentCourseRequest-modal {
+  margin-top: 30px;
+  min-width: 766px;
+  min-height: 170px;
+
+  &-pickers {
+    display: flex;
+  }
+  .divDateTime {
+    margin-right: 10px;
+    .input__control,
+    .textarea__control {
+      border: 1px solid #979797;
+      padding: 10px;
+    }
+  }
+  .textarea__control {
+    border: 1px solid #979797;
+    padding: 10px;
+  }
+
+  .msg {
+    margin-top: 10px;
+  }
+
+  &-button {
+    text-align: center;
+    margin-top: 25px;
+  }
+  &-button .button {
+    margin: 0 50px;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .StudentCourseRequest-modal {
+    min-width: 100%;
+  }
+}

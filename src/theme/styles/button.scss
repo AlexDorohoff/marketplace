@@ -1,0 +1,113 @@
+button.button {
+  border-radius: $button-radius;
+  border: 0 none;
+  height: auto;
+  line-height: $button-line-height;
+  padding: $button-pad;
+  color: white;
+  @include fonts($button-size, $button-family);
+  transition: all 0.2s linear;
+  text-transform: none;
+
+  &:hover, &:focus, &:active {
+    transition: all 0.2s linear;
+  }
+
+  &_default {
+    background-color: #1B60FF;
+    &:hover, &:focus, &:active {
+      background-color: #e27a14;
+    }
+  }
+
+  &_secondary {
+    background-color: #1B60FF;
+    &:hover, &:focus, &:active {
+      background-color: #e27a14;
+    }
+  }
+  &_modal {
+    @include fonts($size-small, $font-family-base);
+  }
+  &_modalblue {
+    font-size: 14px;
+    background: #29266a;
+    &:hover, &:focus, &:active {
+      background-color: #e27a14;
+    }
+  }
+  &_cancel{
+    font-size: 14px;
+    background: #979797;
+    &:hover, &:focus, &:active {
+      background-color: #828282;
+    }
+  }
+  &_upload{
+    font-size: 14px;
+    background: rgba(41, 38, 106, 0.5);
+    &:hover, &:focus, &:active {
+      background-color: #e27a14;
+    }
+  }
+
+  > .button__text {
+    overflow: inherit;
+  }
+
+  &_disabled {
+    .button__text {
+      color: white;
+      opacity: $opacity-main;
+    }
+  }
+
+  &_focused {
+    box-shadow: none;
+  }
+
+  &_link {
+    border: 0;
+    padding: 0;
+    line-height: $body-line-height;
+    background: none;
+    @include fonts($size-small, $font-family-secondary);
+    color: #29266a;
+
+    &:hover, &:focus, &:active {
+      border: 0;
+    }
+  }
+
+  &.icon-button {
+    width: 40px;
+    height: 40px;
+  }
+
+
+
+  &_settings-form, &_settings-message, &_settings-cancel {
+//    background-color: #fc8a15;
+    background-color: #1B60FF;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 7px 20px;
+    &:hover, &:focus, &:active {
+//      background-color: #e27a14;
+    background-color: #fc8a15;
+    }
+  }
+  &_settings-message {
+    background: #F6F6F6;
+    border: 1px solid #979797;
+    color: #000000;
+  }
+  &_settings-cancel {
+    background: #979797;
+    &:hover, &:focus, &:active {
+      background-color: #828282;
+    }
+  }
+
+}

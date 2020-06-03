@@ -1,0 +1,68 @@
+@import "../../../theme/styles/settings";
+
+.teacher {
+  min-height: 496px;
+}
+.student-title {
+  font-weight: 800;
+  font-size: 27px;
+  line-height: 34px;
+  color: #fc8a15;
+  margin: 0;
+}
+.right-poz {
+  text-align: right;
+}
+.teacher-pencil {
+  display: inline-block;
+  margin-top: 26px;
+}
+.teacher-pencil img {
+  margin: 0 20px -10px 0;
+}
+.teacher-refresh {
+  display: inline-block;
+  // margin-top: 26px;
+}
+.teacher-hr {
+  border: none;
+  color: #fc8a15;
+  background-color: #fc8a15;
+  height: 2px;
+  margin-top: 31px;
+}
+.course-create-title {
+  margin-top: 0;
+  padding-top: 0;
+  &-controls {
+    display: inline;
+    margin-left: 140px;
+    img {
+      margin: 0 10px;
+    }
+  }
+}
+.course-create-h2 {
+  margin: 0 0 13px 0;
+}
+
+.course-create {
+  border: 1px solid #b4b4b4;
+  padding: 6px 21px;
+}
+
+.course-create-btn {
+  float: right;
+}
+
+///* Chrome, Safari, Edge, Opera */
+//input::-webkit-outer-spin-button,
+//input::-webkit-inner-spin-button {
+//  -webkit-appearance: none;
+//  margin: 0;
+//}
+//
+///* Firefox */
+//input[type=number] {
+//  -moz-appearance:textfield;
+//}

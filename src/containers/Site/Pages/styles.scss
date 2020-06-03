@@ -1,0 +1,155 @@
+@import '../../../theme/styles/settings';
+
+.line
+{
+border: 1px solid lightblue;
+}
+
+
+
+hr {
+  border: 2px solid #1B60FF;
+}
+
+
+
+//**************
+.main-sections {
+  &-item {
+    padding: 20px;
+    height: 100%;
+    min-height: 165px;
+
+    p {
+      margin-top: 0;
+    }
+  }
+
+  &-lesson {
+    @include fonts(larger, $font-family-secondary);
+    margin-bottom: 4px;
+  }
+
+  &-heading {
+    @include fonts($size-larger, $font-family-secondary);
+    margin-bottom: 0;
+  }
+  
+    &-heading-name {
+    @include fonts($size-larger, $font-family-secondary);
+    margin-bottom: 0;
+	padding: 0 1em;
+	border-right: 2px solid #f2f1f0;
+	min-width: 60%;
+  }
+    &-heading-price {
+    @include fonts($size-larger, $font-family-secondary);
+    margin-bottom: 0;
+	padding: 0 1em;
+	border-right: 2px solid #f2f1f0;
+	min-width: 60%;
+  }
+  
+    &-heading-quantity {
+    @include fonts($size-larger, $font-family-secondary);
+    margin-bottom: 0;
+	padding: 0 1em;
+	border-right: 2px solid #f2f1f0;
+	min-width: 60%;
+  }
+  
+  &-description {
+    @include fonts($size-small, $font-family-base);
+    margin-bottom: 0;
+  }
+    &-description-text {
+    @include fonts($size-small, $font-family-base);
+    margin-bottom: 0;
+	margin-left: 5px;
+  }
+}
+
+@media (max-width: 840px) {
+  .main-sections {
+    &-item {
+      padding: 10px;
+    }
+    &-heading {
+      font-size: 16px;
+      word-break: break-all;
+    }
+  }
+}
+//********************
+
+
+
+
+.teacher-block {
+  margin-bottom: 30px;
+border:1px dashed #8bc63e;
+//width: 738px;
+  min-height: 20px;
+  @include respond-to(medium, $type: max) {
+    min-height: auto;
+ }
+//*  @include respond-to(medium) {
+//*    min-height:340px;
+//*  }
+
+//  @include respond-to(mobile) {
+//    padding-left: 12px;
+//    padding-right: 12px;
+ // }
+
+}
+
+.teacher-block, .teacher_skills p {
+  font-size: 12px;
+}
+
+.teacher-skill {
+  min-height: 39px;
+}
+.skills-price li {
+  margin: 0 0 8px 0;
+}
+.skills-price p {
+  margin: 0 0 4px 0;
+}
+
+.teacher_skills {
+  &-wrap {
+    padding: 5px;
+  }
+  &-name {
+    font-size: 12px;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+  }
+  &-subject {
+    font-weight: 600;
+    color: #979797;
+    margin: 10px 0 0 0;
+          @include fonts($size-small, $font-family-secondary);
+    
+  }
+  &-price {
+    @include fonts($size-xs, $font-family-secondary);
+    font-size: 12px;
+    font-weight: 600;
+  }
+}
+
+//*************
+
+.checkout {
+position: relative;
+left: 50%;
+transform: translate(-50%, 0);
+}
+
+
+
+
+

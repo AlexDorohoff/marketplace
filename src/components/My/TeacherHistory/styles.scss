@@ -1,0 +1,103 @@
+@import '../../../theme/styles/settings';
+
+.teacherhistory-block {
+
+  h3 {
+    margin: 0;
+    padding: 0;
+  }
+
+  &-title {
+    margin: 20px 0;
+  }
+
+  &-currentdate {
+    font-weight: normal;
+    font-size: 18px;
+    color: #FC8A15;
+    text-align: right;
+  }
+
+  &-name {
+    font-weight: normal;
+    font-size: 18px;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 11px;
+  }
+  &-date {
+    font-weight: normal;
+    font-size: 14px;
+    float: right;
+  }
+  &-date img {
+    margin: 0 0 -5px 8px;
+  }
+
+  &-table {
+    border-collapse: collapse;
+    font-size: 12px;
+    min-width: 100%;
+  }
+  &-table, &-table th, &-table td {
+    border: 1px solid rgba(196, 196, 196, 0.4);
+    padding: 4px 10px;
+    text-align: center;
+  }
+  &-table-head {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  &-table-lname img {
+    margin: 0 15px;
+  }
+
+  &-table-picname img {
+    float: left;
+    margin: 0 5px 0 0;
+  }
+
+  &-table-picname a.link {
+    font-size: 12px;
+    color: #000000;
+  }
+
+  &-table-picname a.link:hover {
+    color: #352fb9;
+  }
+
+  &-table-editdate {
+    min-width: 76px;
+  }
+  &-table-success {
+    min-width: 76px;
+  }
+  &-table-rating {
+    min-width: 76px;
+  }
+  &-table p {
+    margin: 0;
+  }
+  &-table-cntr {
+    text-align: center;
+  }
+  &-table-transparent img {
+    filter: alpha(Opacity=40);
+    opacity: 0.4;
+  }
+  &-table td.teacherhistory-modal-table-picname {
+    text-align: left;
+  }
+  &-table-banner {
+    margin-right: 3px;
+  }
+
+}
+
+
+@media screen and (max-width: 780px) {
+  .teacherhistory-block {
+    min-width: 100%
+  }
+}

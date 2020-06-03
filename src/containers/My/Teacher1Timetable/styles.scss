@@ -1,0 +1,14 @@
+@import '../../../theme/styles/settings';
+.timetable {
+  @include fonts($size-xs, $font-family-third);
+  font-weight: 800;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+.timetable img {
+  margin: 0 0 -6px 18px;
+}
+.section .org-title {
+  text-align: center;
+  font-size: 18px;
+}

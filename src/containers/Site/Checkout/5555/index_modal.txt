@@ -1,0 +1,75 @@
+﻿import React from 'react';
+import Helmet from 'react-helmet';
+import Button from 'arui-feather/button';
+import GridCol from 'arui-feather/grid-col';
+import GridRow from 'arui-feather/grid-row';
+import { NavLink } from 'react-router-dom';
+import Breadcrumbs from '../../../components/Common/Breadcrumbs';
+import RequestForm from '../../../components/Site/Forms/RequestForm';
+import CourseTeacher from '../../../theme/images/course-teacher.jpg';
+import Footer from '../../../components/Common/Footer';
+import { courseBreadcrumbs02 } from '../../../core/utils/testData';
+
+import ModalTeacherCard from '../../../components/My/Forms/ModalTeacherCard';
+
+import './styles.scss';
+
+
+export default function Course() {
+  return (
+    <>
+      <Helmet>
+        <title>Все ОК Корзина</title>
+        <meta name="description" content="Все ОК"/>
+        <meta name="keywords" content="Все ОК"/>
+      </Helmet>
+
+        <Switch>
+          <Route path="/modalteachercard" component={ModalTeacherCard} />
+        </Switch>
+
+      <section className="section breadcrumbs">
+        <Breadcrumbs items={courseBreadcrumbs02}/>
+      </section>
+
+
+
+
+      <section className="section">
+        <h2>Товары в корзине</h2>
+        <GridRow>
+          <GridCol width={{ mobile: 12, tablet: 3 }} className="text-center">
+            <img className="course-teacher-image" src={CourseTeacher} alt=""/>
+          </GridCol>
+
+          <GridCol width={{ mobile: 12, tablet: 9 }}>
+            <div className="course-teacher-content">
+              <h3 className="course-teacher-h3">Набор первоклассника ErichKrause</h3>
+              <p>Подарочный Набор Первоклассника ErichKrause состоит из 43 предметов
+	     </p>
+
+              <NavLink className="link link_third" to="/modalteachercard">
+              <div className="course-teacher-button">
+                <Button className="button button_secondary">Оплатить</Button>
+              </div>
+              </NavLink>
+            </div>
+          </GridCol>
+
+
+          <GridCol width={{ mobile: 12, tablet: 9 }}>
+              <NavLink className="link link_third" to="">
+              <div className="course-teacher-button">
+                <Button className="button button_secondary">Удалить</Button>
+              </div>
+              </NavLink>
+          </GridCol>
+
+        </GridRow>
+      </section>
+
+
+      <Footer/>
+    </>
+  );
+}

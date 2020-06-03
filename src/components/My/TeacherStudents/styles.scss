@@ -1,0 +1,41 @@
+@import '../../../theme/styles/settings';
+.teacherstudents {
+
+  &-element .grid-col {
+    height: 35px;
+  }
+
+  .expansion-panel-title .link .link__icon {
+    top: 0;
+  }
+
+  &-item {
+    margin-bottom: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  &-element {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: normal;
+  }
+  &-hat {
+    margin-top: 22px;
+  }
+  &-button {
+    text-align: center;
+    margin: 12px 0;
+  }
+
+}
+.studentsteachers-h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.expansion-panel-title a, .expansion-panel-title a:link, .expansion-panel-title a:hover, .expansion-panel-title a:active  {
+  color: #000000;
+  font-size: 18px;
+  font-weight: 600;
+}

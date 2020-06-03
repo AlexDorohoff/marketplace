@@ -1,0 +1,72 @@
+@import '../../../theme/styles/settings';
+
+.footer-main {
+  font-size: 12px;
+  font-weight: normal;
+//  max-width: 1024px;
+  max-height: 650px; 
+  margin-left: auto;
+  margin-right: auto;
+//  padding: 35px 138px 44px 120px;
+}
+
+.footer-main a {
+  font-size: 12px;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.footer-main a:hover {
+  font-size: 12px;
+  color: #434343;
+  text-decoration: none;
+}
+.fa-pic {
+  max-width: 12px;
+  margin-right: 5px;
+}
+.footer-soc a {
+  display: inline-block;
+  padding-right: 18px;
+  vertical-align: top;
+}
+.footer-soc a:hover img {
+    opacity: .6;
+    transition: .6s;
+}
+
+.footer-main-first {
+  font-size: 14px;
+  font-weight: 600;
+  padding-bottom: 6px;
+}
+
+.footer-soc-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 16px;
+  margin-bottom: 6px;
+}
+
+.footer-main-second {
+  margin-top: 30px;
+}
+
+.footer-second {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.footer-third p {
+  font-size: 12px;
+  line-height: 1;
+  padding-bottom: 8px;
+  margin: 0;
+}
+
+.footer__content__disclaimer{
+  .footer_cookies_link{
+    color: #FC8A15;
+
+  }
+}

@@ -1,0 +1,157 @@
+a.link {
+  font-family: $body-text-family;
+  color: #000000;
+
+  .link__text {
+    border: 0 none;
+  }
+
+  &_secondary {
+    @include fonts($size-small, $font-family-secondary);
+    color: #979797;
+  }
+
+  &_third {
+    @include fonts($size-small, $font-family-secondary);
+    color: #000000;
+  }
+
+  &_fourth {
+    @include fonts($size-xxs, $font-family-base);
+    text-decoration: underline;
+    color: blue;
+  }
+  &_five {
+    text-decoration: underline;
+    color: blue;
+  }
+  &_toplink {
+    @include fonts($size-small, $font-family-base);
+    color: #006ec2;
+  }
+}
+a.link:hover {
+  color: #000000;
+}
+a.link1:hover {
+  @include fonts($size-small, $font-family-base);  
+  color: #fc8a15;
+}
+
+a.link2:hover {
+  @include fonts($size-small, $font-family-base);  
+  color: #636363;
+  border: 0 none;
+}
+a.link:active {
+  color: #29266a;
+}
+
+a.link3 {
+  font-family: $body-text-family;
+  color: #006ec2;
+  &_toplink {
+    @include fonts($size-small, $font-family-base);
+    color: #006ec2;
+  }  
+}
+a.link3:hover {
+  @include fonts($size-small, $font-family-base);  
+  color: #fc8a15;
+}
+a.link3:active {
+  @include fonts($size-small, $font-family-base);
+  color: #29266a;
+}
+
+a.link4 {
+  font-family: $body-text-family;
+  color: #006ec2;
+  .link__text {
+    border: 0 none;
+  }
+  &_secondary {
+    @include fonts($size-small, $font-family-secondary);
+    color: #979797;
+  }
+  &_third {
+    @include fonts($size-small, $font-family-secondary);
+    color: #000000;
+  }
+  &_fourth {
+    @include fonts($size-xxs, $font-family-base);
+    text-decoration: underline;
+    color: blue;
+  }
+  &_five {
+    text-decoration: underline;
+    color: blue;
+  }
+  &_toplink {
+    @include fonts($size-small, $font-family-base);
+    color: #006ec2;
+  }
+}
+
+a.link4:hover {
+  color: #636363;
+  border: 0 none;
+}
+
+
+a.link5 {
+  font-family: $body-text-family;
+  color: #000000;
+  text-decoration: none;
+  &_third5 {
+    @include fonts($size-default, $font-family-secondary);
+    color: #006ec2;
+  }
+}
+
+a.link5:hover {
+    color: #fc8a15;
+}
+
+a.link5:active {
+  @include fonts($size-default, $font-family-secondary);
+  color: #29266a;
+}
+
+//------------ Для меню
+a.link6 {
+  font-family: $body-text-family;
+  color: #000000;
+  text-decoration: none;
+  margin-left: 8px;
+  // width: 150px;
+  &_third {
+    @include fonts($size-small, $font-family-base);
+    color: #006ec2;
+    width: 350px;
+  }
+}
+
+a.link6:hover {
+    color: #fc8a15;
+    text-decoration: underline;
+}
+
+a.link6:active {
+  @include fonts($size-small, $font-family-base);
+  color: #29266a;
+}
+
+//-------------------
+
+.footer_wrapper a{
+  color: #ffffff;
+  text-decoration: none;
+}
+.footer_wrapper a:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+.footer_wrapper a:active {
+  color: rgba(255, 255, 255, 0.5);
+}
+

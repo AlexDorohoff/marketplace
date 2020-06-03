@@ -1,0 +1,78 @@
+@import '../../../theme/styles/settings';
+
+.teacher {
+  // background-image: url(../../../theme/images/shutterstock153454142.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 496px;
+
+  &-name {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.21;
+    margin: 57px 0 16px;
+  }
+
+  &-expir {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: normal;
+    padding-bottom: 8px;
+  }
+
+  &-more {
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    color: #29266a;
+    margin-bottom: 24px;
+
+  }
+
+  &-subject {
+    font-size: 18px;
+    font-weight: 600;
+    color: #29266a;
+    line-height: 1.6;
+    margin-top: 24px;
+  }
+
+  &-txt {
+    font-size: 14px;
+    line-height: 1.43;
+  }
+
+  &-image {
+    width: 100%;
+    height: auto;
+  }
+
+  &-more-popup {
+    @include fonts($size-xs, $font-family-base);
+    max-width: 300px;
+  }
+
+  @media screen and (max-width: 599px) {
+    .teacher-about {
+      padding: 0 20px 0 30%;
+    }
+  }
+
+}
+
+.teacher-button {
+  margin-top: 20px;
+}
+.teacher-button button.button {
+  padding: 9px 28px;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+}
