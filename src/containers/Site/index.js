@@ -6,11 +6,10 @@ import Shop from './Shop';
 import Teachers from './Teachers';
 import Teacher from './Teacher';
 import Courses from './Courses';
+import Showcase from './Showcase';
 import Course from './Course';
 import NotFoundPage from './NotFound';
 import UnderDevelopment from './UnderDevelopment';
-// import CartPage from './pages/CartPage.js';
-
 import Client from './Pravila/Client';
 import Experts from './Pravila/Experts';
 import Third from './Pravila/Thirdparties';
@@ -59,10 +58,11 @@ export default function Site() {
       <main className="main">
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route path="/teachers" component={Teachers} />
-          <Route path="/teacher/:id" component={Teacher} />
-          <Route path="/courses" component={Courses} />
-          <Route path="/course/:id" component={Course} />
+          <Route path="/shops" component={Teachers} />
+          <Route path="/shop/:id" component={Teacher} />
+          <Route path="/goods" component={Courses} />
+          <Route path="/showcase/:id" component={Showcase} />
+          <Route path="/good/:id" component={Course} />
 
           <Route path="/pravila-of-our-house" component={PravilaHome} />
           <Route path="/policy-experts" component={Experts} />

@@ -1,25 +1,27 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import Helmet from 'react-helmet';
 import GridRow from 'arui-feather/grid-row';
 import GridCol from 'arui-feather/grid-col';
 import Button from 'arui-feather/button';
 import Popup from 'arui-feather/popup';
-import Type from 'prop-types';
+import { FiChevronDown } from 'react-icons/fi';
 import { useSelector } from 'react-redux';
-import TeacherBlock from '../../../components/Site/TeacherBlock';
-import ChevronBottom2 from '../../../theme/images/chevronBottom2.svg';
+import connectorCourses from '../../../core/connectors/courses';
+import CourseBlock from '../../../components/Site/CourseBlock';
 import Footer from '../../../components/Common/Footer';
 import './styles.scss';
-import connectorTeachers from '../../../core/connectors/teachers';
 import Loader from '../../../components/Common/Loader';
 
 /**
- *  Teachers
+ *  Showcase
  */
 
-const Teachers = ({ getTeachersByTitle }) => {
+const Showcase = ({ getCoursesByTitle, match }) => {
   const courses = useSelector(state => state.courses);
-  const teachers = useSelector(state => state.teachers);
+  let filtered=[];
+  if (courses.courses && courses.courses.length) {
+    filtered = courses.courses.filter(item => item.user.id == match.params.id);
+  }
 
   const [isOpenPopup, setIsOpenPopup] = useState(false);
   const [step, setStep] = useState(6);
@@ -30,40 +32,44 @@ const Teachers = ({ getTeachersByTitle }) => {
   const getCoursesTitles = (courses, number) => {
     if (courses.length > 0) {
       let titles = [];
-      const newTitles = [];
-      titles = courses.map(course => course.title);
-      titles.forEach(title => {
-        if (!newTitles.includes(title)) {
-          newTitles.push(title);
+      let multiTitles = [];
+      const allTitles = courses.map(course => course.title);
+      allTitles.forEach(title => {
+        if (!multiTitles.includes(title)) {
+          if (allTitles.indexOf(title) !== allTitles.lastIndexOf(title)) {
+            multiTitles.push(title);
+          }
+          titles.push(title);
         }
       });
       if (!number) {
-        return newTitles;
+        return titles;
       }
-      return newTitles.slice(0, number);
+      return titles.slice(0, number);
     }
     return [];
   };
 
-  const outputData =
-    teachers.data.length > 0 ? teachers.data.slice(0, step) : [];
-  const isOutputData = outputData.length > 0;
-  const isGetMore = isOutputData && teachers.data.length > step;
+  const outputCourses =
+    filtered.length ? filtered.slice(0, step) : [];
 
-  if (teachers.fetching) {
+  const isOutputCourses = outputCourses.length > 0;
+  const isGetMore = isOutputCourses && filtered.length > step;
+
+  if (courses.fetching) {
     return <Loader />;
   }
 
   return (
     <>
       <Helmet>
-        <title>Море-Витрины</title>
+        <title>Море-Товары</title>
         <meta name="description" content="Море" />
         <meta name="keywords" content="Море" />
       </Helmet>
       <section className="section">
         <div className="select-subject">
-          Выбрать витрину
+          Выбрать товар
           <Button
             ref={refTarget}
             size="m"
@@ -74,11 +80,7 @@ const Teachers = ({ getTeachersByTitle }) => {
             }}
             className="button button_link"
           >
-            <img
-              className="select-subject-img"
-              src={ChevronBottom2}
-              alt="arrow"
-            />
+            <FiChevronDown className="select-subject-icon" />
           </Button>
           {isOpenPopup && <div className="popup-overlay" />}
           <Popup
@@ -88,22 +90,22 @@ const Teachers = ({ getTeachersByTitle }) => {
             mainOffset={10}
             height="adaptive"
           >
-            <div className="teachers-more-popup">
+            <div className="courses-more-popup">
               <ul>
                 <li
                   onClick={() => {
-                    getTeachersByTitle();
+                    getCoursesByTitle();
                     setStep(6);
                   }}
                 >
-                  Все витрины
+                  Все товары
                 </li>
                 {getCoursesTitles(courses.inputCourses).map(title => {
                   return (
                     <li
                       key={`${title}${Math.random()}`}
                       onClick={() => {
-                        getTeachersByTitle(title, courses.inputCourses);
+                        getCoursesByTitle(title);
                         setStep(6);
                       }}
                     >
@@ -112,22 +114,27 @@ const Teachers = ({ getTeachersByTitle }) => {
                   );
                 })}
               </ul>
+              {/* <Link pseudo="true" to="/courses">
+                Подробнее...
+              </Link> */}
             </div>
           </Popup>
         </div>
+
         <GridRow justify="left">
-          {isOutputData &&
-            outputData.map(teacher => (
+          {isOutputCourses &&
+            outputCourses.map(course => (
               <GridCol
-                key={`${teacher.id}${Math.random()}`}
+                key={`${course.id}${Math.random()}`}
                 width={{ mobile: 12, tablet: 6, desktop: 4 }}
               >
-                <TeacherBlock teacher={teacher} />
+                <CourseBlock course={course} />
               </GridCol>
             ))}
         </GridRow>
+
         {isGetMore && (
-          <div className="button-center m-t30">
+          <div className="button-center">
             <Button
               className="button button_secondary"
               onClick={() => setStep(step + 6)}
@@ -142,10 +149,4 @@ const Teachers = ({ getTeachersByTitle }) => {
   );
 };
 
-Teachers.propTypes = {
-  teachers: Type.object.isRequired,
-  getTeachers: Type.func.isRequired,
-  getTeachersByTitle: Type.func.isRequired,
-};
-
-export default connectorTeachers(Teachers);
+export default connectorCourses(Showcase);

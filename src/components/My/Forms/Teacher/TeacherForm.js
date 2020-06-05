@@ -40,7 +40,7 @@ export default function TeacherForm({
   const onModalClose = () => {
     setSubmitting(false);
     if (Object.keys(errors).length === 0) {
-      history.push('/my/teacher1');
+      history.push('/my/lk');
     }
   };
 
@@ -99,7 +99,7 @@ export default function TeacherForm({
             width={{ mobile: 12, tablet: 4, desktop: 4 }}
             className="form-field"
           >
-            <div className="input-title">Опыт работы*</div>
+            <div className="input-title">Сколько лет на рынке*</div>
             <div className="experience-input">
               <Input
                 id="experience"

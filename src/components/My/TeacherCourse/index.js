@@ -109,19 +109,19 @@ const TeacherCourse = ({ name = '', items = [] }) => {
                         <p>{description && description.schedule}</p>
                       </td>
                       <td className="teachercourse-icons">
-                        <NavLink to={`/my/update-course/${item.id}`}>
+                        <NavLink to={`/my/update-good/${item.id}`}>
                           <FaPencilAlt
                             size="18px"
                             className="teachercourse-icon"
                           />
                         </NavLink>
-                        <NavLink to={`/my/update-course/${item.id}`}>
+                        <NavLink to={`/my/update-good/${item.id}`}>
                           <MdSettings
                             size="18px"
                             className="teachercourse-icon"
                           />
                         </NavLink>
-                        <NavLink to={`/course/${item.id}`}>
+                        <NavLink to={`/good/${item.id}`}>
                           <FaEye size="18px" className="teachercourse-icon" />
                         </NavLink>
                       </td>

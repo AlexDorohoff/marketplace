@@ -64,7 +64,7 @@ const TeacherCourses = ({ items = [], teacherId }) => {
     } catch (e) {
       contents = course.contents;
     }
-    return {...course, description, contents}
+    return { ...course, description, contents };
   });
 
   return (
@@ -106,9 +106,7 @@ const TeacherCourses = ({ items = [], teacherId }) => {
             onClickExpand={() => handleClickExpand(index + 1)}
             content={
               <div>
-                <p>
-                  {item.annotation}
-                </p>
+                <p>{item.annotation}</p>
                 <GridRow>
                   <GridCol
                     width={{
@@ -118,13 +116,15 @@ const TeacherCourses = ({ items = [], teacherId }) => {
                   >
                     <h3 className="teacherc-h3">Краткие характеристики</h3>
                     <ul className="teacherc-ul">
-                      {item.contents.programm &&  item.contents.programm.map(item => {
-                        return (
-                          <li key={`${item.theme}Тема`}>
-                            <span>{item.theme}</span>
-                          </li>
-                        )
-                      })}
+                      {item.contents &&
+                        item.contents.programm &&
+                        item.contents.programm.map(item => {
+                          return (
+                            <li key={`${item.theme}Тема`}>
+                              <span>{item.theme}</span>
+                            </li>
+                          );
+                        })}
                     </ul>
                   </GridCol>
                   <GridCol
@@ -135,9 +135,11 @@ const TeacherCourses = ({ items = [], teacherId }) => {
                   >
                     <h3 className="teacherc-h3">Срок отгрузки и гарантия</h3>
                     <ul className="ul-without">
-                      {item.description?
-                      <li>{hoursPlural(item.description.scope)}</li>:
-                        <li>0 часов</li>}
+                      {item.description ? (
+                        <li>{hoursPlural(item.description.scope)}</li>
+                      ) : (
+                        <li>0 часов</li>
+                      )}
                     </ul>
                   </GridCol>
                   <GridCol

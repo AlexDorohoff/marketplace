@@ -44,7 +44,7 @@ const TeacherHeader = ({ profile }) => {
             <GridCol width={{ mobile: 12, tablet: 6, desktop: 6 }}>
               <div className="teacher-about">
                 <div className="teacher-about-settings">
-                  <NavLink className="link link_third" to="/my/update-teacher">
+                  <NavLink className="link link_third" to="/my/update-shop">
                     <img className="dot-green" src={ImgSettings} alt="" />
                     Настройки
                   </NavLink>
@@ -59,7 +59,7 @@ const TeacherHeader = ({ profile }) => {
                 }
 
                 <div className="teacher-expir">
-                  Опыт работы:&nbsp;
+                  На рынке:&nbsp;
                   {profile.user && profile.user.profile &&
                     yearsPlural(profile.user.profile.experience)}
                 </div>

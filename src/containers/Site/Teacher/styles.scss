@@ -64,7 +64,7 @@
 .teacher-button {
   margin-top: 20px;
 }
-.teacher-button button.button {
+.teacher-button .button {
   padding: 9px 28px;
 }
 
@@ -75,4 +75,11 @@
   width: 100vw;
   height: 100vh;
   z-index: 100;
+}
+
+.showcase {
+  text-decoration: none;
+  a:hover{
+    font-size: 18px;
+  }
 }

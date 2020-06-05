@@ -1,34 +1,33 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Helmet from 'react-helmet';
 import Type from 'prop-types';
 import GridCol from 'arui-feather/grid-col';
 import GridRow from 'arui-feather/grid-row';
 import Button from 'arui-feather/button';
 import Popup from 'arui-feather/popup';
-import { useLocation } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { NavLink, useLocation } from 'react-router-dom';
 import TeacherCourses from '../../../components/Site/TeacherCourses';
 import HowWork from '../../../components/Site/HowWork';
-// import RequestForm from '../../../components/Site/Forms/RequestForm';
+import UseNavigation from '../../../core/connectors/navigation';
 import RequestForm01 from '../../../components/Site/Forms/RequestForm01';
 import Footer from '../../../components/Common/Footer';
 import './styles.scss';
 import connectorTeachers from '../../../core/connectors/teachers';
 import config from '../../../config';
-import { NavLink } from 'react-router-dom';
 import { yearsPlural } from '../../../core/utils/common';
 import Loader from '../../../components/Common/Loader';
 
 /**
  * Teacher
  */
-const Teacher = ({ getTeacher, teachers, match }) => {
-  const session = useSelector(state => state.session);
-  const dispatch = useDispatch();
-
+const Teacher = ({ navigationTo, getTeacher, teachers, match }) => {
   const [isOpenPopup, setIsOpenPopup] = useState(false);
 
   const location = useLocation();
+
+  const navTo = to => () => {
+    navigationTo(to);
+  };
 
   useEffect(() => {
     getTeacher(match.params.id);
@@ -47,12 +46,6 @@ const Teacher = ({ getTeacher, teachers, match }) => {
 
   const fio = teacher ? teacher.name.split(' ') : [];
 
-  const doSignTeacher = () => {
-    if (!session.authenticated) {
-      dispatch({ type: 'AUTH_SHOW_DIALOG', payload: true });
-    }
-  };
-
   if (teachers.teacherFetching) {
     return <Loader />;
   }
@@ -65,84 +58,87 @@ const Teacher = ({ getTeacher, teachers, match }) => {
         <meta name="keywords" content="Море" />
       </Helmet>
       <section className="section section_fullwidth">
-        {/* <div className="teacher"> */}
-          <GridRow>
-            <GridCol width={{ mobile: 0, tablet: 6 }}>
+        <GridRow>
+          <GridCol width={{ mobile: 0, tablet: 6 }}>
+            {teacher && (
+              <img
+                style={{ width: '100%' }}
+                src={`${config.baseUrl}/avatars/${
+                  teacher.image
+                }?${Date.now().toString()}`}
+                alt={teacher.name}
+              />
+            )}
+          </GridCol>
+
+          <GridCol width={{ mobile: 12, tablet: 6 }}>
+            <div className="teacher-about">
               {teacher && (
-                <img
-                  style={{ width: '100%' }}
-                  src={`${config.baseUrl}/avatars/${teacher.image}?${Date.now().toString()}`}
-                  alt={teacher.name}
-                />
+                <h1>
+                  {fio[0]}
+                  <br />
+                  {`${fio[1]} ${fio[2]}`}
+                </h1>
               )}
-            </GridCol>
-
-            <GridCol width={{ mobile: 12, tablet: 6 }}>
-              <div className="teacher-about">
-                {teacher && (
-                  <h1>
-                    {fio[0]}
-                    <br />
-                    {`${fio[1]} ${fio[2]}`}
-                  </h1>
-                )}
-                <div className="teacher-expir">
-                  Стаж работы&nbsp;
-                  {teacher &&
-                    teacher.profile &&
-                    yearsPlural(teacher.profile.experience)}
-                </div>
-
-                <div className="teacher-expir">
-                  {teacher && teacher.profile && teacher.profile.edo}
-                </div>
-                <div className="teacher-more">
-                  <Button
-                    ref={refTarget}
-                    size="m"
-                    onClick={() => {if (!refPopup.current.anchor) refPopup.current.anchor = refTarget.current.control; setIsOpenPopup(true)}}
-                    className="button button_link"
-                  >
-                    Подробнее...
-                  </Button>
-                  {isOpenPopup && <div className="popup-overlay" />}
-                  <Popup
-                    ref={refPopup}
-                    visible={isOpenPopup}
-                    onClickOutside={() => setIsOpenPopup(false)}
-                    mainOffset={10}
-                    height="adaptive"
-                  >
-                    <div className="teacher-more-popup">
-                      {teacher && teacher.profile && teacher.profile.yourself}
-                    </div>
-                  </Popup>
-                </div>
-                <div className="teacher-button">
-                  <Button
-                    className="button button_default"
-                    onClick={() => {
-                      doSignTeacher();
-                    }}
-                  >
-                    Посмотреть витрину
-                  </Button>
-                </div>
-                <div className="teacher-subject">
-                  Канцелярские товары
-                  <br />
-                  Сувенирная продукция
-                  <br />
-                  Персональные подарки
-                  <br />
-                </div>
+              <div className="teacher-expir">
+                Стаж работы&nbsp;
+                {teacher &&
+                  teacher.profile &&
+                  yearsPlural(teacher.profile.experience)}
               </div>
-            </GridCol>
-          </GridRow>
+
+              <div className="teacher-expir">
+                {teacher && teacher.profile && teacher.profile.edo}
+              </div>
+              <div className="teacher-more">
+                <Button
+                  ref={refTarget}
+                  size="m"
+                  onClick={() => {
+                    if (!refPopup.current.anchor)
+                      refPopup.current.anchor = refTarget.current.control;
+                    setIsOpenPopup(true);
+                  }}
+                  className="button button_link"
+                >
+                  Подробнее...
+                </Button>
+                {isOpenPopup && <div className="popup-overlay" />}
+                <Popup
+                  ref={refPopup}
+                  visible={isOpenPopup}
+                  onClickOutside={() => setIsOpenPopup(false)}
+                  mainOffset={10}
+                  height="adaptive"
+                >
+                  <div className="teacher-more-popup">
+                    {teacher && teacher.profile && teacher.profile.yourself}
+                  </div>
+                </Popup>
+              </div>
+              <div className="teacher-button">
+                <button
+                  type="button"
+                  className="button button_default showcase"
+                  onClick={navTo(`/showcase/${teacher && teacher.id}`)}
+                >
+                  Посмотреть витрину
+                </button>
+              </div>
+              <div className="teacher-subject">
+                Канцелярские товары
+                <br />
+                Сувенирная продукция
+                <br />
+                Персональные подарки
+                <br />
+              </div>
+            </div>
+          </GridCol>
+        </GridRow>
         {/* </div> */}
       </section>
 
-      
       <section className="section">
         <h2>О магазине</h2>
         <GridRow>
@@ -153,7 +149,9 @@ const Teacher = ({ getTeacher, teachers, match }) => {
             {teacher && (
               <img
                 className="teacher-image"
-                src={`${config.baseUrl}/avatars/${teacher.image}?${Date.now().toString()}`}
+                src={`${config.baseUrl}/avatars/${
+                  teacher.image
+                }?${Date.now().toString()}`}
                 alt={teacher.name}
               />
             )}
@@ -161,10 +159,11 @@ const Teacher = ({ getTeacher, teachers, match }) => {
 
           <NavLink className="link link_third" to="/TeacherReviewAll01">
             <div className="teacher-button">
-              <Button className="button button_default">Отзывы о магазине</Button>
+              <Button className="button button_default">
+                Отзывы о магазине
+              </Button>
             </div>
           </NavLink>
-                   
         </GridRow>
       </section>
       <section className="section">
@@ -184,9 +183,10 @@ const Teacher = ({ getTeacher, teachers, match }) => {
 };
 
 Teacher.propTypes = {
+  navigationTo: Type.func.isRequired,
   getTeacher: Type.func.isRequired,
   teachers: Type.object.isRequired,
   match: Type.object.isRequired,
 };
 
-export default connectorTeachers(Teacher);
+export default UseNavigation(connectorTeachers(Teacher));

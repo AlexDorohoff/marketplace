@@ -74,6 +74,7 @@ function Header({ navigationTo, router: { location }, isUser = false }) {
     dispatch(getTeachersByTitle());
     setIsOpenMenu(false);
     setIsOpenMenuMobile(false);
+    document.body.style.overflow = '';
     navigationTo(to);
   };
 
@@ -95,7 +96,7 @@ function Header({ navigationTo, router: { location }, isUser = false }) {
       navTo('/')();
       searchByTitlesAndTags();
       setSearchText('');
-    }else{
+    } else {
       searchInput.focus();
     }
   };
@@ -133,7 +134,9 @@ function Header({ navigationTo, router: { location }, isUser = false }) {
                 <Link pseudo>
                   <FaSearch className="search-pic" onClick={() => doSearch()} />
                   <input
-                    ref={(input) => { searchInput = input; }}
+                    ref={input => {
+                      searchInput = input;
+                    }}
                     type="text"
                     placeholder="Найти"
                     value={searchText}
@@ -160,13 +163,19 @@ function Header({ navigationTo, router: { location }, isUser = false }) {
             </div>
 
             <div className="login">
-            <NavLink className="link link_third" to="/cart">
-						<div className="top-controls-salebasket">
-							<img src={Salebasket} className="salebasket-pic" title="Покупки" alt="Корзина"/>
-						</div>
-					</NavLink>
+              <NavLink className="link link_third" to="/cart">
+                <div className="top-controls-salebasket">
+                  <img
+                    src={Salebasket}
+                    className="salebasket-pic"
+                    title="Покупки"
+                    alt="Корзина"
+                  />
+                </div>
+              </NavLink>
+
               {isUser || session.authenticated ? (
-                location.pathname === '/my/teacher1' ||
+                location.pathname === '/my/lk' ||
                 location.pathname === '/my/student1' ? (
                   <div className="login-links">
                     <Link
@@ -185,13 +194,13 @@ function Header({ navigationTo, router: { location }, isUser = false }) {
                     {session.user.type && session.user.type === 'teacher' ? (
                       <div className="login-links desktop">
                         <NavLink
-                          to="/my/teacher1"
+                          to="/my/lk"
                           className="link login-links-lk"
                         >
                           Личный кабинет
                         </NavLink>
                         <NavLink
-                          to="/my/teacher1"
+                          to="/my/lk"
                           className="link login-links-course"
                         >
                           Мои курсы

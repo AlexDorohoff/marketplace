@@ -13,16 +13,16 @@ export default {
   /**
    * Back-end server base url
    */
-  apiBaseUrl: 'http://edu.local/api',
+  apiBaseUrl: 'http://market.local/api',
   /**
    * Back-end server base url for images
    */
-  baseUrl: 'http://edu.local',
+  baseUrl: 'http://market.local',
 
   /**
    * Site base url
    */
-  siteBaseUrl: 'https://edu.stplab.ru',
+  siteBaseUrl: 'http://market.local',
 
   /**
    * Default connect timeout, ms

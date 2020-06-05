@@ -57,7 +57,6 @@ const TeacherRequests = ({ getRequests, profile }) => {
               </div>
             </div>
             <div className="teacheracadem-reguest-detail-data">
-              <div className="teacheracadem-lesson-detail-1" />
               <div className="teacheracadem-lesson-detail-2">
                 {r.requested_date}
               </div>

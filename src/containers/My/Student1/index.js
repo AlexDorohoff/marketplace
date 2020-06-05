@@ -49,7 +49,7 @@ const Student1 = ({ profile, getProfile, history }) => {
   }, []);
   
   useEffect(() => {
-    if (profileData && profileData.user.type === 'teacher') history.push('/my/teacher1');
+    if (profileData && profileData.user.type === 'teacher') history.push('/my/lk');
   }, [profileData]);
 
   return (

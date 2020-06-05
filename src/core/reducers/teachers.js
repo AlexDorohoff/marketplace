@@ -12,46 +12,72 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
+    case types.GET_TEACHERS_BY_TITLE: {
+      const data =
+        action.payload.res === 'Все предметы'
+          ? state.inputData
+          : state.inputData.filter(teacher => {
+              const teacherCourses =
+                action.payload.courses.length > 0
+                  ? action.payload.courses.filter(
+                      course => course.user.id === teacher.id
+                    )
+                  : [];
+              return teacherCourses.some(
+                course => course.title === action.payload.res
+              );
+            });
 
-    case types.GET_TEACHERS_BY_TITLE:
-      {
-        const data = action.payload.res === 'Все предметы' ? state.inputData : state.inputData.filter(teacher => {
-          const teacherCourses = action.payload.courses.length > 0 ? action.payload.courses.filter(course => course.user.id === teacher.id) : [];
-          return teacherCourses.some(course => course.title === action.payload.res)
-        })
-
-        return {
-          ...state,
-          fetching: false,
-          error: null,
-          data,
-        };
+      return {
+        ...state,
+        fetching: false,
+        error: null,
+        data,
       };
+    }
 
-    case types.SEARCH_TEACHERS_BY_PART_OF_TITLE_OR_TAG:
-      {
-        const searchData = state.inputData.filter(teacher => {
-          const teacherCourses = action.payload.courses.length > 0 ? action.payload.courses.filter(course => course.user.id === teacher.id) : [];
-          
-          return teacherCourses.some(course => {
+    case types.SEARCH_TEACHERS_BY_PART_OF_TITLE_OR_TAG: {
+      const searchData = state.inputData.filter(teacher => {
+        const teacherCourses =
+          action.payload.courses.length > 0
+            ? action.payload.courses.filter(
+                course => course.user.id === teacher.id
+              )
+            : [];
+
+        return (
+          teacherCourses.some(course => {
             let contents;
-            try {contents = JSON.parse(course.contents)}
-            catch (e) {contents = course.contents};
-            const themes = contents.programm ? contents.programm.map(item => item.theme) : [];
+            try {
+              contents = JSON.parse(course.contents);
+            } catch (e) {
+              contents = course.contents;
+            }
+            const themes =
+              contents && contents.programm
+                ? contents.programm.map(item => item.theme)
+                : [];
 
-            return course.title.toLowerCase().includes(action.payload.res) || 
-            course.tags.some(tag => tag.name.toLowerCase().includes(action.payload.res)) ||
-            themes.some(theme => theme.toLowerCase().includes(action.payload.res));
-          }) || teacher.name.toLowerCase().includes(action.payload.res);
-        })
+            return (
+              course.title.toLowerCase().includes(action.payload.res) ||
+              course.tags.some(tag =>
+                tag.name.toLowerCase().includes(action.payload.res)
+              ) ||
+              themes.some(theme =>
+                theme.toLowerCase().includes(action.payload.res)
+              )
+            );
+          }) || teacher.name.toLowerCase().includes(action.payload.res)
+        );
+      });
 
-        return {
-          ...state,
-          fetching: false,
-          error: null,
-          searchData,
-        };
+      return {
+        ...state,
+        fetching: false,
+        error: null,
+        searchData,
       };
+    }
 
     case types.TEACHERS_CLOSE:
       return {
@@ -67,7 +93,7 @@ export default (state = initialState, action) => {
         error: action.payload.error,
       };
 
-    case types.TEACHERS_SUCCESS: 
+    case types.TEACHERS_SUCCESS:
       return {
         ...state,
         fetching: false,
@@ -75,7 +101,6 @@ export default (state = initialState, action) => {
         inputData: action.payload.res,
         data: action.payload.res,
       };
-    
 
     case types.TEACHER_SUCCESS:
       return {

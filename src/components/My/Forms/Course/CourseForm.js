@@ -42,7 +42,7 @@ export default function CourseForm({
   const onModalClose = () => {
     setSubmitting(false);
     if (Object.keys(errors).length === 0) {
-      history.push('/my/teacher1');
+      history.push('/my/lk');
     }
   }
 

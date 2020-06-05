@@ -29,9 +29,14 @@
     font-weight: 600;
     margin: 0 0 8px 0;
   }
+  &-subtitle{
+    color: #1e2b37;
+    display: block;
+    font-weight: bold;
+  }
   &-subject {
     font-weight: 600;
-    color: #fc8a15;
+    color: #006ec2;
     margin: 10px 0 0 0;
   }
 }

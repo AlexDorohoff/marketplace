@@ -10,7 +10,6 @@ import './styles.scss';
  * Course block
  */
 export default function CourseBlock({ course }) {
-
   const getSubject = () => {
     let res = '';
     try {
@@ -25,38 +24,38 @@ export default function CourseBlock({ course }) {
   return (
     <Plate className="course-block">
       {/* <div className="course_skills"> */}
-        <Link
-          // className="link link_toplink link_image"          
-          className="link link_toplink"
-          to={`/course/${course.id}`}
-        >
-          <img
-            // className="teacher-image"
-            className="flex-container"
-            src={`${config.baseUrl}/courses/${
-              course.image
-            }?${Date.now().toString()}`}
-            alt={course.name}
-          />
-        </Link>
-        <div className="course_skills-wrap">
-          <h3 className="course_skills-name toplink">{course.title}</h3>
-          <p className="course_skills-subject">Наименование</p>
-          <div className="range1">
-            <p>{getSubject()}</p>
-          </div>
-          <p className="course_skills-subject">Цена,{' '}₽</p>
-          <p className="course_skills-price">
-            {+course.price === 0 ? 'Бесплатно' : course.price}
-          </p>
+      <Link
+        // className="link link_toplink link_image"
+        className="link link_toplink"
+        to={`/good/${course.id}`}
+      >
+        <img
+          // className="teacher-image"
+          className="flex-container"
+          src={`${config.baseUrl}/courses/${
+            course.image
+          }?${Date.now().toString()}`}
+          alt={course.name}
+        />
+      </Link>
+      <div className="course_skills-wrap">
+        <h3 className="course_skills-name toplink">{course.title}</h3>
+        <p className="course_skills-subject">Наименование</p>
+        <div className="range1">
+          <p>{getSubject()}</p>
         </div>
-        <div className="course_skills">
-        <Link className="link link_third" to={`/course/${course.id}`}>
+        <p className="course_skills-subject">Цена, ₽</p>
+        <p className="course_skills-price">
+          {+course.price === 0 ? 'Бесплатно' : course.price}
+        </p>
+      </div>
+      <div className="course_skills">
+        <Link className="link link_third" to={`/good/${course.id}`}>
           <div className="button-cntr">
             <Button className="button button_settings-form">Подробнее</Button>
           </div>
         </Link>
-        </div>
+      </div>
       {/* </div> */}
     </Plate>
   );

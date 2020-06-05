@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { useLocation , NavLink } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
 import Helmet from 'react-helmet';
 import GridRow from 'arui-feather/grid-row';
 import GridCol from 'arui-feather/grid-col';

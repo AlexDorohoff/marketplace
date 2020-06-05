@@ -15,7 +15,7 @@ const MainSectionsCourseItem = ({ id, big }) => {
       : undefined;
 
   return (
-    <NavLink className="link link_third" to={`/course/${id}`}>
+    <NavLink className="link link_third" to={`/good/${id}`}>
       {course && (
         <div className="main-sections-item">
           <img

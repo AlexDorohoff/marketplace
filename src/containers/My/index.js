@@ -45,17 +45,17 @@ export default function My() {
       <main className="layout__main">
         <Switch>
           <Route path="/my/student" component={Student} />
-          <Route path="/my/create-teacher" component={Teacher} />
-          <Route path="/my/update-teacher" component={UpdateTeacher} />
-          <Route path="/my/update-course/:id" component={UpdateCourse} />
+          <Route path="/my/create-good" component={Teacher} />
+          <Route path="/my/update-shop" component={UpdateTeacher} />
+          <Route path="/my/update-good/:id" component={UpdateCourse} />
           <Route path="/my/headteacher" component={Headteacher} />
-          <Route path="/my/create-course" component={Course} />
+          <Route path="/my/create-good" component={Course} />
           <Route path="/my/modals" component={Modals} />
-          <Route exact path="/my/teacher1" component={Teacher1} />
-          <Route exact path="/my/teacher1/history" component={Teacher1History} />
-          <Route exact path="/my/teacher1/review" component={Teacher1Review} />
-          <Route exact path="/my/teacher1/timetable" component={Teacher1Timetable} />
-          <Route exact path="/my/teacher1/procreation" component={ProCreation} />
+          <Route exact path="/my/lk" component={Teacher1} />
+          <Route exact path="/my/lk/history" component={Teacher1History} />
+          <Route exact path="/my/lk/review" component={Teacher1Review} />
+          <Route exact path="/my/lk/timetable" component={Teacher1Timetable} />
+          <Route exact path="/my/lk/procreation" component={ProCreation} />
           <Route path="/my/student1" component={Student1} />
           <Route path="*" component={Dashboard} />
         </Switch>

@@ -11,21 +11,12 @@ import { yearsPlural } from '../../../core/utils/common';
  * Teacher block
  */
 export default function TeacherBlock({ teacher }) {
-  const courses = useSelector(state => state.courses.courses);
-
   const { name } = teacher;
   const fio = name.split(' ');
 
-  const teacherCourses = courses.filter(
-    course => course.user.id === teacher.id
-  );
-
   return (
-    <Plate className="teacher-block">
-      <NavLink
-        className="link link_toplink"
-        to={`/teacher/${teacher.id}`}
-      >
+    <NavLink to={`/shop/${teacher.id}`}>
+      <Plate className="teacher-block">
         <img
           className="flex-container"
           src={`${config.baseUrl}/avatars/${
@@ -33,31 +24,31 @@ export default function TeacherBlock({ teacher }) {
           }?${Date.now().toString()}`}
           alt={teacher.name}
         />
-      </NavLink>
-      <div className="teacher_skills-wrap">
-        <h3 className="teacher_skills-name">
-          <NavLink className="link link_toplink" to={`/teacher/${teacher.id}`}>
-            <b>
-            {fio[0]}
-            <br />
-            {fio[1]} 
-            {' '}
-            {fio[2]}
-            </b>
-          </NavLink>
-        </h3>
-        <p>
-          <b>Стаж работы</b>
-            &nbsp;
-          {teacher &&
-            teacher.profile &&
-            yearsPlural(teacher.profile.experience)}
-          <p className="teacher_skills-subject">О себе</p>
-          {teacher && teacher.profile && teacher.profile.yourself}
-        </p>
 
-      </div>
-    </Plate>
+        <div className="teacher_skills-wrap">
+          <h3 className="teacher_skills-name">
+            <b>
+              {fio[0]}
+              <br />
+              {fio[1]} {fio[2]}
+            </b>
+          </h3>
+          <div>
+            <p className="teacher_skills-subject">
+              <b>На рынке</b>
+              &nbsp;
+              {teacher &&
+                teacher.profile &&
+                yearsPlural(teacher.profile.experience)}
+            </p>
+            <p className="teacher_skills-subject">
+              <span className="teacher_skills-subtitle">О нас</span>
+              {teacher && teacher.profile && teacher.profile.yourself}
+            </p>
+          </div>
+        </div>
+      </Plate>
+    </NavLink>
   );
 }
 

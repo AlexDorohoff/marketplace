@@ -12,7 +12,6 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-
     case types.GET_COURSES_BY_TITLE: {
       const courses =
         action.payload.res === 'Все предметы'
@@ -30,24 +29,27 @@ export default (state = initialState, action) => {
     }
 
     case types.SEARCH_COURSES_BY_PART_OF_TITLE_OR_TAG: {
-      const searchCourses = state.inputCourses.filter(
-        course =>
-        {
-          let contents;
-          try {contents = JSON.parse(course.contents)}
-          catch (e) {contents = course.contents};
-          const themes = contents.programm ? contents.programm.map(item => item.theme) : [];
+      const searchCourses = state.inputCourses.filter(course => {
+        let contents;
+        try {
+          contents = JSON.parse(course.contents);
+        } catch (e) {
+          contents = course.contents;
+        }
+        const themes =
+          contents && contents.programm
+            ? contents.programm.map(item => item.theme)
+            : [];
 
-          return course.title.toLowerCase().includes(action.payload.res) ||
+        return (
+          course.title.toLowerCase().includes(action.payload.res) ||
           course.tags.some(tag =>
             tag.name.toLowerCase().includes(action.payload.res)
           ) ||
           course.user.name.toLowerCase().includes(action.payload.res) ||
-          themes.some(theme => 
-            theme.toLowerCase().includes(action.payload.res)
-          );
-        }
-      );
+          themes.some(theme => theme.toLowerCase().includes(action.payload.res))
+        );
+      });
 
       return {
         ...state,

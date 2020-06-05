@@ -15,7 +15,6 @@ import teacherUpdateModel from '../../../theme/images/teacherUpdateModel.png';
  * teacher
  */
 const UpdateTeacher = ({ profile }) => {
-
   const [isOpenPopup, setIsOpenPopup] = useState(false);
 
   const prof = { ...profile.profile };
@@ -42,11 +41,6 @@ const UpdateTeacher = ({ profile }) => {
             className="form-field right-poz"
             align="middle"
           >
-            {/* <div className="student-pencil">
-              <Link pseudo>
-                <img src={Pencil} alt="" />
-              </Link>
-            </div> */}
             <div className="student-refresh">
               <Button
                 type="button"
@@ -58,14 +52,22 @@ const UpdateTeacher = ({ profile }) => {
               <Modal
                 open={isOpenPopup}
                 onClose={() => setIsOpenPopup(false)}
-                title='Образец'
+                title="Образец"
               >
-                <img style={{maxWidth: '765px'}} src={teacherUpdateModel} alt="Образец"></img>
+                <img
+                  style={{ maxWidth: '765px' }}
+                  src={teacherUpdateModel}
+                  alt="Образец"
+                />
               </Modal>
             </div>
           </GridCol>
         </GridRow>
-        {data ? <TeacherUpdateForm formType="teacher" data={data} /> : <TeacherUpdateForm formType="teacher" data={{}} />}
+        {data ? (
+          <TeacherUpdateForm formType="teacher" data={data} />
+        ) : (
+          <TeacherUpdateForm formType="teacher" data={{}} />
+        )}
         <hr className="teacher-hr" />
       </section>
       <section className="section">
@@ -73,6 +75,6 @@ const UpdateTeacher = ({ profile }) => {
       </section>
     </>
   );
-}
+};
 
 export default useProfile(UpdateTeacher);

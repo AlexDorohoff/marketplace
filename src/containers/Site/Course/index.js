@@ -65,30 +65,28 @@ const Course = ({ courses, getCourse, match }) => {
   if (courses.courseFetching) {
     return <Loader />;
   }
-  ;
+  // корзина
+  // constructor(props) {
+  //   super(props);
+  //   this.addToCart = this.addToCart.bind(this);
+  // }
 
-// корзина  
-// constructor(props) {
-//   super(props);
-//   this.addToCart = this.addToCart.bind(this);
-// }
-
-// addToCart() {
-//   const id = 'Photo2';
+  // addToCart() {
+  //   const id = 'Photo2';
 
   // const addedItem = STATE.cart.find(item => item._id === id);
-//   const addedItem = {course};
+  //   const addedItem = {course};
 
-//   if (addedItem) {
-//     addedItem.quantity = addedItem.quantity + 1;
-//   } else {
-//     STATE.cart.push({
-//       _id: id,
-//       quantity: 1
-//     });
-//   }
-// };
-// конец корзина
+  //   if (addedItem) {
+  //     addedItem.quantity = addedItem.quantity + 1;
+  //   } else {
+  //     STATE.cart.push({
+  //       _id: id,
+  //       quantity: 1
+  //     });
+  //   }
+  // };
+  // конец корзина
 
   return (
     <>
@@ -109,44 +107,45 @@ const Course = ({ courses, getCourse, match }) => {
       </Helmet>
       <section className="section section_fullwidth">
         <GridRow>
-          <GridCol width={{
-            mobile: 12,
-            tablet: 6,
-            desktop: 6,
-          }}
+          <GridCol
+            width={{
+              mobile: 12,
+              tablet: 6,
+              desktop: 6,
+            }}
           >
             {course && (
               <img
                 style={{ width: '100%' }}
-                src={`${config.baseUrl}/courses/${course.image}?${Date.now()
-                  .toString()}`}
+                src={`${config.baseUrl}/courses/${
+                  course.image
+                }?${Date.now().toString()}`}
                 alt={course.title}
               />
             )}
           </GridCol>
-          <GridCol width={{
-            mobile: 12,
-            tablet: 6,
-            desktop: 6,
-          }}
+          <GridCol
+            width={{
+              mobile: 12,
+              tablet: 6,
+              desktop: 6,
+            }}
           >
             <div className="course-inner">
               {course && <h1 className="course-h1">{course.title}</h1>}
               {/* <div className="course-intro">{course && course.annotation}</div> */}
               <div className="">{course && course.annotation}</div>
               <div className="course-txt">
-                
-                {course && 
-                <p className="course-h1">
-                  <strong>Стоимость:&nbsp;</strong>
-                  {course.price}
-                  {' '}
-                  ₽
-                </p>}
-            
+                {course && (
+                  <p className="course-h1">
+                    <strong>Стоимость:&nbsp;</strong>
+                    {course.price} ₽
+                  </p>
+                )}
+
                 <p>
                   <strong>Количество:&nbsp;</strong>
-                  {description && hoursPlural(description.scope)}
+                  {description && `${description.scope} ед.`}
                 </p>
                 <p>
                   <strong>Срок отгрузки:&nbsp;</strong>
@@ -178,14 +177,15 @@ const Course = ({ courses, getCourse, match }) => {
         <p className="course-about">{contents && contents.tasks}</p>
 
         <p className="sertif">
-          <strong>(что-то вроде- поле ввода- ВАЖНАЯ информация) Товар сертифицирован.</strong>
+          <strong>
+            (что-то вроде- поле ввода- ВАЖНАЯ информация) Товар сертифицирован.
+          </strong>
         </p>
         <h2>Условия продавца</h2>
         {/* <div className="course-about"> */}
         <p className="course-about">
           Количество:&nbsp;
-          <strong>{description && hoursPlural(description.scope)}</strong>
-          .
+          <strong>{description && `${description.scope} ед.`}</strong>
         </p>
         <p className="course-about">
           Срок отгрузки:&nbsp;
@@ -197,35 +197,40 @@ const Course = ({ courses, getCourse, match }) => {
         </p>
         {/* </div> */}
         <h2>Аудитория</h2>
-        <p className="course-about">{description && description.courseAuditory}</p>
+        <p className="course-about">
+          {description && description.courseAuditory}
+        </p>
         <h2>Характеристики изделия</h2>
         <ul className="course-ul">
           {contents &&
-          contents.programm &&
-          contents.programm.map(item => {
-            if (item.theme.length > 0) {
-              return (
-                <li key={`theme${item.theme}`}>
-                  <span>{item.theme}</span>
-                </li>
-              );
-            }
-          })}
+            contents.programm &&
+            contents.programm.map(item => {
+              if (item.theme.length > 0) {
+                return (
+                  <li key={`theme${item.theme}`}>
+                    <span>{item.theme}</span>
+                  </li>
+                );
+              }
+            })}
         </ul>
         <br />
         <GridRow>
           <GridCol width={{ mobile: 12, tablet: 9 }}>
-
             <NavLink className="link link_third" to="/salebasket">
-            <div className="course-btn">
-              <Button className="button button_default" onClick={course}>Добавить в корзину</Button>
-            </div>
+              <div className="course-btn">
+                <Button className="button button_default" onClick={course}>
+                  Добавить в корзину
+                </Button>
+              </div>
             </NavLink>
           </GridCol>
           <GridCol width={{ mobile: 12, tablet: 9 }}>
             <NavLink className="link link_third" to="/TeacherReviewAll03">
               <div className="course-btn">
-                <Button className="button button_default">Отзывы о товаре</Button>
+                <Button className="button button_default">
+                  Отзывы о товаре
+                </Button>
               </div>
             </NavLink>
           </GridCol>
@@ -236,38 +241,40 @@ const Course = ({ courses, getCourse, match }) => {
         <GridRow>
           <GridCol
             width={{
-            mobile: 12,
-            tablet: 6,
-            desktop: 6,
-          }}
+              mobile: 12,
+              tablet: 6,
+              desktop: 6,
+            }}
             className="text-center"
           >
             <img
               className="course-teacher-image"
               src={
                 course
-                  ? `${config.baseUrl}/avatars/${course.user.image}?${Date.now()
-                    .toString()}`
+                  ? `${config.baseUrl}/avatars/${
+                      course.user.image
+                    }?${Date.now().toString()}`
                   : undefined
               }
               alt=""
             />
           </GridCol>
-          <GridCol width={{
-            mobile: 12,
-            tablet: 6,
-            desktop: 6,
-          }}
+          <GridCol
+            width={{
+              mobile: 12,
+              tablet: 6,
+              desktop: 6,
+            }}
           >
             <div className="course-teacher-content">
               <h3 className="course-teacher-h3">
                 {course && course.user.name}
                 +ID=
-                {course && course.user.id}
-                +
-                {course && course.id}
+                {course && course.user.id}+{course && course.id}
               </h3>
-              <p className="course-about">{course && course.user.profile && course.user.profile.yourself}</p>
+              <p className="course-about">
+                {course && course.user.profile && course.user.profile.yourself}
+              </p>
               <NavLink
                 className="link link_third"
                 to={`/teacher/${course && course.user.id}`}
