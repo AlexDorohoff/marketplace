@@ -189,19 +189,21 @@ function Header({ navigationTo, router: { location }, isUser = false }) {
                 ) : (
                   <>
                     <div className="login-pic">
+                    <NavLink to="/my/teacher1" className="link login-links-lk">
                       <img className="" src={Lk} alt="Личный кабинет" />
+                      </NavLink>  
                     </div>
                     {session.user.type && session.user.type === 'teacher' ? (
                       <div className="login-links desktop">
                         <NavLink
                           to="/my/lk"
-                          className="link login-links-lk"
+                          className="link link_toplinklk login-links-lk"
                         >
                           Личный кабинет
                         </NavLink>
                         <NavLink
                           to="/my/lk"
-                          className="link login-links-course"
+                          className="link link_toplinklk login-links-course"
                         >
                           Мои курсы
                         </NavLink>
@@ -210,13 +212,13 @@ function Header({ navigationTo, router: { location }, isUser = false }) {
                       <div className="login-links desktop">
                         <NavLink
                           to="/my/student1"
-                          className="link login-links-lk"
+                          className="link link_toplinklk login-links-lk"
                         >
                           Личный кабинет
                         </NavLink>
                         <NavLink
                           to="/my/student1"
-                          className="link login-links-course"
+                          className="link link_toplinklk login-links-course"
                         >
                           Мои курсы
                         </NavLink>

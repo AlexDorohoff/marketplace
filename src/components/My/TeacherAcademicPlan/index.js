@@ -12,7 +12,8 @@ import ModalTeacherMessage from '../Forms/ModalTeacherMessage';
 // import TasksWaiting from '../../../theme/images/account/tasks-waiting.svg';
 import Dialog from '../../Common/Dialog';
 import TeacherRequests from '../TeacherRequests';
-import './styles.scss';
+// import './styles.scss';
+import '../../../theme/styles/settings.scss';
 
 /**
  * Teacher academic plan
@@ -29,44 +30,18 @@ const TeacherAcademicPlan = ({ profile }) => {
 
 
   return (
-    <div className="teacheracadem">
-      {/* <ExpansionPanelR
-        className="teacheracadem-item"
-        title={
-          <div className="teacheracadem-calendar">
-            <div className="teacheracadem-calendar-title">
-              Календарь и Расписание
-            </div>
-            <div className="teacheracadem-calendar-waiting">
-              Ожидание заданий
-            </div>
-            <div className="teacheracadem-calendar-amount">3</div>
-            <div className="teacheracadem-calendar-pic">
-              <Link pseudo>
-                <img className="" src={TasksWaiting} alt="" />
-              </Link>
-            </div>
-          </div>
-        }
-        isExpanded={openPanelNumber === 1}
-        onClickExpand={() => handleClickExpand(1)}
-        content={
-          <div>
-            <LoadableTeacherCalendar profileData={profile} />
-          </div>
-        }
-      /> */}
+    <div className="academ">
       <ExpansionPanelR
-        className="teacheracadem-item"
+        className="academ-item"
         title={
-          <div className="teacheracadem-lesson">
-            <div className="teacheracadem-lesson-title">Доставка</div>
-            {/* <div className="teacheracadem-lesson-theme">Тема</div> */}
-            <div className="teacheracadem-lesson-subject">Велосипед BMW</div>
-            <div className="teacheracadem-lesson-timer">
+          <div className="academ-lesson">
+            <div className="academ-lesson-title">Реализация</div>
+            <div className="academ-request-amount" />
+            <div className="academ-lesson-subject">Велосипед BMW</div>
+            <div className="academ-lesson-timer">
               <CountDown date="2020-06-25 15:47:00" />
             </div>
-            <div className="teacheracadem-lesson-button">
+            <div className="academ-lesson-button">
               <Button className="button button_settings-form">
                 Отправлено
               </Button>
@@ -76,13 +51,12 @@ const TeacherAcademicPlan = ({ profile }) => {
         isExpanded={openPanelNumber === 2}
         onClickExpand={() => handleClickExpand(2)}
         content={
-          <div className="teacheracadem-lesson-detail">
-            <div className="teacheracadem-lesson-nearest">
-              Ближайшая доставка
+          <div className="academ-lesson-detail">
+            <div className="academ-lesson-nearest">
+              Ближайшая реализация
             </div>
-            {/* <div className="teacheracadem-lesson-theme1">Тема</div> */}
-            <div className="teacheracadem-lesson-subject1">Велосипед BMW</div>
-            <div className="teacheracadem-lesson-header">
+            <div className="academ-lesson-subject1">Велосипед BMW</div>
+            <div className="academ-lesson-header">
               <GridRow>
                 <GridCol width={{ mobile: 2, tablet: 1, desktop: 1 }} />
                 <GridCol width={{ mobile: 10, tablet: 4, desktop: 4 }}>
@@ -96,7 +70,7 @@ const TeacherAcademicPlan = ({ profile }) => {
                 </GridCol>
               </GridRow>
             </div>
-            <div className="teacheracadem-lesson-schedule">
+            <div className="academ-lesson-schedule">
               <GridRow>
                 <GridCol width={{ mobile: 2, tablet: 2, desktop: 1 }}>
                   <img src={ImgChat1} alt="" />
@@ -112,7 +86,7 @@ const TeacherAcademicPlan = ({ profile }) => {
                 </GridCol>
               </GridRow>
             </div>
-            <div className="teacheracadem-lesson-buttons">
+            <div className="academ-lesson-buttons">
               <Button
                 className="button button_settings-message"
                 onClick={() => setIdOpenModal('teacherMessage')}
@@ -126,86 +100,90 @@ const TeacherAcademicPlan = ({ profile }) => {
                 Отмена заказа
               </Button>
             </div>
-            <div className="teacheracadem-lesson-detail-title">
-              <div className="teacheracadem-lesson-detail-1">#</div>
-              <div className="teacheracadem-lesson-detail-2">Дата / Время</div>
-              <div className="teacheracadem-lesson-detail-3">
+
+            {/* <div className="academ-lesson-detail-title">
+              <div className="academ-lesson-detail-1">#</div>
+              <div className="academ-lesson-detail-2">Дата / Время</div>
+              <div className="academ-lesson-detail-3">
                 Покупатель
               </div>
-              <div className="teacheracadem-lesson-detail-4">Товар</div>
-              <div className="teacheracadem-lesson-detail-5">Сумма</div>
-              <div className="teacheracadem-lesson-detail-6">Статус</div>
+              <div className="academ-lesson-detail-4">Товар</div>
+              <div className="academ-lesson-detail-5">Сумма</div>
+              <div className="academ-lesson-detail-6">Статус</div>
             </div>
-            <div className="teacheracadem-lesson-detail-data">
-              <div className="teacheracadem-lesson-detail-1">132</div>
-              <div className="teacheracadem-lesson-detail-2">
+            <div className="academ-lesson-detail-data">
+              <div className="academ-lesson-detail-1">132</div>
+              <div className="academ-lesson-detail-2">
                 2020-06-25 11:30
               </div>
-              <div className="teacheracadem-lesson-detail-3">
+              <div className="academ-lesson-detail-3">
                 <img className="" src={ImgChat2} alt="" />
                 Rain Man
               </div>
-              <div className="teacheracadem-lesson-detail-4">Велосипед BMW</div>
-              <div className="teacheracadem-lesson-detail-5">4500₽</div>
-              <div className="teacheracadem-lesson-detail-6">Принят</div>
+              <div className="academ-lesson-detail-4">Велосипед BMW</div>
+              <div className="academ-lesson-detail-5">4500₽</div>
+              <div className="academ-lesson-detail-6">Принят</div>
             </div>
-            <div className="teacheracadem-lesson-detail-data">
-              <div className="teacheracadem-lesson-detail-1">131</div>
-              <div className="teacheracadem-lesson-detail-2">
+            <div className="academ-lesson-detail-data">
+              <div className="academ-lesson-detail-1">131</div>
+              <div className="academ-lesson-detail-2">
                 2020-09-01 13:30
               </div>
-              <div className="teacheracadem-lesson-detail-3">
+              <div className="academ-lesson-detail-3">
                 <img className="" src={ImgChat2} alt="" />
                 ООО “Акелла”
               </div>
-              <div className="teacheracadem-lesson-detail-4">Мячи регбийные</div>
-              <div className="teacheracadem-lesson-detail-5">50000₽</div>
-              <div className="teacheracadem-lesson-detail-6">Принят</div>
+              <div className="academ-lesson-detail-4">Мячи регбийные</div>
+              <div className="academ-lesson-detail-5">50000₽</div>
+              <div className="academ-lesson-detail-6">Принят</div>
             </div>
-            <div className="teacheracadem-lesson-detail-data">
-              <div className="teacheracadem-lesson-detail-1">130</div>
-              <div className="teacheracadem-lesson-detail-2">
+            <div className="academ-lesson-detail-data">
+              <div className="academ-lesson-detail-1">130</div>
+              <div className="academ-lesson-detail-2">
                 2020-06-01 13:30
               </div>
-              <div className="teacheracadem-lesson-detail-3">
+              <div className="academ-lesson-detail-3">
                 <img className="" src={ImgChat2} alt="" />
                 Rain Man
               </div>
-              <div className="teacheracadem-lesson-detail-4">Гироскутер</div>
-              <div className="teacheracadem-lesson-detail-5">11500₽</div>
-              <div className="teacheracadem-lesson-detail-6">Выполнен</div>
+              <div className="academ-lesson-detail-4">Гироскутер</div>
+              <div className="academ-lesson-detail-5">11500₽</div>
+              <div className="academ-lesson-detail-6">Выполнен</div>
             </div>
-            <div className="teacheracadem-lesson-detail-data">
-              <div className="teacheracadem-lesson-detail-1">129</div>
-              <div className="teacheracadem-lesson-detail-2">
+            <div className="academ-lesson-detail-data">
+              <div className="academ-lesson-detail-1">129</div>
+              <div className="academ-lesson-detail-2">
                 2020-05-31 13:30
               </div>
-              <div className="teacheracadem-lesson-detail-3">
+              <div className="academ-lesson-detail-3">
                 <img className="" src={ImgChat2} alt="" />
                 Rain Man
               </div>
-              <div className="teacheracadem-lesson-detail-4">Ракетка HEAD</div>
-              <div className="teacheracadem-lesson-detail-5">15000₽</div>
-              <div className="teacheracadem-lesson-detail-6">Выполнен</div>
-            </div>
-            <Link pseudo>
-              <div className="teacheracadem-lessons-button">
+              <div className="academ-lesson-detail-4">Ракетка HEAD</div>
+              <div className="academ-lesson-detail-5">15000₽</div>
+              <div className="academ-lesson-detail-6">Выполнен</div>
+            </div> */}
+            <TeacherRequests />
+
+
+            
+            {/* <Link pseudo>
+              <div className="academ-lessons-button">
                 <Button className="button button_secondary">
                   Показать ещё
                 </Button>
               </div>
-            </Link>
+            </Link> */}
           </div>
         }
       />
       <ExpansionPanelR
-        className="teacheracadem-item"
+        className="academ-item"
         title={
-          <div className="teacheracadem-request">
-            <div className="teacheracadem-request-title">Заявки</div>
-            <div className="teacheracadem-request-amount">133</div>
-            {/* <div className="teacheracadem-request-theme">Тема</div> */}
-            <div className="teacheracadem-request-literature">
+          <div className="academ-request">
+            <div className="academ-request-title">Заявки</div>
+            <div className="academ-request-amount">133</div>
+            <div className="academ-request-literature">
               <ul>
                 <li>Велосипед Ferrari</li>
                 <li>17000 руб.</li>

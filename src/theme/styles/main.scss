@@ -178,6 +178,9 @@ hr {
 .hr1 {
   border: 1px solid #ffffff;
 }
+.hr2 {
+  border: 1px solid #1B60FF;
+}
 
 .menu-content__title {
   font-size: 22px;
@@ -407,3 +410,425 @@ ol.wsnumber4 li:hover:before {
   margin-left: auto;
   margin-right: auto;
 }
+// Стили личных кабинетов
+.starsize {
+  height: 24px;
+}
+.timer-description {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  display: inline-block;
+  min-width: 175px;
+  vertical-align: middle;
+  margin-top: 5px;
+}
+.timer-block {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.info-lk {
+  margin-bottom: 9px;
+}
+.info-lk-contact {
+  display: inline-block;
+  min-width: 175px;
+  vertical-align: top;
+  margin: 19px 0 8px;
+  font-size: 14px;
+}
+
+.info-lk-contact ul li {
+  margin-bottom: 6px;
+}
+.info-lk-soc {
+  text-align: center;
+  display: inline-block;
+  width: 310px;
+  vertical-align: top;
+  margin: 19px 0 8px;
+  font-size: 14px;
+  img {
+    margin: 0 5px;
+  }
+}
+.info-lk-soc-title {
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 7px;
+}
+
+.student-settings .about-h1 {
+font-size: 28px;
+margin: 14px 0;
+}
+
+.stats-wrap img {
+  max-width: 100%;
+}
+
+.settings-h2 {
+  margin: 0 0 13px 0;
+}
+// ------
+// Финансы и Статистика
+.finance {
+
+  .expansion-panel-title .link .link__icon {
+    top: 0px;
+  }
+
+  &-item {
+    margin-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 19px;
+  }
+
+  &-block a {
+    width: 40px;
+  }
+
+  &-block-balance {
+    margin-right: 3px;
+    font-weight: 800;
+    font-size: 18px;
+    display: inline-block;
+    width: 72px;
+  }
+
+  &-block-price {
+    @include fonts($size-xs, $font-family-third);
+    font-style: normal;
+    font-weight: 800;
+    font-size: 18px;
+    display: inline-block;
+    margin-right: 17px;
+    margin-left: 24px;
+  }
+
+  &-block-date {
+    display: inline-block;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    margin-right: 90px;
+  }
+
+  &-block-pic {
+    display: inline-block;
+  }
+  &-block-pic-text {
+    display: inline-block;
+    position: relative;
+    margin-right: 42px;
+    &:after {
+      content: '• ';
+      font-family: 'slick';
+      font-size: 10px;
+      line-height: 30px;
+      text-align: center;
+      color: #fc8a15;
+      position: absolute;
+      right: -18px;
+      top: -2px;
+    }
+  }
+  &-block-pic-img {
+    display: inline-block;
+  }
+
+  &-block img {
+    margin-bottom: -18px;
+    display: inline-block;
+  }
+
+  &-stat-operation {
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 600;
+    font-size: 18px;
+    color: #979797;
+  }
+  &-stat-action {
+    display: inline-block;
+    margin-right: 5px;
+    position: relative;
+    margin-left: 26px;
+    font-weight: 600;
+    font-size: 18px;
+    color: #979797;
+    &:before {
+      content: '• ';
+      font-family: 'slick';
+      font-size: 10px;
+      line-height: 30px;
+      text-align: center;
+      color: #fc8a15;
+      position: absolute;
+      left: -18px;
+      top: 0;
+    }
+  }
+}
+
+.expansion-panel-title a,
+.expansion-panel-title a:link,
+.expansion-panel-title a:hover,
+.expansion-panel-title a:active {
+  color: #000000;
+  font-size: 18px;
+  font-weight: 600;
+}
+//--------------------
+// Реализация( продавец) и Текущие покупки (покупатель) 
+.academ {
+  .expansion-panel-title .link .link__icon {
+    top: 0;
+  }
+  &-item {
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+  &-lesson-title {
+    font-weight: 600;
+    font-size: 18px;
+    display: inline-block;
+    width: 98px;
+    vertical-align: middle;
+  }
+
+  &-lesson-subject {
+    font-weight: normal;
+    display: inline-block;
+    margin-right: 5px;
+    position: relative;
+    margin-left: 24px;
+    font-weight: 600;
+    font-size: 18px;
+    color: #979797;
+    vertical-align: middle;
+    &:before {
+      content: '• ';
+      font-family: 'slick';
+      font-size: 10px;
+      line-height: 30px;
+      text-align: center;
+      color: #fc8a15;
+      position: absolute;
+      left: -18px;
+      top: -2px;
+    }
+  }
+  &-lesson-subject1 {
+    display: inline-block;
+    margin-right: 5px;
+    position: relative;
+    margin-left: 24px;
+    vertical-align: middle;
+    font-weight: 600;
+    font-size: 18px;
+    color: #000000;
+    &:before {
+      content: '• ';
+      font-family: 'slick';
+      font-size: 10px;
+      line-height: 30px;
+      text-align: center;
+      color: #fc8a15;
+      position: absolute;
+      left: -18px;
+      top: -2px;
+    }
+  }
+  &-request-title {
+    margin-right: 4px;
+    font-weight: 600;
+    font-size: 18px;
+    display: inline-block;
+    width: 77px;
+  }
+  &-request-amount {
+    font-weight: normal;
+    font-size: 14px;
+    display: inline-block;
+    width: 34px;
+    margin-right: 4px;
+  }
+  &-request-detail {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  &-request-literature {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  &-request-literature ul li {
+    display: inline-block;
+    margin-right: 5px;
+    position: relative;
+    margin-left: 24px;
+    font-weight: 600;
+    font-size: 18px;
+    color: #979797;
+    &:before {
+      content: '• ';
+      font-family: 'slick';
+      font-size: 10px;
+      line-height: 30px;
+      text-align: center;
+      color: #fc8a15;
+      position: absolute;
+      left: -18px;
+      top: -2px;
+    }
+  }
+  &-lesson-nearest {
+    font-weight: 600;
+    font-size: 18px;
+    color: #fc8a15;
+    margin-bottom: 14px;
+  }
+  &-lesson-header {
+    font-size: 18px;
+    color: #979797;
+    margin: 14px 0 16px;
+  }
+  &-lesson-schedule {
+    font-weight: 600;
+    font-size: 18px;
+    color: #000000;
+    margin-bottom: 14px;
+  }
+  &-lesson-detail-title {
+    font-size: 15px;
+    color: #979797;
+    margin-bottom: 14px;
+  }
+  &-lesson-detail {
+    &-avatar {
+      float: left;
+      margin: 0 5px 5px 0;
+      width: 40px;
+      height: auto;
+    }
+  }
+  &-lesson-buttons {
+    text-align: center;
+  }
+  &-lesson-buttons .button {
+    margin: 0 40px 35px;
+  }
+  &-lessons-button {
+    margin: 30px 0 20px;
+    display: block;
+    text-align: center;
+  }
+
+  .academ-lesson-subject1 span {
+    color: #979797;
+  }
+  &-lesson-timer {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 15px;
+    margin-right: 21px;
+  }
+  &-lesson-button {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.academ-request,
+.academ-lesson {
+  margin-top: 8px;
+}
+//-------------------------
+//---- ЧАТ
+.chat {
+  .expansion-panel-title .link .link__icon {
+    top: 0;
+  }
+  &-item {
+    margin-bottom: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  &-block a {
+    width: 40px;
+  }
+  &-block-pic {
+    display: inline-block;
+    width: 72px;
+  }
+  &-block-reading {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 18px;
+    color: #FC8A15;
+    vertical-align: middle;
+  }
+  &-block img {
+    margin-bottom: -10px;
+    width: 80%;
+    height: 80%;
+    display: inline-block;
+  }
+  &-frame {
+    border: 1px solid #979797;
+    padding: 8px;
+    margin-top: 30px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  &-teacher {
+    background: #E3F8FF;
+    border-radius: 14px;
+    padding: 2px;
+  }
+  &-student {
+    background: #F9E7F5;
+    border-radius: 14px;
+    padding: 2px;
+  }
+  &-student-time {
+    text-align: right;
+  }
+  &-notreading {
+    font-size: 14px;
+    color: #979797;
+    margin-top: 90px;
+    text-align: center;
+  }
+  &-send {
+    border: 1px solid #979797;
+    border-radius: 40px;
+    height: 62px;
+    color: #979797;
+    padding: 15px 10px;
+    margin: 10px;
+  }
+  &-send-pic {
+    margin-top: 16px;
+  }
+}
+.block-title {
+  font-weight: 600;
+  font-size: 18px;
+  // display: inline-block;
+  max-width: 260px;
+  vertical-align: middle;
+}
+.block-date {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 1.2vw;
+}
+//------------

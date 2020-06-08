@@ -1,5 +1,5 @@
 @import '../../../theme/styles/settings';
-.studentchat {
+.chat {
 
   .expansion-panel-title .link .link__icon {
     top: 0;
@@ -19,21 +19,24 @@
     display: inline-block;
     width: 72px;
   }
-  &-block-title {
-    margin-right: 6px;
-    font-weight: 600;
-    font-size: 18px;
-    display: inline-block;
-    max-width: 260px;
-    vertical-align: middle;
-  }
-  &-block-date {
-    display: inline-block;
-    font-weight: normal;
-    font-size: 14px;
-    margin-right: 18px;
-    vertical-align: middle;
-  }
+  // &-block-title {
+  //   margin-right: 6px;
+  //   font-weight: 600;
+  //   font-size: 18px;
+  //   display: inline-block;
+  //   max-width: 260px;
+  //   margin-top: auto;
+  //   margin-bottom: auto;
+  //   // vertical-align: middle;
+  //   // top: 10px;    
+  // }
+  // &-block-date {
+  //   display: inline-block;
+  //   font-weight: normal;
+  //   font-size: 14px;
+  //   margin-right: 18px;
+  //   vertical-align: middle;
+  // }
   &-block-reading {
     display: inline-block;
     font-weight: 600;
@@ -43,7 +46,9 @@
   }
 
   &-block img {
-    margin-bottom: -22px;
+    margin-bottom: -10px;
+    width: 80%;
+    height: 80%;
     display: inline-block;
   }
 
@@ -88,14 +93,20 @@
   }
 
 }
-.studentchat-h3 {
+.chat-h3 {
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 16px;
 }
 
-.expansion-panel-title a, .expansion-panel-title a:link, .expansion-panel-title a:hover, .expansion-panel-title a:active  {
-  color: #000000;
-  font-size: 18px;
-  font-weight: 600;
-}
+// .expansion-panel-title a, .expansion-panel-title a:link, .expansion-panel-title a:hover, .expansion-panel-title a:active  {
+//   color: #000000;
+//   font-size: 18px;
+//   font-weight: 600;
+// }
+
+// .block-date {
+//   font-size: 12px;
+//   text-align: center;
+//   margin-top: 20px;
+// }

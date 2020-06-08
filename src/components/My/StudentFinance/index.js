@@ -6,9 +6,10 @@ import ImgPurse from '../../../theme/images/img-purse.svg';
 // import StatStudent from '../../../theme/images/account/stat-student.jpg';
 import ModalTeacherCard from '../Forms/ModalTeacherCard';
 import Dialog from '../../Common/Dialog';
-import './styles.scss';
+// import './styles.scss';
 import SelectOperation from '../../Common/SelectOperation';
 import SelectDateRange from '../../Common/SelectDateRange';
+import '../../../theme/styles/settings.scss';
 
 /**
  * Student finance
@@ -25,23 +26,27 @@ const StudentFinance = ({ items = [] }) => {
   };
 
   return (
-    <div className="studentfinance">
+    <div className="finance">
       <ExpansionPanelR
-        className="studentfinance-item"
+        className="finance-item"
         title={(
-          <div className="studentfinance-block">
-            <div className="studentfinance-block-balance">
+          <div className="finance-block">
+            <div className="finance-block-balance">
               Баланс
             </div>
-            <div className="studentfinance-block-price">
+            <div className="finance-block-price">
               12 000₽
             </div>
-            <div className="studentfinance-block-date">
+            <div className="finance-block-date">
               28.08.2020 г.
             </div>
-            <div className="studentfinance-block-pic">
-              <div className="studentfinance-block-pic-text">Перевод средств</div>
-              <div className="studentfinance-block-pic-img"><Link pseudo onClick={() => setIdOpenModal('TeacherCard')}><img className="" src={ImgPurse} alt="" /></Link></div>
+            <div className="finance-block-pic">
+              <div className="finance-block-pic-text">Перевод средств</div>
+              <div className="finance-block-pic-img">
+                <Link pseudo onClick={() => setIdOpenModal('TeacherCard')}>
+                  <img className="" src={ImgPurse} alt="" />
+                </Link>
+              </div>
             </div>
             <Dialog isOpen={idOpenModal === 'TeacherCard'} onClose={() => setIdOpenModal('')} title="">
               <ModalTeacherCard />
@@ -52,23 +57,23 @@ const StudentFinance = ({ items = [] }) => {
         onClickExpand={() => handleClickExpand(1)}
         content={(
           <div>
-            <div className="studentfinance-stat">
-              <div className="studentfinance-stat-operation">
-                  Операции
+            <div className="finance-stat">
+              <div className="finance-stat-operation">
+                Операции
               </div>
-              <div className="studentfinance-stat-action">
-                  Действия
+              <div className="finance-stat-action">
+                Действия
               </div>
               <span>
-                  <SelectOperation onChange={(type) => {}}/>
+                <SelectOperation onChange={(type) => {}} />
               </span>
             </div>
-            <div className="studentfinance-stat">
-              <div className="studentfinance-stat-operation">
-                  Даты
+            <div className="finance-stat">
+              <div className="finance-stat-operation">
+                Даты
               </div>
-              <div className="studentfinance-stat-action">
-                  Период
+              <div className="finance-stat-action">
+                Период
               </div>
               <span>
                 <SelectDateRange dateRange={dateRange} onChangeRange={dateRange => setDateRange(dateRange)} />

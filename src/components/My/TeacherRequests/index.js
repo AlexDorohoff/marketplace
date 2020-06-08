@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'arui-feather/link';
 import Button from 'arui-feather/button';
+import GridRow from 'arui-feather/grid-row/grid-row';
+import GridCol from 'arui-feather/grid-col/grid-col';
 import config from '../../../config';
 import SelectPopup from '../../Common/SelectPopup';
 import UseProfile from '../../../core/connectors/profile';
@@ -31,65 +33,81 @@ const TeacherRequests = ({ getRequests, profile }) => {
   }
 
   return (
-    <div className="teacheracadem-request-detail">
-      <div className="teacheracadem-lesson-detail-title">
-        <div className="teacheracadem-lesson-detail-1">#</div>
-        <div className="teacheracadem-lesson-detail-2">Дата / Время</div>
-        <div className="teacheracadem-lesson-detail-3">Покупатель</div>
-        <div className="teacheracadem-lesson-detail-4">Товар</div>
-        <div className="teacheracadem-lesson-detail-5">Сумма</div>
-        <div className="teacheracadem-lesson-detail-6">Статус</div>
-      </div>
-
+    <div className="academ-request-detail">
+      {/* <div className="academ-lesson-detail-title">
+        <div className="academ-lesson-detail-1">#</div>
+        <div className="academ-lesson-detail-2">Дата / Время</div>
+        <div className="academ-lesson-detail-3">Покупатель</div>
+        <div className="academ-lesson-detail-4">Товар</div>
+        <div className="academ-lesson-detail-5">Сумма</div>
+        <div className="academ-lesson-detail-6">Статус</div>
+      </div> */}
+      <br />
+      <GridRow className="academ-lesson-detail-title">
+        <GridCol width={{ mobile: 12, tablet: 1, desktop: 1 }}>
+          №
+        </GridCol>
+        <GridCol width={{ mobile: 12, tablet: 2, desktop: 2 }}>
+          Дата
+        </GridCol>
+        <GridCol width={{ mobile: 12, tablet: 3, desktop: 3 }}>
+          Покупатель
+        </GridCol>
+        <GridCol width={{ mobile: 12, tablet: 4, desktop: 4 }}>
+          Товар
+        </GridCol>
+        <GridCol width={{ mobile: 12, tablet: 1, desktop: 1 }}>
+          Сумма
+        </GridCol>
+        <GridCol width={{ mobile: 12, tablet: 1, desktop: 1 }}>
+          Статус
+        </GridCol>
+      </GridRow>
+      <div className="hr2" />
+      <br />
       {data &&
         data.map(r => (
           <div key={r.id}>
-            <div className="teacheracadem-reguest-detail-dataheader">
-              <div className="teacheracadem-lesson-detail-1">{r.id}</div>
-              <div className="teacheracadem-lesson-detail-2">
-                <div className="teacheracadem-lesson-theme1">Тема</div>
-                <div className="teacheracadem-lesson-subject1">
-                  <span>{r.course.description.subject}</span>
-                </div>
-                <div className="teacheracadem-lesson-subject1">
-                  {r.course.title}
-                </div>
-              </div>
-            </div>
-            <div className="teacheracadem-reguest-detail-data">
-              <div className="teacheracadem-lesson-detail-2">
+            <GridRow>
+              <GridCol width={{ mobile: 12, tablet: 1, desktop: 1 }}>
+                {r.id}
+              </GridCol>
+              <GridCol width={{ mobile: 12, tablet: 2, desktop: 2 }}>
                 {r.requested_date}
-              </div>
-              <div className="teacheracadem-lesson-detail-3">
+              </GridCol>
+              <GridCol width={{ mobile: 12, tablet: 3, desktop: 3 }}>
                 <img
-                  className="teacheracadem-lesson-detail-avatar"
+                  className="academ-lesson-detail-avatar"
                   src={`${config.baseUrl}/avatars/${r.user.image}`}
                   alt="r.user.name"
                 />
                 {r.user.name}
-              </div>
-              <div className="teacheracadem-lesson-detail-4">
-                {r.course.description.subject}
-              </div>
-              <div className="teacheracadem-lesson-detail-5">
+              </GridCol>
+              <GridCol width={{ mobile: 12, tablet: 4, desktop: 4 }}>
+                <span>{r.course.description.subject}</span>
+                {r.course.title}
+              </GridCol>
+              <GridCol width={{ mobile: 12, tablet: 1, desktop: 1 }}>
                 {r.course.price}
-              </div>
-              <div className="teacheracadem-lesson-detail-6">
+              </GridCol>    
+              <GridCol width={{ mobile: 12, tablet: 1, desktop: 1 }}>
                 <SelectPopup
                   onChange={value => {}}
                   value="request"
                   options={statusTypes}
                 />
-              </div>
-            </div>
+                {r.course.description.subject}
+              </GridCol>             
+            </GridRow>
+            <br />
           </div>
         ))}
 
       {listCount < requests.length && (
         <Link pseudo>
-          <div className="teacheracadem-lessons-button">
+          <div className="academ-lessons-button">
             <Button
-              className="button button_secondary"
+              className="button button_settings-form"
               onClick={() => setListCount(listCount + 4)}
             >
               Показать ещё

@@ -3,10 +3,11 @@ import Type from 'prop-types';
 import GridRow from 'arui-feather/grid-row';
 import GridCol from 'arui-feather/grid-col';
 import ExpansionPanelR from '../../Common/ExpansionPanelR';
-import './styles.scss';
+// import './styles.scss';
 import ImgChat from '../../../theme/images/account/img-chat1.svg';
 import ImgChat2 from '../../../theme/images/account/img-chat2.svg';
 import ImgChat3 from '../../../theme/images/account/img-chat3.svg';
+import '../../../theme/styles/settings.scss';
 
 /**
  * Teacher chat
@@ -21,23 +22,50 @@ const TeacherChat = ({ items = [] }) => {
   };
 
   return (
-    <div className="teacherchat">
+    <div className="chat">
       <ExpansionPanelR
-        className="teacherchat-item"
+        className="chat-item"
         title={(
-          <div className="teacherchat-block">
-            <div className="teacherchat-block-pic">
+          <div className="chat-block">
+            <GridRow>
+              <GridCol width={{ mobile: 12, tablet: 2, desktop: 2 }}>
+                <div className="chat-block-pic">
+                  <img className="" src={ImgChat} alt="" />
+                </div>
+              </GridCol>
+              <GridCol width={{ mobile: 12, tablet: 4, desktop: 4 }}>
+                <div className="block-title">
+                  Rain Man
+                </div>
+              </GridCol>
+              <GridCol width={{ mobile: 12, tablet: 3, desktop: 3 }}>
+                <div className="block-date">  
+                  2020-08-25 11:30
+                </div>
+              </GridCol>
+              <GridCol width={{ mobile: 12, tablet: 3, desktop: 3 }}>
+                <div className="chat-block-reading">
+                  Не прочитано:
+                  {' '}
+                  (20)
+                </div>
+              </GridCol>
+            </GridRow>
+
+
+            {/* <div className="chat-block-pic">
               <img className="" src={ImgChat} alt="" />
             </div>
-            <div className="teacherchat-block-title">
+            <div className="chat-block-title">
               Rain Man
             </div>
-            <div className="teacherchat-block-date">
+            <div className="chat-block-date">
               2020-05-25  11:30
             </div>
-            <div className="teacherchat-block-reading">
+            <div className="chat-block-reading">
               Не прочитано: (20)
-            </div>
+            </div> */}
+
           </div>
         )}
         isExpanded={openPanelNumber === 1}
@@ -45,7 +73,7 @@ const TeacherChat = ({ items = [] }) => {
         content={(
           <div>
             {/* <hr className="hr2orange" /> */}
-            <div className="teacherchat-frame">
+            <div className="chat-frame">
               <GridRow>
                 <GridCol width={{ mobile: 1, tablet: 1, desktop: 1 }}>
                   <img className="" src={ImgChat2} alt="" />
@@ -53,7 +81,7 @@ const TeacherChat = ({ items = [] }) => {
                   13:30
                 </GridCol>
                 <GridCol width={{ mobile: 11, tablet: 6, desktop: 6 }}>
-                  <div className="teacherchat-teacher">
+                  <div className="chat-teacher">
                     Добрый день. Хотелось бы подробнее узнать об ордене Святого Станислава.
                   </div>
                 </GridCol>
@@ -62,13 +90,13 @@ const TeacherChat = ({ items = [] }) => {
               <GridRow>
                 <GridCol width={{ mobile: 12, tablet: 7, desktop: 7 }} />
                 <GridCol width={{ mobile: 12, tablet: 5, desktop: 5 }}>
-                  <div className="teacherchat-student">
+                  <div className="chat-student">
                     Лента самодел. Имеются небольшие вмятины на тыльной части ордена
                   </div>
-                  <div className="teacherchat-student-time">13:45</div>
+                  <div className="chat-student-time">13:45</div>
                 </GridCol>
               </GridRow>
-              <div className="teacherchat-notreading">
+              <div className="chat-notreading">
                 Не прочитанное сообщение
               </div>
               <hr className="hr1blue" />
@@ -79,7 +107,7 @@ const TeacherChat = ({ items = [] }) => {
                   14:15
                 </GridCol>
                 <GridCol width={{ mobile: 11, tablet: 6, desktop: 6 }}>
-                  <div className="teacherchat-teacher">
+                  <div className="chat-teacher">
                     Спасибо.
                   </div>
                 </GridCol>
@@ -88,12 +116,12 @@ const TeacherChat = ({ items = [] }) => {
             </div>
             <GridRow>
               <GridCol width={{ mobile: 12, tablet: 10, desktop: 10 }}>
-                <div className="teacherchat-send">
+                <div className="chat-send">
                   Написать сообщение .....
                 </div>
               </GridCol>
               <GridCol width={{ mobile: 12, tablet: 2, desktop: 2 }}>
-                <div className="teacherchat-send-pic">
+                <div className="chat-send-pic">
                   <img className="" src={ImgChat3} alt="" />
                 </div>
               </GridCol>

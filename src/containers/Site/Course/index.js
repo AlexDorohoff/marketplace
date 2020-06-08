@@ -277,7 +277,7 @@ const Course = ({ courses, getCourse, match }) => {
               </p>
               <NavLink
                 className="link link_third"
-                to={`/teacher/${course && course.user.id}`}
+                to={`/shop/${course && course.user.id}`}
               >
                 <div className="course-teacher-button">
                   <Button className="button button_secondary">Подробнее</Button>

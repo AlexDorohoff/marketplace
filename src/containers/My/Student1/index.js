@@ -61,9 +61,9 @@ const Student1 = ({ profile, getProfile, history }) => {
       </Helmet>
       {profileData ? <StudentHeader profile={profileData} /> : <StudentHeader profile={{fetching: profile.fetching}} />}
       {/* <section className="section section_profile">
-        <h2 className="student-settings-h2">
+        <h2 className="settings-h2-">
           Мои преподаватели
-          <div className="students-teachers-control">
+          <div className="teachers-control">
             <Link pseudo>
               <FaEye size="30px" />
             </Link>
@@ -120,7 +120,7 @@ const Student1 = ({ profile, getProfile, history }) => {
       </section> */}
 
       {/* <section className="section section_profile">
-        <h2 className="student-settings-h2">Задания преподавателей</h2>
+        <h2 className="settings-h2">Задания преподавателей</h2>
         <StudentsTasks items={[]} />
       </section> */}
 
@@ -129,14 +129,14 @@ const Student1 = ({ profile, getProfile, history }) => {
       </section>
 
       <section className="section section_profile">
-        <h2 className="student-settings-h2">Текущие покупки</h2>
+        <h2 className="settings-h2">Мои покупки</h2>
         <StudentAcademicPlan items={[]} />
       </section>
 
       <section className="section section_profile">
-        <h2 className="student-settings-h2">Финансы и Статистика</h2>
+        <h2 className="settings-h2">Финансы и Статистика</h2>
         <StudentFinance items={[]} />
-        <GridRow className="student-stats-wrap">
+        <GridRow className="stats-wrap">
           {/* <GridCol width={{ mobile: 12, tablet: 6, desktop: 6 }}>
             <Link
               pseudo
@@ -164,8 +164,8 @@ const Student1 = ({ profile, getProfile, history }) => {
       </section>
 
       <section className="section section_profile">
-        <h2 className="student-settings-h2">Отзывы</h2>
-        <GridRow className="student-stats-wrap">
+        <h2 className="settings-h2">Отзывы</h2>
+        <GridRow className="stats-wrap">
         <GridCol width={{ mobile: 12, tablet: 6, desktop: 6 }}>
             <NavLink to="/under-development">
               <img src={Review2} alt="" />
@@ -180,7 +180,7 @@ const Student1 = ({ profile, getProfile, history }) => {
       </section>
 
       <section className="section section_profile">
-        <h2 className="student-settings-h2">Чат</h2>
+        <h2 className="settings-h2">Чат</h2>
         <StudentChat items={[]} />
       </section>
 
@@ -188,8 +188,8 @@ const Student1 = ({ profile, getProfile, history }) => {
         <DocsBrowser title="Интересные товары" files={files} />
       </section>
 
-      <section className="section section_profile course-create-title">
-        <h2 className="course-create-h2">
+      <section className="section section_profile">
+        <h2 className="settings-h2">
           Корзина
           {/* <div className="course-create-title-controls">
             <Link pseudo>

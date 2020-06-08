@@ -94,8 +94,15 @@ export default function DocsBrowser({ title, files, value, index, programm, setP
         />
         <Carousel settings={settings} className="docs-browser-carousel">
           {upFiles.length > 0 ?  
-            upFiles.map(item => <img key={item.id} src={item.img} alt="" onClick={() => handleDeleteFile(item.id)} />)
-          : files.map(item => <img key={item.id} src={item.img} alt="" />)}
+            upFiles.map(item =>
+              <img
+                key={item.id} 
+                src={item.img}
+                title='9999'
+                alt=""
+                onClick={() => handleDeleteFile(item.id)}
+              />)
+          : files.map(item => <img key={item.id} src={item.img} title='2222' alt="" />)}
         </Carousel>
       </div>
     </div>

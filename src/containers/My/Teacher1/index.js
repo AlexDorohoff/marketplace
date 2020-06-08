@@ -5,6 +5,8 @@ import GridRow from 'arui-feather/grid-row';
 import GridCol from 'arui-feather/grid-col';
 
 import Type from 'prop-types';
+// import { files } from '../../../core/utils/testData';
+// import DocsBrowser from '../../../components/Common/DocsBrowser';
 // import { FaPencilAlt } from 'react-icons/fa';
 import './styles.scss';
 import Star1 from '../../../theme/images/star1.svg';
@@ -101,10 +103,10 @@ const Teacher1 = ({ getProfile, profile, history }) => {
 
       <section className="section section_profile">
         <GridRow>
-          <GridCol width={{ mobile: 12, tablet: 6, desktop: 6 }}>
+          <GridCol width={{ mobile: 12, tablet: 12, desktop: 12 }}>
             <h2>О витрине</h2>
           </GridCol>
-          <GridCol width={{ mobile: 12, table: 6, desktop: 6 }}>
+          {/* <GridCol width={{ mobile: 12, table: 6, desktop: 6 }}>
             <div className="teacher-star">
               <img src={Star1} alt="" />
               <img src={Star1} alt="" />
@@ -112,7 +114,7 @@ const Teacher1 = ({ getProfile, profile, history }) => {
               <img src={Star1} alt="" />
               <img src={Star1} alt="" />
             </div>
-          </GridCol>
+          </GridCol> */}
           <GridCol width={{ mobile: 12, tablet: 6 }}>
             <p>
               {profileData &&
@@ -120,14 +122,14 @@ const Teacher1 = ({ getProfile, profile, history }) => {
                 profileData.user.profile.yourself}
             </p>
           </GridCol>
-          <GridCol width={{ mobile: 12, table: 6 }}>
-            <VideoBlock bannerSrc="" videoId="" />
+          <GridCol className="video-profile" width={{ mobile: 12, table: 6 }}>
+            <VideoBlock className="video-profile" bannerSrc="" videoId="" />
           </GridCol>
         </GridRow>
       </section>
 
       <section className="section section_profile">
-        <h2 className="docs-browser-title">Документы</h2>
+        <h2 className="settings-h2">Документы</h2>
         <div className="docs-browser-carousel-wrapper">
           {profileData && profileData.user.type === 'teacher' && 
             profileData.user.profile &&
@@ -158,14 +160,14 @@ const Teacher1 = ({ getProfile, profile, history }) => {
       </section> */}
 
       <section className="section section_profile">
-        <h2 className="teacher-settings-h2">Реализация</h2>
+        <h2 className="settings-h2">Реализация</h2>
         {profileData && profileData.user.type === 'teacher' && <TeacherAcademicPlan profile={profileData} />}
       </section>
 
       <section className="section section_profile">
-        <h2 className="teacher-settings-h2">Финансы и Статистика</h2>
+        <h2 className="settings-h2">Финансы и Статистика</h2>
         <TeacherFinance items={[]} />
-        {/* <GridRow className="teacher-stats-wrap">
+        {/* <GridRow className="stats-wrap">
           <GridCol width={{ mobile: 12, tablet: 6, desktop: 6 }}>
             <NavLink to="/under-development">
               <img src={Stats1} alt="" />
@@ -180,8 +182,8 @@ const Teacher1 = ({ getProfile, profile, history }) => {
       </section>
 
       <section className="section section_profile">
-        <h2 className="teacher-settings-h2">Отзывы</h2>
-        <GridRow className="teacher-stats-wrap">
+        <h2 className="settings-h2">Отзывы</h2>
+        <GridRow className="stats-wrap">
           <GridCol width={{ mobile: 12, tablet: 6, desktop: 6 }}>
             <NavLink to="/under-development">
               <img src={Review2} alt="" />
@@ -197,12 +199,12 @@ const Teacher1 = ({ getProfile, profile, history }) => {
       </section>
 
       <section className="section section_profile">
-        <h2 className="teacher-settings-h2">Чат</h2>
+        <h2 className="settings-h2">Чат</h2>
         <TeacherChat items={[]} />
       </section>
 
       <section className="section section_profile">
-        <h2 className="docs-browser-title">Галерея товаров</h2>
+        <h2 className="settings-h2">Галерея товаров</h2>
         <div className="docs-browser-carousel-wrapper">
           {materials.length > 0 && (
             <Carousel settings={settings} className="docs-browser-carousel">
@@ -215,15 +217,15 @@ const Teacher1 = ({ getProfile, profile, history }) => {
         {/* <DocsBrowser title="Материалы" files={files} /> */}
       </section>
 
-      <section className="section section_profile course-create-title">
-        <h2 className="course-create-h2">
+      <section className="section section_profile">
+        <h2 className="settings-h2">
           Товары (создание и редактирование)
-          <div className="course-create-title-controls">
-            {/* <button type="button">
+          {/* <div className="course-create-title-controls">
+            <button type="button">
               <FaPencilAlt size="30px" />
-            </button> */}
-            {/* <Link pseudo><img src={Eye} alt="" /></Link> */}
-          </div>
+            </button>
+            <Link pseudo><img src={Eye} alt="" /></Link>
+          </div> */}
         </h2>
         {profileData && (
           <TeacherCourse

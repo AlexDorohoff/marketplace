@@ -19,6 +19,7 @@ import Hat from '../../../theme/images/account/hat.svg';
 import CountDown from '../CountDown/CountDown';
 import config from '../../../config';
 import Loader from '../../Common/Loader';
+import '../../../theme/styles/settings.scss';
 
 const StudentHeader = ({ profile }) => {
   const name = profile.user ? profile.user.name : '';
@@ -34,63 +35,57 @@ const StudentHeader = ({ profile }) => {
           // }}
         >
           <GridRow>
-            <GridCol
-              width={{
-                mobile: 0,
-                tablet: 6,
-                desktop: 6,
-              }}
-            >
-              {
+            <GridCol width={{ mobile: 0, tablet: 6, desktop:2 }}>
+              <div className="">
+                {
                 profile.fetching ? 
-                <Loader /> :
+                  <Loader /> :
                 (profile.user ? <img
-                  style={{ width: '100%' }}
+                  style={{ width: '144px'}}
                   src={`${config.baseUrl}/avatars/${profile.user.image}?${Date.now().toString()}`}
                   alt={profile.user.name}
                 /> : null)
               }
+              </div>
             </GridCol>
-            <GridCol
-              width={{
-                mobile: 12,
-                tablet: 6,
-                desktop: 6,
-              }}
-            >
-              <div className="student-about">
-                <div className="student-about-settings">
-                  <NavLink className="link link_third" to="/my/student">
-                    <img className="dot-green" src={ImgSettings} alt="" />
-                    Настройки
-                  </NavLink>
-                </div>
-                {
+            {/* <GridCol width={{ mobile: 12, tablet: 6, desktop: 10 }}> */}
+
+              <GridCol className="" width={{ mobile: 12, tablet: 12, desktop: 5 }}>
+                <div className="">
+                  <div className="">
+                    <NavLink className="link link_third" to="/my/student">
+                      <img src={ImgSettings} style={{margin: '0 6px -6px 0'}} alt="" />
+                      Настройки
+                    </NavLink>
+                  </div>
+                  {
                   name !== '' &&
-                  <h1 className="student-about-h1">
+                  <h1 className="about-h1">
                     {fio[0]}
                     <br />
                     {`${fio[1] ? fio[1] : ''} ${fio[2] ? fio[2] : ''}`}
                   </h1>
                 }
-                <div className="student-online-hat">
-                  <img className="" src={Hat} alt="" />
-                  <img className="" src={Hat} alt="" />
-                  <img className="" src={Hat} alt="" />
-                  <img className="" src={Hat} alt="" />
-                  <img className="" src={Hat} alt="" />
+                  <img className="starsize" src={Hat} alt="" />
+                  <img className="starsize" src={Hat} alt="" />
+                  <img className="starsize" src={Hat} alt="" />
+                  <img className="starsize" src={Hat} alt="" />
+                  <img className="starsize" src={Hat} alt="" />
                 </div>
-                <div className="student-timer">
-                  <div className="student-timer-description">
+              </GridCol>
+
+              <GridCol width={{ mobile: 12, tablet: 12, desktop: 5 }}>              
+                <div className="">
+                  <div className="timer-description">
                     Ближайшая доставка
                   </div>
-                  <div className="student-timer-block">
+                  <div className="timer-block">
                     <CountDown date="2020-06-25 15:47" />
                   </div>
                 </div>
-                <div className="student-data">
-                  <div className="student-data-contact">
-                    <div className="student-data-contact-title">
+                <div className="info-lk">
+                  <div className="info-lk-contact">
+                    <div className="info-lk-contact-title">
                       Личные данные
                     </div>
                     {
@@ -101,8 +96,8 @@ const StudentHeader = ({ profile }) => {
                       </ul>
                     }
                   </div>
-                  <div className="student-data-soc">
-                    <div className="student-data-soc-title">В соцсетях</div>
+                  <div className="info-lk-soc">
+                    <div className="info-lk-soc-title">В соцсетях</div>
 
                     {/* {profile.user.profile.vk && ( */}
                     {/*  <a href={profile.user.profile.vk}> */}
@@ -182,10 +177,15 @@ const StudentHeader = ({ profile }) => {
                     {/* )} */}
                   </div>
                 </div>
-              </div>
-            </GridCol>
+                {/* </div> */}
+              </GridCol>
+            {/* </GridCol> */}
           </GridRow>
+          {/* <br />
+          <div className="hr2" /> */}
         </div>
+        <br />
+        <div className="hr2" />
       </section>
     </>
   );

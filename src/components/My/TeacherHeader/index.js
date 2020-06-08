@@ -19,6 +19,7 @@ import CountDown from '../CountDown/CountDown';
 import config from '../../../config';
 import Loader from '../../Common/Loader';
 import { yearsPlural } from '../../../core/utils/common';
+import Star1 from '../../../theme/images/star1.svg';
 
 const TeacherHeader = ({ profile }) => {
   const name = profile.user ? profile.user.name : '';
@@ -32,7 +33,7 @@ const TeacherHeader = ({ profile }) => {
             <GridCol width={{ mobile: 0, tablet: 6 }}>
               {
                 profile.fetching ? 
-                <Loader /> :
+                  <Loader /> :
                 (profile.user ? <img
                   style={{ width: '100%' }}
                   src={`${config.baseUrl}/avatars/${profile.user.image}?${Date.now().toString()}`}
@@ -40,24 +41,33 @@ const TeacherHeader = ({ profile }) => {
                 /> : null)
               }
             </GridCol>
-
             <GridCol width={{ mobile: 12, tablet: 6, desktop: 6 }}>
-              <div className="teacher-about">
-                <div className="teacher-about-settings">
-                  <NavLink className="link link_third" to="/my/update-shop">
-                    <img className="dot-green" src={ImgSettings} alt="" />
-                    Настройки
-                  </NavLink>
-                </div>
-                {
+
+              <GridCol width={{ mobile: 12, tablet: 12, desktop: 12 }}>
+                <div className="">
+                  <div className="">
+                    <NavLink className="link link_third" to="/my/update-shop">
+                      <img src={ImgSettings} style={{margin: '0 6px -6px 0'}} alt="" />
+                      Настройки
+                    </NavLink>
+                  </div>
+                  {
                   name !== '' &&
-                  <h1 className="teacher-about-h1">
+                  <h1 className="about-h1">
                     {fio[0]}
                     <br />
                     {`${fio[1] ? fio[1] : ''} ${fio[2] ? fio[2] : ''}`}
                   </h1>
                 }
-
+                  <img className="starsize" src={Star1} alt="" />
+                  <img className="starsize" src={Star1} alt="" />
+                  <img className="starsize" src={Star1} alt="" />
+                  <img className="starsize" src={Star1} alt="" />
+                  <img className="starsize" src={Star1} alt="" />
+                </div>
+              </GridCol>
+                
+              <GridCol width={{ mobile: 12, tablet: 12, desktop: 12 }}>
                 <div className="teacher-expir">
                   На рынке:&nbsp;
                   {profile.user && profile.user.profile &&
@@ -68,18 +78,18 @@ const TeacherHeader = ({ profile }) => {
                 </div>
 
                 <br />
-                <div className="teacher-timer">
-                  <div className="teacher-timer-description">
+                <div className="">
+                  <div className="timer-description">
                     Ближайшая доставка
                   </div>
-                  <div className="teacher-timer-block">
+                  <div className="timer-block">
                     <CountDown date="2020-06-25 15:47:00" />
                   </div>
                 </div>
                 <br />
-                <div className="teacher-data">
-                  <div className="teacher-data-contact">
-                    <div className="teacher-data-contact-title">
+                <div className="info-lk">
+                  <div className="info-lk-contact">
+                    <div className="info-lk-contact-title">
                       Личные данные
                     </div>
                     {
@@ -91,10 +101,10 @@ const TeacherHeader = ({ profile }) => {
                     }
                   </div>
                   <div
-                    className="teacher-data-soc"
+                    className="info-lk-soc"
                     style={{ textAlign: 'center' }}
                   >
-                    <div className="teacher-data-soc-title">В соцсетях</div>
+                    <div className="info-lk-soc-title">В соцсетях</div>
                     {profile.user && profile.user.profile && profile.user.profile.vk && (
                       <a href={profile.user.profile.vk}>
                         <FaVk
@@ -173,10 +183,13 @@ const TeacherHeader = ({ profile }) => {
                     )}
                   </div>
                 </div>
-              </div>
+                {/* </div> */}
+              </GridCol>
             </GridCol>
           </GridRow>
         </div>
+        <br />
+        <div className="hr2" />
       </section>
     </>
   );

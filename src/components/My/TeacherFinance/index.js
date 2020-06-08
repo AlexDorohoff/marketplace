@@ -5,12 +5,12 @@ import { NavLink } from 'react-router-dom';
 
 import ExpansionPanelR from '../../Common/ExpansionPanelR';
 import ImgPurse from '../../../theme/images/img-purse.svg';
-import StatTeacher from '../../../theme/images/account/stat-teacher.jpg';
+// import StatTeacher from '../../../theme/images/account/stat-teacher.jpg';
 import Dialog from '../../Common/Dialog';
 import ModalTeacherCard from '../Forms/ModalTeacherCard';
 import SelectOperation from '../../Common/SelectOperation';
 import SelectDateRange from '../../Common/SelectDateRange';
-import './styles.scss';
+import '../../../theme/styles/settings.scss';
 
 /**
  * Teacher finance
@@ -27,23 +27,23 @@ const TeacherFinance = ({ items = [] }) => {
   };
 
   return (
-    <div className="teacherfinance">
+    <div className="finance">
       <ExpansionPanelR
-        className="teacherfinance-item"
+        className="finance-item"
         title={
-          <div className="teacherfinance-block">
-            <div className="teacherfinance-block-balance">
+          <div className="finance-block">
+            <div className="finance-block-balance">
               Баланс
             </div>
-            <div className="teacherfinance-block-price dot_before">
+            <div className="finance-block-price">
               12 000₽
             </div>
-            <div className="teacherfinance-block-date">
+            <div className="finance-block-date">
               28.08.2019 г.
             </div>
-            <div className="teacherfinance-block-pic">
-              <div className="teacherfinance-block-pic-text">Вывод средств</div>
-              <div className="teacherfinance-block-pic-img">
+            <div className="finance-block-pic">
+              <div className="finance-block-pic-text">Вывод средств</div>
+              <div className="finance-block-pic-img">
                 <NavLink 
                   // pseudo
                   // onClick={() => setIdOpenModal('TeacherCard')}
@@ -62,43 +62,43 @@ const TeacherFinance = ({ items = [] }) => {
         onClickExpand={() => handleClickExpand(1)}
         content={
           <div>
-            <div className="teacherfinance-stat">
-              <div className="teacherfinance-stat-operation">
+            <div className="finance-stat">
+              <div className="finance-stat-operation">
                 Операции
               </div>
-              <div className="teacherfinance-stat-action">
+              <div className="finance-stat-action">
                 Действия
               </div>
               <span>
-                {/* <SelectOperation onChange={(type) => {}}/> */}
-                <span className="select-operation">
+                <SelectOperation onChange={(type) => {}}/>
+                {/* <span className="select-operation">
                   <span className="select-operation-title">
                     <NavLink to="/under-development">
                       Все операции
                     </NavLink>
                   </span>
-                </span>
+                </span> */}
               </span>
             </div>
-            <div className="teacherfinance-stat">
-              <div className="teacherfinance-stat-operation">
+            <div className="finance-stat">
+              <div className="finance-stat-operation">
                 Даты
               </div>
-              <div className="teacherfinance-stat-action">
+              <div className="finance-stat-action">
                 Период
               </div>
               <span>
-                {/* <SelectDateRange dateRange={dateRange} onChangeRange={dateRange => setDateRange(dateRange)} /> */}
-                <span className="select-operation">
+                <SelectDateRange dateRange={dateRange} onChangeRange={dateRange => setDateRange(dateRange)} />
+                {/* <span className="select-operation">
                   <span className="select-operation-title">
                     <NavLink to="/under-development">
                       23.03.2020
                     </NavLink>
                   </span>
-                </span>
+                </span> */}
               </span>
             </div>
-            <img className="" src={StatTeacher} alt="" />
+            {/* <img className="" src={StatTeacher} alt="" /> */}
           </div>
         }
       />

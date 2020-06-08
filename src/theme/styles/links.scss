@@ -29,6 +29,10 @@ a.link {
     @include fonts($size-small, $font-family-base);
     color: #006ec2;
   }
+  &_toplinklk {
+    @include fonts($size-small, $font-family-base);
+    color: #1B60FF;
+  }
 }
 a.link:hover {
   color: #000000;
