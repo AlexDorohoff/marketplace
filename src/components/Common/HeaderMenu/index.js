@@ -32,10 +32,8 @@ function HeaderMenu({ isOpen, navTo, onClose }) {
       return list;
     }
   };
-
   const renderCourses = () => {
     if (courses.length > 0) {
-      <hr />;
       const list = [];
       courses.map((course, index) => {
         if (index < 5) {
@@ -48,6 +46,29 @@ function HeaderMenu({ isOpen, navTo, onClose }) {
                 onClick={navTo(`/good/${course.id}`)}
               >
                 {course.title}
+              </Link>
+            </li>
+          );
+        }
+      });
+      return list;
+    }
+  };
+
+  const renderSection = () => {
+    if (courses.length > 0) {
+      const list = [];
+      courses.map((course, index) => {
+        if (index < 5) {
+          list.push(
+            <li key={index + Math.random()}>
+              <Link
+                pseudo
+                className="link6 link6_third"
+                key={course.id}
+                onClick={navTo(`/good/${course.id}`)}
+              >
+                {course.subject}
               </Link>
             </li>
           );
@@ -105,9 +126,10 @@ function HeaderMenu({ isOpen, navTo, onClose }) {
                     </Link>
                     <ul>
                       <li className="bold14">Популярные разделы</li>
+                      {renderSection()}
                     </ul>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link
                       pseudo
                       className="link6 link6_third"
@@ -135,7 +157,7 @@ function HeaderMenu({ isOpen, navTo, onClose }) {
                     <Link pseudo className="link6 link6_third">
                       Поп/ный Раздел 5
                     </Link>
-                  </li>
+                  </li> */}
                 </ul>
               </li>
               <li>

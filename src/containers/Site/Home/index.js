@@ -15,6 +15,7 @@ import WhereToBegin from '../../../components/Site/WhereToBegin';
 import connectorSearch from '../../../core/connectors/search';
 import connectorTeachers from '../../../core/connectors/teachers';
 import connectorCourses from '../../../core/connectors/courses';
+import '../../../theme/styles/settings.scss';
 
 function Home({ search, teachers, courses }) {
 
@@ -31,20 +32,36 @@ function Home({ search, teachers, courses }) {
     const teachersSearchOutput = teachers.searchData.length > 0 ? teachers.searchData.slice(0, searchStepTeachers) : [];
     const coursesSearchOutput = courses.searchCourses.length > 0 ? courses.searchCourses.slice(0, searchStepCourses) : [];
 
+    // $(document).ready(function(){
+    //   $(window).scroll(function (){
+    //       if ($(this).scrollTop('100px') > 0){
+    //           $('#scroller').fadeIn();
+    //       } else {
+    //           $('#scroller').fadeOut();
+    //       }
+    //   });
+      
+    //   $('#scroller').click(function () {
+    //       $('body,html').animate({scrollTop: 0}, 400); 
+    //       return false;
+    //   });
+    // });
+    
+
     return (
       <>
         <Helmet>
-          <title>Home</title>
-          <meta name="description" content="Home" />
-          <meta name="keywords" content="Home" />
+          <title>Море-маркетплейс для всех</title>
+          <meta name="description" content="Море" />
+          <meta name="keywords" content="Море" />
         </Helmet>
         {teachers.searchData.length > 0 &&
         <section className="section">
-          Преподаватели
+          Витрины
           <GridRow justify="left">
             {teachersSearchOutput.map(teacher => (
               <GridCol key={`${teacher.id}${Math.random()}`} width={{ mobile: 12, tablet: 6, desktop: 4 }}>
-                <TeacherBlock teacher={teacher}/>
+                <TeacherBlock teacher={teacher} />
               </GridCol>
             ))}
           </GridRow>
@@ -53,13 +70,13 @@ function Home({ search, teachers, courses }) {
               className="button button_secondary"
               onClick={() => setSearchStepTeachers(searchStepTeachers + 6)}
             >
-                Показать ещё
+              Показать ещё
             </Button>
           </div>}
         </section>}
         {courses.searchCourses.length > 0 &&
         <section className="section">
-          Курсы
+          Товары
           <GridRow justify="left">
             {coursesSearchOutput.map(course => (
               <GridCol key={`${course.id}${Math.random()}`} width={{ mobile: 12, tablet: 6, desktop: 4 }}>
@@ -91,8 +108,8 @@ function Home({ search, teachers, courses }) {
   return (
     <>
       <Helmet>
-        <title>Home</title>
-        <meta name="description" content="Home" />
+        <title>1Море-маркетплейс для всех</title>
+        <meta name="description" content="Море" />
         <meta name="keywords" content="Home" />
       </Helmet>
       <section className="section section_home_carousel">
@@ -113,6 +130,9 @@ function Home({ search, teachers, courses }) {
       <section className="section">
         <WhereToBegin />
       </section>
+      {/* <div id="scroller" className="b-top" style={{display: 'none'}}>
+        <span className="b-top-but">наверх</span>
+      </div> */}
       <FooterMain />
     </>
   );

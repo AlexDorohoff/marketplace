@@ -7,7 +7,7 @@ import './styles.scss';
 /**
  * Student course request form
  */
-export default function ModalStudentCourseRequest({
+export default function ModalCartRequest({
   values,
   errors,
   touched,
@@ -25,7 +25,7 @@ export default function ModalStudentCourseRequest({
 
         <div className="StudentCourseRequest-modal-pickers">
           <div className="divDateTime">
-            <label htmlFor="dt">159Дата</label>
+            <label htmlFor="dt">Дата</label>
             <Input
               type="date"
               id="dt"

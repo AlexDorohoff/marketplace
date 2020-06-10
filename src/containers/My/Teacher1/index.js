@@ -28,12 +28,39 @@ import UseProfile from '../../../core/connectors/profile';
 import Carousel from '../../../components/Site/Carousel/CarouselBase';
 
 const settings = {
-  dots: false,
+  dots: true,
   arrows: true,
   infinite: false,
-  speed: 300,
-  slidesToShow: 4,
-  margin: 0,
+  speed: 500,
+  slidesToShow: 3,
+  slidesToScroll: 2,
+    
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 2,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        initialSlide: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
 };
 
 /**
@@ -135,9 +162,11 @@ const Teacher1 = ({ getProfile, profile, history }) => {
             profileData.user.profile &&
             profileData.user.profile.documents &&
             profileData.user.profile.documents.length > 0 && (
+              // <Carousel settings={settings} className="docs-browser-carousel">
               <Carousel settings={settings} className="docs-browser-carousel">
+
                 {profileData.user.profile.documents.map(item => (
-                  <img key={item.id} src={item.img} alt="" />
+                  <img key={item.id} style={{height: '10px'}} className="" src={item.img} alt="" />
                 ))}
               </Carousel>
             )}
@@ -209,7 +238,7 @@ const Teacher1 = ({ getProfile, profile, history }) => {
           {materials.length > 0 && (
             <Carousel settings={settings} className="docs-browser-carousel">
               {materials.map(item => (
-                <img key={`${item}material`} src={item} alt="Материал" />
+                <img key={`${item}material`} src={item} alt="Галерея товаров" />
               ))}
             </Carousel>
           )}

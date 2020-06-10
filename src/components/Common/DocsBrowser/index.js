@@ -29,7 +29,7 @@ export default function DocsBrowser({ title, files, value, index, programm, setP
   const materialsArr = programm ? programm[index].materials : [];
 
   const setFieldDocuments = (f) => {
-    if (title === 'Мои документы') {
+    if (title === 'Документы') {
       setFieldValue('documents', f)
     }
   };

@@ -1,3 +1,5 @@
+@import '../../../theme/styles/settings';
+
 .teacherc{
   &-item {
     margin-bottom: 16px;
@@ -5,12 +7,7 @@
     padding-bottom: 10px;
   }
 }
-.teacherc-button {
-  margin-top: 20px;
-}
-.teacherc-button button.button {
-  padding: 9px 28px;
-}
+
 .teacherc-h3 {
   font-size: 18px;
   font-weight: 600;
@@ -54,8 +51,3 @@
   padding-bottom:0;
 }
 
-.expansion-panel-title a, .expansion-panel-title a:link, .expansion-panel-title a:hover, .expansion-panel-title a:active  {
-  color: #000000;
-  font-size: 18px;
-  font-weight: 600;
-}

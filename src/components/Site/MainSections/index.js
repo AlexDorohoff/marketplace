@@ -23,10 +23,13 @@ const MainSectionsCourseItem = ({ id, big }) => {
             src={`${config.baseUrl}/courses/${course.image}`}
             alt={course.title}
           />
-          <p className="main-sections-lesson">Предмет</p>
-          <p className="main-sections-heading">{!big && course.title.length > 10 ? `${course.title.slice(0, 10)}...` : course.title}</p>
-          <p className="main-sections-description">{!big && course.annotation.length > 25 ? `${course.annotation.slice(0, 25)}...` : course.annotation}</p>
+          <div className="slider_text">
+            {/* <p className="main-sections-lesson">Предмет</p> */}
+            <p className="main-sections-heading101">{!big && course.title.length > 10 ? `${course.title.slice(0, 10)}...` : course.title}</p>
+            <p className="main-sections-description101">{!big && course.annotation.length > 25 ? `${course.annotation.slice(0, 25)}...` : course.annotation}</p>
+          </div>
         </div>
+
       )}
     </NavLink>
   );
@@ -42,7 +45,7 @@ const MainSections = () => {
   const getRandomIds = (startIds = []) => {
     const ids = [];
     let newIds = startIds;
-    const length = startIds.length;
+    const {length} = startIds;
     for (let i = 0; i < length; i++) {
       const index = Math.floor( Math.random() * ( length - i) );
       ids[i] = newIds[index];
@@ -100,7 +103,7 @@ const MainSections = () => {
               {
                 rowIds.map((id, index) => {
                   const width = index === bigIndexes[indx] ? 6 : 3;
-                  const big = width === 6 ? true : false;
+                  const big = width === 6;
 
                   return (
                     <GridCol

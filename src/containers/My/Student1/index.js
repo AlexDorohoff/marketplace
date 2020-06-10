@@ -188,23 +188,23 @@ const Student1 = ({ profile, getProfile, history }) => {
         <DocsBrowser title="Интересные товары" files={files} />
       </section>
 
-      <section className="section section_profile">
-        <h2 className="settings-h2">
-          Корзина
+      {/* <section className="section section_profile"> */}
+        {/* <h2 className="settings-h2"> */}
+          {/* Корзина */}
           {/* <div className="course-create-title-controls">
             <Link pseudo>
               <FaPencilAlt size="30px" />
             </Link>
             <Link pseudo><img src={Eye} alt="" /></Link>
           </div> */}
-        </h2>
-        {profileData && (
+        {/* </h2> */}
+        {/* {profileData && (
           <StudentCourse
             name={profileData.user.name}
             items={profileData.courses}
           />
         )}
-      </section>
+      </section> */}
       {/* <Dialog
         isOpen={idOpenModal === 'studentHistory'}
         onClose={() => setIdOpenModal('')}

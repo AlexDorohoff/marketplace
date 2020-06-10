@@ -150,7 +150,7 @@ const TeacherCourses = ({ items = [], teacherId }) => {
                   >
                     <h3 className="teacherc-h3">Стоимость</h3>
                     <div className="price-course">{`${item.price}₽`}</div>
-                    <div className="teacherc-button">
+                    <div className="teacher-button">
                       <Button
                         variant="contained"
                         className="button button_default"

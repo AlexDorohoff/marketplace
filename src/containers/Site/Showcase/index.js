@@ -63,7 +63,7 @@ const Showcase = ({ getCoursesByTitle, match }) => {
   return (
     <>
       <Helmet>
-        <title>Море-Товары</title>
+        <title>Море-Товары магазина</title>
         <meta name="description" content="Море" />
         <meta name="keywords" content="Море" />
       </Helmet>

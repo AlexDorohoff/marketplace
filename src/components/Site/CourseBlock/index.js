@@ -40,14 +40,14 @@ export default function CourseBlock({ course }) {
       </Link>
       <div className="course_skills-wrap">
         <h3 className="course_skills-name toplink">{course.title}</h3>
-        <p className="course_skills-subject">Наименование</p>
-        <div className="range1">
-          <p>{getSubject()}</p>
-        </div>
         <p className="course_skills-subject">Цена, ₽</p>
         <p className="course_skills-price">
           {+course.price === 0 ? 'Бесплатно' : course.price}
         </p>
+        <p className="course_skills-subject">Раздел</p>
+        <div className="range1">
+          <p>{getSubject()}</p>
+        </div>
       </div>
       <div className="course_skills">
         <Link className="link link_third" to={`/good/${course.id}`}>

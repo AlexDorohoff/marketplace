@@ -41,11 +41,12 @@ export default function RequestForm({
               className="form-field"
             >
               <Textarea
-              minRows={3}
-              label='Сообщение'
+                minRows={3}
+                label='Сообщение'
+                className="form-textarea"
               />
-              <br/>
-              <br/>
+              <br />
+              <br />
 
               <Input
                 id="name"

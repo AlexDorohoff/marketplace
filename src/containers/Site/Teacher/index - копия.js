@@ -16,14 +16,53 @@ import connectorTeachers from '../../../core/connectors/teachers';
 import config from '../../../config';
 import { yearsPlural } from '../../../core/utils/common';
 import Loader from '../../../components/Common/Loader';
+import Carousel from '../../../components/Site/Carousel/CarouselBase';
+
 
 /**
  * Teacher
  */
-const Teacher = ({ navigationTo, getTeacher, teachers, match }) => {
+const Teacher = ({ navigationTo, getTeacher, teachers, match, getProfile, profile, }) => {
   const [isOpenPopup, setIsOpenPopup] = useState(false);
 
   const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant',
+    });
+  }, [location]);
+  
+  const profileData = profile.profile;
+
+  useEffect(() => {
+    getProfile();
+  }, []);
+
+  useEffect(() => {
+    if (profileData && profileData.user.type === 'student') history.push('/my/student1');
+  }, [profileData]);
+
+
+
+  const courses = profileData
+  ? profileData.courses.map(course => {
+      let description;
+      let contents;
+      try {
+        description = JSON.parse(course.description);
+      } catch (e) {
+        description = course.description;
+      }
+      try {
+        contents = JSON.parse(course.contents);
+      } catch (e) {
+        contents = course.contents;
+      }
+      return { ...course, description, contents };
+    })
+   : [];
 
   const navTo = to => () => {
     navigationTo(to);
@@ -178,6 +217,26 @@ const Teacher = ({ navigationTo, getTeacher, teachers, match }) => {
       <section className="section">
         <HowWork />
       </section> */}
+
+
+      <section className="section section_profile">
+        <h2 className="settings-h2">Документы</h2>
+        <div className="docs-browser-carousel-wrapper">
+          {profileData && profileData.user.type === 'teacher' && 
+            profileData.user.profile &&
+            profileData.user.profile.documents &&
+            profileData.user.profile.documents.length > 0 && (
+              <Carousel settings={settings} className="docs-browser-carousel">
+                {profileData.user.profile.documents.map(item => (
+                  <img key={item.id} src={item.img} alt="" />
+                ))}
+              </Carousel>
+            )}
+        </div>
+        {/* <DocsBrowser title="Мои документы" files={files} /> */}
+      </section>
+
+
       <section className="section">
         <RequestForm01 formType="teacher" />
       </section>

@@ -13,7 +13,7 @@ import Photo12 from '../../theme/images/course6.jpg';
 import Banner1 from '../../theme/images/home-banner.jpg';
 import Banner2 from '../../theme/images/home-banner2.jpg';
 import Banner3 from '../../theme/images/home-banner3.jpg';
-import Bannersuccess2 from '../../theme/images/account/bannersuccess2.svg';
+// import Bannersuccess2 from '../../theme/images/account/bannersuccess2.svg';
 
 export const teachers = [
   // {
@@ -269,19 +269,19 @@ export const carousel = [
 export const carouselstudent = [
   {
     id: 1,
-    img: Bannersuccess2,
+    // img: Bannersuccess2,
   },
   {
     id: 2,
-    img: Bannersuccess2,
+    // img: Bannersuccess2,
   },
   {
     id: 3,
-    img: Bannersuccess2,
+    // img: Bannersuccess2,
   },
   {
     id: 4,
-    img: Bannersuccess2,
+    // img: Bannersuccess2,
   },
 ];
 
@@ -303,28 +303,28 @@ export const mycourseBreadcrumbs = [
 export const files = [
   {
     id: 1,
-    img: Bannersuccess2,
+    // img: Bannersuccess2,
   },
   {
     id: 2,
-    img: Bannersuccess2,
+    // img: Bannersuccess2,
   },
   {
     id: 3,
-    img: Bannersuccess2,
+    // img: Bannersuccess2,
   },
   {
     id: 4,
-    img: Bannersuccess2,
+    // img: Bannersuccess2,
   },
-  {
-    id: 5,
-    img: Bannersuccess2,
-  },
-  {
-    id: 6,
-    img: Bannersuccess2,
-  },
+  // {
+  //   id: 5,
+    // img: Bannersuccess2,
+  // },
+  // {
+  //   id: 6,
+    // img: Bannersuccess2,
+  // },
 ];
 export const myteacher1Breadcrumbs = [
   {

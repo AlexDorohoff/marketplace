@@ -40,7 +40,7 @@ export default withRouter(
       values.phone = values.phone.replace(/[-+]/g, '');
       if (!values.phone || values.phone.length !== 11)
         errors.phone = 'Введите номер телефона';
-      if (!values.edo) errors.edo = 'Укажите ваше образование';
+      if (!values.edo) errors.edo = 'Укажите ваше специализацию';
 
       if (values.pwd && values.pwd.length < 6)
         errors.pwd = 'Пароль не менее 6 символов';

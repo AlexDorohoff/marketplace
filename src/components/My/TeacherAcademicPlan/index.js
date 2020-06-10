@@ -76,7 +76,7 @@ const TeacherAcademicPlan = ({ profile }) => {
                   <img src={ImgChat1} alt="" />
                 </GridCol>
                 <GridCol width={{ mobile: 10, tablet: 2, desktop: 3 }}>
-                  rain Man
+                  321rain Man
                 </GridCol>
                 <GridCol width={{ mobile: 12, tablet: 2, desktop: 3 }}>
                   2020-05-25 11:30

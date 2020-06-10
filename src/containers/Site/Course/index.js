@@ -12,7 +12,9 @@ import UseCourses from '../../../core/connectors/courses';
 import RequestForm01 from '../../../components/Site/Forms/RequestForm01';
 import Footer from '../../../components/Common/Footer';
 import Modal from '../../../components/Common/Modal';
+// import Modal1 from '../../../components/Common/Modal1';
 import ModalStudentCourseRequest from '../../../components/My/Forms/ModalStudentCourseRequest';
+// import ModalCartRequest from '../../../components/My/Forms/ModalCartRequest';
 import './styles.scss';
 import { hoursPlural } from '../../../core/utils/common';
 import Loader from '../../../components/Common/Loader';
@@ -34,6 +36,7 @@ const Course = ({ courses, getCourse, match }) => {
 
   const [signModalOpen, setSignModalOpen] = useState(false);
 
+  // const { setSignModalOpen1 } = setSignModalOpen;
   const { course } = courses;
   let description;
   let contents;
@@ -62,44 +65,43 @@ const Course = ({ courses, getCourse, match }) => {
     }
   };
 
+  // const doSignCourse1 = () => {
+  //   if (!session.authenticated) {
+  //     dispatch({
+  //       type: 'AUTH_SHOW_DIALOG',
+  //       payload: true,
+  //     });
+  //   } else if (session.user.type === 'student') {
+  //     setSignModalOpen1(true);
+  //   }
+  // };
+
   if (courses.courseFetching) {
     return <Loader />;
   }
-  // корзина
-  // constructor(props) {
-  //   super(props);
-  //   this.addToCart = this.addToCart.bind(this);
-  // }
-
-  // addToCart() {
-  //   const id = 'Photo2';
-
-  // const addedItem = STATE.cart.find(item => item._id === id);
-  //   const addedItem = {course};
-
-  //   if (addedItem) {
-  //     addedItem.quantity = addedItem.quantity + 1;
-  //   } else {
-  //     STATE.cart.push({
-  //       _id: id,
-  //       quantity: 1
-  //     });
-  //   }
-  // };
-  // конец корзина
 
   return (
     <>
       <Modal
         open={signModalOpen}
         onClose={() => setSignModalOpen(false)}
-        title="Купить курс?"
+        title="Купить товар?"
       >
         <ModalStudentCourseRequest
           course={course}
           onClose={() => setSignModalOpen(false)}
         />
       </Modal>
+      {/* <Modal1
+        open={signModalOpen}
+        onClose={() => setSignModalOpen1(false)}
+        title="Купить товар?"
+      >
+        <ModalCartRequest
+          course={course}
+          onClose={() => setSignModalOpen1(false)}
+        />
+      </Modal1> */}
       <Helmet>
         <title>Море-товары</title>
         <meta name="description" content="Море" />
@@ -139,7 +141,9 @@ const Course = ({ courses, getCourse, match }) => {
                 {course && (
                   <p className="course-h1">
                     <strong>Стоимость:&nbsp;</strong>
-                    {course.price} ₽
+                    {course.price}
+                    {' '}
+                    ₽
                   </p>
                 )}
 
@@ -156,19 +160,37 @@ const Course = ({ courses, getCourse, match }) => {
                   {description && description.placemap}
                 </p>
               </div>
-              <div className="course-btn">
-                <Button
-                  className="button button_default"
-                  onClick={() => {
+              <GridRow>
+                <GridCol>
+                  <div className="course-btn">
+                    <Button
+                      className="button button_default"
+                      onClick={() => {
                     doSignCourse();
                   }}
-                >
-                  Купить
-                </Button>
-              </div>
+                    >
+                      Купить
+                    </Button>
+                  </div>
+                </GridCol>
+                <GridCol>
+                  <div className="course-btn">
+                    <Button
+                      className="button button_default"
+                      onClick={() => {
+                    doSignCourse1();
+                  }}
+                    >
+                      в Корзину
+                    </Button>
+                  </div>
+                </GridCol>
+              </GridRow>
             </div>
           </GridCol>
         </GridRow>
+        <br />
+        <div className="hr2" />
       </section>
       <section className="section">
         <h2>Описание изделия</h2>
@@ -216,15 +238,16 @@ const Course = ({ courses, getCourse, match }) => {
         </ul>
         <br />
         <GridRow>
-          <GridCol width={{ mobile: 12, tablet: 9 }}>
-            <NavLink className="link link_third" to="/salebasket">
+          {/* <GridCol width={{ mobile: 12, tablet: 9 }}> */}
+          {/* <NavLink className="link link_third" to="/salebasket">
               <div className="course-btn">
                 <Button className="button button_default" onClick={course}>
                   Добавить в корзину
                 </Button>
-              </div>
-            </NavLink>
-          </GridCol>
+              </div> */}
+
+          {/* </NavLink> */}
+          {/* </GridCol> */}
           <GridCol width={{ mobile: 12, tablet: 9 }}>
             <NavLink className="link link_third" to="/TeacherReviewAll03">
               <div className="course-btn">
@@ -236,6 +259,9 @@ const Course = ({ courses, getCourse, match }) => {
           </GridCol>
         </GridRow>
       </section>
+      <section className="section section_fullwidth">
+        <div className="hr2" /> 
+      </section>     
       <section className="section">
         <h2>Владелец</h2>
         <GridRow>
@@ -270,7 +296,9 @@ const Course = ({ courses, getCourse, match }) => {
               <h3 className="course-teacher-h3">
                 {course && course.user.name}
                 +ID=
-                {course && course.user.id}+{course && course.id}
+                {course && course.user.id}
+                +
+                {course && course.id}
               </h3>
               <p className="course-about">
                 {course && course.user.profile && course.user.profile.yourself}
