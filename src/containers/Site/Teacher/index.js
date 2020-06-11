@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Helmet from 'react-helmet';
+import ScrollTop from "react-scrolltop-button";
 import Type from 'prop-types';
 import GridCol from 'arui-feather/grid-col';
 import GridRow from 'arui-feather/grid-row';
@@ -57,6 +58,15 @@ const Teacher = ({ navigationTo, getTeacher, teachers, match }) => {
         <meta name="description" content="Море" />
         <meta name="keywords" content="Море" />
       </Helmet>
+      <ScrollTop
+        text="Наверх"
+        distance={50}
+        breakpoint={900}
+        style={{ backgroundColor: "#ffffff", color: '#272727' }}
+        // className="scroll-your-role"
+        speed={250}
+        target={0}
+      />
       <section className="section section_fullwidth">
         <GridRow>
           <GridCol width={{ mobile: 0, tablet: 6 }}>

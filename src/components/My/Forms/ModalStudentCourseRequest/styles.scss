@@ -5,9 +5,9 @@
   min-width: 766px;
   min-height: 170px;
 
-  &-pickers {
-    display: flex;
-  }
+  // &-pickers {
+  //   display: flex;
+  // }
   .divDateTime {
     margin-right: 10px;
     .input__control,
@@ -38,4 +38,22 @@
   .StudentCourseRequest-modal {
     min-width: 100%;
   }
+}
+
+// ----------- Ордер заказа
+.tel-number {
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  border: 1px solid #979797;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 2px 5px 2px 1px;
+  margin: 10px 0px;
+  justify-content: center;
+  align-items: 10;
+  vertical-align: middle;
 }

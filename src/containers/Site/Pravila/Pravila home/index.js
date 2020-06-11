@@ -1,6 +1,7 @@
 ﻿/* eslint-disable react/no-access-state-in-setstate */
 import React from 'react';
 import Helmet from 'react-helmet';
+import ScrollTop from "react-scrolltop-button";
 import GridCol from 'arui-feather/grid-col';
 import GridRow from 'arui-feather/grid-row';
 import Button from 'arui-feather/button';
@@ -37,6 +38,15 @@ class Teacher extends React.Component {
           <meta name="description" content="Море" />
           <meta name="keywords" content="Море" />
         </Helmet>
+        <ScrollTop
+          text="Наверх"
+          distance={50}
+          breakpoint={900}
+          style={{ backgroundColor: "#ffffff", color: '#272727' }}
+        // className="scroll-your-role"
+          speed={250}
+          target={0}
+        />
         <section className="section breadcrumbs">
           <Breadcrumbs items={pravBreadcrumbs} />             
           <Scroll />

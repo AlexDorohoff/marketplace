@@ -1,6 +1,7 @@
 ﻿/* eslint-disable import/no-unresolved */
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import ScrollTop from "react-scrolltop-button";
 import GridCol from 'arui-feather/grid-col';
 import GridRow from 'arui-feather/grid-row';
 import Breadcrumbs from '../../../../components/Pravila/BreadcrumbsPravila';
@@ -18,6 +19,15 @@ const Experts = () => (
       <meta name="description" content="Море" />
       <meta name="keywords" content="Море" />
     </Helmet>
+    <ScrollTop
+      text="Наверх"
+      distance={50}
+      breakpoint={900}
+      style={{ backgroundColor: "#ffffff", color: '#272727' }}
+        // className="scroll-your-role"
+      speed={250}
+      target={0}
+    />
     <section className="section breadcrumbs">
       <Breadcrumbs items={thirdBreadcrumbs} />             
       <Scroll />

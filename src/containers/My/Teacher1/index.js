@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import Helmet from 'react-helmet';
+import ScrollTop from "react-scrolltop-button";
 import GridRow from 'arui-feather/grid-row';
 import GridCol from 'arui-feather/grid-col';
 
@@ -126,6 +127,15 @@ const Teacher1 = ({ getProfile, profile, history }) => {
         <meta name="description" content="Море" />
         <meta name="keywords" content="Море" />
       </Helmet>
+      <ScrollTop
+        text="Наверх"
+        distance={50}
+        breakpoint={900}
+        style={{ backgroundColor: "#ffffff", color: '#272727' }}
+        // className="scroll-your-role"
+        speed={250}
+        target={0}
+      />
       {profileData ? <TeacherHeader profile={profileData} /> : <TeacherHeader profile={{fetching: profile.fetching}} />}
 
       <section className="section section_profile">

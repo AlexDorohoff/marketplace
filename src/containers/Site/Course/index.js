@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Helmet from 'react-helmet';
+import ScrollTop from "react-scrolltop-button";
 import Button from 'arui-feather/button';
 import GridCol from 'arui-feather/grid-col';
 import GridRow from 'arui-feather/grid-row';
@@ -18,6 +19,7 @@ import ModalStudentCourseRequest from '../../../components/My/Forms/ModalStudent
 import './styles.scss';
 import { hoursPlural } from '../../../core/utils/common';
 import Loader from '../../../components/Common/Loader';
+
 
 /**
  *  Course
@@ -85,7 +87,7 @@ const Course = ({ courses, getCourse, match }) => {
       <Modal
         open={signModalOpen}
         onClose={() => setSignModalOpen(false)}
-        title="Купить товар?"
+        // title="Купить 147товар?"
       >
         <ModalStudentCourseRequest
           course={course}
@@ -107,6 +109,17 @@ const Course = ({ courses, getCourse, match }) => {
         <meta name="description" content="Море" />
         <meta name="keywords" content="Море" />
       </Helmet>
+
+      <ScrollTop
+        text="Наверх"
+        distance={50}
+        breakpoint={900}
+        style={{ backgroundColor: "#ffffff", color: '#272727' }}
+        // className="scroll-your-role"
+        speed={250}
+        target={0}
+      />
+
       <section className="section section_fullwidth">
         <GridRow>
           <GridCol
