@@ -1,5 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
+import ScrollTop from "react-scrolltop-button";
 import Link from 'arui-feather/link';
 import GridRow from 'arui-feather/grid-row';
 import GridCol from 'arui-feather/grid-col';
@@ -23,6 +24,15 @@ export default () => {
         <meta name="description" content="Море" />
         <meta name="keywords" content="Море" />
       </Helmet>
+      <ScrollTop
+        text="Наверх"
+        distance={50}
+        breakpoint={900}
+        style={{ backgroundColor: "#ffffff", color: '#1B60FF', border: '1px solid #1B60FF' }}
+        className="scroll-your-role"
+        speed={250}
+        target={0}
+      />
       <section className="section breadcrumbs">
         <Breadcrumbs items={myteacherBreadcrumbs} />
       </section>

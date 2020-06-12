@@ -19,14 +19,14 @@ const Experts = () => (
       <meta name="keywords" content="Море" />
     </Helmet>
     <ScrollTop
-        text="Наверх"
-        distance={50}
-        breakpoint={900}
-        style={{ backgroundColor: "#ffffff", color: '#272727' }}
-        // className="scroll-your-role"
-        speed={250}
-        target={0}
-      />
+      text="Наверх"
+      distance={50}
+      breakpoint={900}
+      style={{ backgroundColor: "#ffffff", color: '#1B60FF', border: '1px solid #1B60FF' }}
+      className="scroll-your-role"
+      speed={250}
+      target={0}
+    />
     <section className="section breadcrumbs">
       <Breadcrumbs items={sog152fzBreadcrumbs} />             
       <Scroll />

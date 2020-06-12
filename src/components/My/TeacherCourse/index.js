@@ -45,7 +45,7 @@ const TeacherCourse = ({ name = '', items = [] }) => {
                   width={{ mobile: 12, tablet: 9, desktop: 3 }}
                   className="form-field right-poz"
                 >
-                  <NavLink className="" to="/my/create-course">
+                  <NavLink className="" to="/my/create-good1">
                     <div className="teachercourse-create-btn">
                       <Button
                         type="submit"

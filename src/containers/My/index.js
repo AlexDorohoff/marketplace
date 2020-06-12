@@ -49,7 +49,7 @@ export default function My() {
           <Route path="/my/update-shop" component={UpdateTeacher} />
           <Route path="/my/update-good/:id" component={UpdateCourse} />
           <Route path="/my/headteacher" component={Headteacher} />
-          <Route path="/my/create-good" component={Course} />
+          <Route path="/my/create-good1" component={Course} />
           <Route path="/my/modals" component={Modals} />
           <Route exact path="/my/lk" component={Teacher1} />
           <Route exact path="/my/lk/history" component={Teacher1History} />
