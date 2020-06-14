@@ -1,4 +1,3 @@
-// import React from 'react';
 import React, { useState } from 'react';
 import GridRow from 'arui-feather/grid-row';
 import GridCol from 'arui-feather/grid-col';
@@ -60,6 +59,13 @@ function HeaderMenu({ isOpen, navTo, onClose }) {
       const list = [];
       courses.map((course, index) => {
         if (index < 5) {
+          let description;
+          try {
+            description = JSON.parse(course.description);
+          } catch (e) {
+            console.log(e);
+          }
+
           list.push(
             <li key={index + Math.random()}>
               <Link
@@ -68,7 +74,7 @@ function HeaderMenu({ isOpen, navTo, onClose }) {
                 key={course.id}
                 onClick={navTo(`/good/${course.id}`)}
               >
-                {course.subject}
+                {description && description.subject}
               </Link>
             </li>
           );
