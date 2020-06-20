@@ -91,11 +91,7 @@ const TeacherRequests = ({ getRequests, profile }) => {
                 {r.course.price}
               </GridCol>    
               <GridCol width={{ mobile: 12, tablet: 1, desktop: 1 }}>
-                <SelectPopup
-                  onChange={value => {}}
-                  value="request"
-                  options={statusTypes}
-                />
+                {r.purchase.label}
                 {r.course.description.subject}
               </GridCol>             
             </GridRow>
