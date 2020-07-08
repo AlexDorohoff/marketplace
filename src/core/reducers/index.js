@@ -5,6 +5,7 @@ import locale from './locale';
 import notification from './notification';
 import teachers from './teachers';
 import courses from './courses';
+import categories from './categories';
 import profile from './profile';
 import search from './search';
 
@@ -15,6 +16,7 @@ const reducers = {
   notification,
   teachers,
   courses,
+  categories,
   profile,
   search
 };

@@ -19,6 +19,7 @@ import ProCreation from './ProCreation';
 import Student1 from './Student1';
 import { getCourses } from '../../core/actions/courses';
 import { getTeachers } from '../../core/actions/teachers';
+import {getCategories} from "../../core/actions/categories";
 
 /**
  * My
@@ -29,6 +30,9 @@ export default function My() {
   const { courses } = coursesState;
   const teachersState = useSelector(state => state.teachers);
   const teachers = teachersState.data;
+  const categoriesState = useSelector(state => state.categories);
+  const { categories } = categoriesState;
+
 
   useEffect(() => {
     if (courses.length < 1 && !courses.fetching) {
@@ -36,6 +40,9 @@ export default function My() {
     }
     if (teachers.length < 1 && !teachers.fetching) {
       dispatch(getTeachers());
+    }
+    if (categories.length < 1 && !categories.fetching) {
+      dispatch(getCategories());
     }
   }, []);
 

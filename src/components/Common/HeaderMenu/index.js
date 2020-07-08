@@ -4,10 +4,35 @@ import GridCol from 'arui-feather/grid-col';
 import Link from 'arui-feather/link';
 import { useSelector } from 'react-redux';
 import './styles.scss';
+import CategoriesServices from '../../../core/services/categories';
 
 function HeaderMenu({ isOpen, navTo, onClose }) {
   const courses = useSelector(state => state.courses.inputCourses);
   const teachers = useSelector(state => state.teachers.inputData);
+  const categories = useSelector(state => state.categories.inputCategories);
+
+  const renderCategory = () => {
+    if (categories.length > 0) {
+      const list = [];
+      categories.map((category, index) => {
+        if (index < 5) {
+          list.push(
+              <li key={index + Math.random()}>
+                <Link
+                    pseudo
+                    className="link6 link6_third"
+                    key={category.id}
+                    onClick={navTo(`/shop/${category.id}`)}
+                >
+                  {category.name}
+                </Link>
+              </li>
+          );
+        }
+      });
+      return list;
+    }
+  };
 
   const renderTeachers = () => {
     if (teachers.length > 0) {
@@ -60,8 +85,10 @@ function HeaderMenu({ isOpen, navTo, onClose }) {
       courses.map((course, index) => {
         if (index < 5) {
           let description;
+          let courseName;
           try {
             description = JSON.parse(course.description);
+            courseName = course.category[0].name;
           } catch (e) {
             console.log(e);
           }
@@ -76,6 +103,7 @@ function HeaderMenu({ isOpen, navTo, onClose }) {
               >
                 {description && description.subject}
               </Link>
+              <p>{course.name}</p>
             </li>
           );
         }
@@ -133,6 +161,7 @@ function HeaderMenu({ isOpen, navTo, onClose }) {
                     <ul>
                       <li className="bold14">Популярные разделы</li>
                       {renderSection()}
+                      {renderCategory()}
                     </ul>
                   </li>
                   {/* <li>
