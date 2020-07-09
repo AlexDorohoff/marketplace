@@ -13,11 +13,15 @@ export default {
   /**
    * Back-end server base url
    */
-  apiBaseUrl: 'http://edu.local/api',
+  //apiBaseUrl: 'http://edu.local/api',
+
+  apiBaseUrl: 'http://localhost:8000/api',
   /**
    * Back-end server base url for images
-   */
-  baseUrl: 'http://edu.local',
+   *    */
+  //baseUrl: 'http://edu.local',
+
+  baseUrl: 'http://localhost:8000',
 
   /**
    * Site base url
