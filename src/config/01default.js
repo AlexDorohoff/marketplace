@@ -8,12 +8,12 @@
   /**
    * Node server port
    */
-  port: process.env.PORT || '3000',
+  port: process.env.PORT || '5000',
 
   /**
    * Back-end server base url
    */
-  apiBaseUrl: 'http://localhost:8000/api',
+  apiBaseUrl: 'https://localhost:8000',
 
   /**
    * Site base url

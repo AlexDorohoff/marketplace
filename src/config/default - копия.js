@@ -1,9 +1,9 @@
-﻿export default {
+export default {
 
   /**
    * Node server host
    */
-  host: process.env.NODE_HOST || 'localhost',
+  host: process.env.NODE_HOST || '0.0.0.0',
 
   /**
    * Node server port
@@ -13,12 +13,16 @@
   /**
    * Back-end server base url
    */
-  apiBaseUrl: 'http://localhost:8000/api',
+  apiBaseUrl: 'http://edu.local/api',
+  /**
+   * Back-end server base url for images
+   */
+  baseUrl: 'http://edu.local',
 
   /**
    * Site base url
    */
-  siteBaseUrl: 'http://localhost:8000',
+  siteBaseUrl: 'https://edu.stplab.ru',
 
   /**
    * Default connect timeout, ms
