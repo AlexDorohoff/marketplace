@@ -1,426 +1,425 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import GridRow from 'arui-feather/grid-row';
 import GridCol from 'arui-feather/grid-col';
 import Link from 'arui-feather/link';
-import { useSelector } from 'react-redux';
+import {useSelector} from 'react-redux';
 import './styles.scss';
+
 // import CategoriesServices from '../../../core/services/categories';
 
-function HeaderMenu({ isOpen, navTo, onClose }) {
-  const courses = useSelector(state => state.courses.inputCourses);
-  const teachers = useSelector(state => state.teachers.inputData);
-  const categories = useSelector(state => state.categories.inputCategories);
-  const list1 = [];
-  const list2 = [];
-  const list3 = [];
-  
-  // --------первая колонка меню
-  const firstCol = () => {
-    if (categories.length > 0) {
-      const list = [];
-       categories.map((category, index) => {
-        if (index < 5 && category.id <= 2) {
-          if (category.children.length !== 0) {
+function HeaderMenu({isOpen, navTo, onClose}) {
+    const courses = useSelector(state => state.courses.inputCourses);
+    const teachers = useSelector(state => state.teachers.inputData);
+    const categories = useSelector(state => state.categories.inputCategories);
+    const list1 = [];
+    const list2 = [];
+    const list3 = [];
+
+    // --------первая колонка меню
+    const firstCol = () => {
+        if (categories.length > 0) {
+            const list = [];
+            categories.map((category, index) => {
+                if (index < 5 && category.id <= 2) {
+                    if (category.children.length !== 0) {
 // --- Children вывод начало
-            let child;
-            child = category.id;
-            // alert((child))
-            // alert('GHBDTN')
-            // alert((category.id))
-            const renderCategoryChild = () => {
-              if (categories.length > 0) {
-                // const list1 = [];
-                categories.map((category, index) => {
-                  // if (index < 5 && category.parent_id >= 2) {
-                  // if (category.parent_id >= 2) {
-                  if (category.parent_id == child) {
-                    list1.push(
-                      <li key={index + Math.random()}>
-                        <Link
-                          pseudo
-                          className="link6 link6_third"
-                          key={category.id}
-                          onClick={navTo(`/showcase/${category.id}`)}
-                        >
-                          {category.name}
-                        </Link>
-                      </li>
-                    );
-                  }
-                });
-                return list1;
-              }
-            };
+                        let parent;
+                        parent = category.id;
+                        //alert((child));
+                        // alert('GHBDTN')
+                        // alert((category.id));
+                        let childs = category.children;
+                        const renderCategoryChild = () => {
+                            if (childs.length > 0) {
+                                const list1 = [];
+                                childs.map((child, index) => {
+                                    // if (index < 5 && category.parent_id >= 2) {
+                                    // if (category.parent_id >= 2) {
+                                    if (child.parent_id == parent ) {
+                                        list1.push(
+                                            <li key={index + Math.random()}>
+                                                <Link
+                                                    pseudo
+                                                    className="link6 link6_third"
+                                                    key={child.id}
+                                                    onClick={navTo(`/showcase/${child.id}`)}
+                                                >
+                                                    {child.name}
+                                                </Link>
+                                            </li>
+                                        );
+                                    }
+                                });
+                                return list1;
+                            }
+                        };
 // --- Children вывод ОКОНЧАНИЕ
 
-            list.push(
-              <li key={index + Math.random()}>
-                <Link
-                  pseudo
-                  className="link5"
-                  key={category.id}
-                  // onClick={navTo(`/shop/${category.id}`)}
-                  onClick={handleClickMenuItem('subjects1')}
-                >
-                  <b>{category.name}</b>
-                </Link>
-                <ul
-                  className={`header-menu-mobiles-sub-menu ${
-                  idSubMenu === 'subjects1'
-                  ? 'header-menu-mobiles-sub-menu-open'
-                  : ''
-                }`}
-                >
-                  <li>
-                    <ul>
-                      {renderCategoryChild()} 
-                    </ul>
-                  </li>
-                </ul>
+                        list.push(
+                            <li key={index + Math.random()}>
+                                <Link
+                                    pseudo
+                                    className="link5"
+                                    key={category.id}
+                                    // onClick={navTo(`/shop/${category.id}`)}
+                                    onClick={handleClickMenuItem('subjects1')}
+                                >
+                                    <b>{category.name}</b>
+                                </Link>
+                                <ul
+                                    className={`header-menu-mobiles-sub-menu ${
+                                        idSubMenu === 'subjects1'
+                                            ? 'header-menu-mobiles-sub-menu-open'
+                                            : ''
+                                    }`}
+                                >
+                                    <li>
+                                        <ul>
+                                            {renderCategoryChild()}
+                                        </ul>
+                                    </li>
+                                </ul>
 
-              </li>
-            );
-          }
-          else {
-            list.push(
-              <li key={index + Math.random()}>
-                <Link
-                  pseudo
-                  className="link5"
-                  key={category.id}
-                  onClick={navTo(`/shop/${category.id}`)}
-                >
-                  {category.name}
-                </Link>
-              </li>
-            );
-          }
+                            </li>
+                        );
+                    } else {
+                        list.push(
+                            <li key={index + Math.random()}>
+                                <Link
+                                    pseudo
+                                    className="link5"
+                                    key={category.id}
+                                    onClick={navTo(`/shop/${category.id}`)}
+                                >
+                                    {category.name}
+                                </Link>
+                            </li>
+                        );
+                    }
+                }
+            });
+            return list;
         }
-      });
-      return list;
-    }
-  };
+    };
 
 // ---- вторая колонка меню
-const secondCol = () => {
-  if (categories.length > 0) {
-    const list = [];
-     categories.map((category, index) => {
-      if (index < 5 && category.id <= 2) {
-        if (category.children.length !== 0) {
+    const secondCol = () => {
+        if (categories.length > 0) {
+            const list = [];
+            categories.map((category, index) => {
+                if (index < 5 && category.id <= 2) {
+                    if (category.children.length !== 0) {
 // --- Children вывод начало
-          let child1;
-          child1 = category.id;
-          // alert((child))
-          const renderCategoryChild = () => {
-            if (categories.length > 0) {
-              categories.map((category, index) => {
-                if (category.parent_id == child1) {
-                  list2.push(
-                    <li key={index + Math.random()}>
-                      <Link
-                        pseudo
-                        className="link6 link6_third"
-                        key={category.id}
-                        onClick={navTo(`/shop/${category.id}`)}
-                      >
-                        {category.name}
-                      </Link>
-                    </li>
-                  );
-                }
-              });
-              return list2;
-            }
-          };
+                        let child1;
+                        child1 = category.id;
+                        // alert((child))
+                        const renderCategoryChild = () => {
+                            if (categories.length > 0) {
+                                categories.map((category, index) => {
+                                    if (category.parent_id == child1) {
+                                        list2.push(
+                                            <li key={index + Math.random()}>
+                                                <Link
+                                                    pseudo
+                                                    className="link6 link6_third"
+                                                    key={category.id}
+                                                    onClick={navTo(`/shop/${category.id}`)}
+                                                >
+                                                    {category.name}
+                                                </Link>
+                                            </li>
+                                        );
+                                    }
+                                });
+                                return list2;
+                            }
+                        };
 // --- Children вывод ОКОНЧАНИЕ
 
-          list.push(
-            <li key={index + Math.random()}>
-              <Link
-                pseudo
-                className="link5"
-                key={category.id}
-                // onClick={navTo(`/shop/${category.id}`)}
-                onClick={handleClickMenuItem('subjects4')}
-              >
-                <b>{category.name}</b>
-              </Link>
-              <ul
-                className={`header-menu-mobiles-sub-menu ${
-                idSubMenu === 'subjects4'
-                ? 'header-menu-mobiles-sub-menu-open'
-                : ''
-              }`}
-              >
-                <li>
-                  <ul>
-                    {renderCategoryChild()} 
-                  </ul>
-                </li>
-              </ul>
+                        list.push(
+                            <li key={index + Math.random()}>
+                                <Link
+                                    pseudo
+                                    className="link5"
+                                    key={category.id}
+                                    // onClick={navTo(`/shop/${category.id}`)}
+                                    onClick={handleClickMenuItem('subjects4')}
+                                >
+                                    <b>{category.name}</b>
+                                </Link>
+                                <ul
+                                    className={`header-menu-mobiles-sub-menu ${
+                                        idSubMenu === 'subjects4'
+                                            ? 'header-menu-mobiles-sub-menu-open'
+                                            : ''
+                                    }`}
+                                >
+                                    <li>
+                                        <ul>
+                                            {renderCategoryChild()}
+                                        </ul>
+                                    </li>
+                                </ul>
 
-            </li>
-          );
+                            </li>
+                        );
+                    } else {
+                        list.push(
+                            <li key={index + Math.random()}>
+                                <Link
+                                    pseudo
+                                    className="link5"
+                                    key={category.id}
+                                    onClick={navTo(`/shop/${category.id}`)}
+                                >
+                                    {category.name}
+                                </Link>
+                            </li>
+                        );
+                    }
+                }
+            });
+            return list;
         }
-        else {
-          list.push(
-            <li key={index + Math.random()}>
-              <Link
-                pseudo
-                className="link5"
-                key={category.id}
-                onClick={navTo(`/shop/${category.id}`)}
-              >
-                {category.name}
-              </Link>
-            </li>
-          );
-        }
-      }
-    });
-    return list;
-  }
-};
+    };
 // --------- третья колонка меню
-const thirdCol = () => {
-  if (categories.length > 0) {
-    const list = [];
-     categories.map((category, index) => {
-      if (index < 5 && category.id <= 2) {
-        if (category.children.length !== 0) {
+    const thirdCol = () => {
+        if (categories.length > 0) {
+            const list = [];
+            categories.map((category, index) => {
+                if (index < 5 && category.id <= 2) {
+                    if (category.children.length !== 0) {
 // --- Children вывод начало
-          let child2;
-          child2 = category.id;
-          // alert((child))
-          const renderCategoryChild = () => {
-            if (categories.length > 0) {
-              categories.map((category, index) => {
-                if (category.parent_id == child2) {
-                  list3.push(
-                    <li key={index + Math.random()}>
-                      <Link
-                        pseudo
-                        className="link6 link6_third"
-                        key={category.id}
-                        onClick={navTo(`/shop/${category.id}`)}
-                      >
-                        {category.name}
-                      </Link>
-                    </li>
-                  );
-                }
-              });
-              return list3;
-            }
-          };
+                        let child2;
+                        child2 = category.id;
+                        // alert((child))
+                        const renderCategoryChild = () => {
+                            if (categories.length > 0) {
+                                categories.map((category, index) => {
+                                    if (category.parent_id == child2) {
+                                        list3.push(
+                                            <li key={index + Math.random()}>
+                                                <Link
+                                                    pseudo
+                                                    className="link6 link6_third"
+                                                    key={category.id}
+                                                    onClick={navTo(`/shop/${category.id}`)}
+                                                >
+                                                    {category.name}
+                                                </Link>
+                                            </li>
+                                        );
+                                    }
+                                });
+                                return list3;
+                            }
+                        };
 // --- Children вывод ОКОНЧАНИЕ
 
-          list.push(
-            <li key={index + Math.random()}>
-              <Link
-                pseudo
-                className="link5"
-                key={category.id}
-                // onClick={navTo(`/shop/${category.id}`)}
-                onClick={handleClickMenuItem('subjects5')}
-              >
-                <b>{category.name}</b>
-              </Link>
-              <ul
-                className={`header-menu-mobiles-sub-menu ${
-                idSubMenu === 'subjects5'
-                ? 'header-menu-mobiles-sub-menu-open'
-                : ''
-              }`}
-              >
-                <li>
-                  <ul>
-                    {renderCategoryChild()} 
-                  </ul>
-                </li>
-              </ul>
+                        list.push(
+                            <li key={index + Math.random()}>
+                                <Link
+                                    pseudo
+                                    className="link5"
+                                    key={category.id}
+                                    // onClick={navTo(`/shop/${category.id}`)}
+                                    onClick={handleClickMenuItem('subjects5')}
+                                >
+                                    <b>{category.name}</b>
+                                </Link>
+                                <ul
+                                    className={`header-menu-mobiles-sub-menu ${
+                                        idSubMenu === 'subjects5'
+                                            ? 'header-menu-mobiles-sub-menu-open'
+                                            : ''
+                                    }`}
+                                >
+                                    <li>
+                                        <ul>
+                                            {renderCategoryChild()}
+                                        </ul>
+                                    </li>
+                                </ul>
 
-            </li>
-          );
+                            </li>
+                        );
+                    } else {
+                        list.push(
+                            <li key={index + Math.random()}>
+                                <Link
+                                    pseudo
+                                    className="link5"
+                                    key={category.id}
+                                    onClick={navTo(`/shop/${category.id}`)}
+                                >
+                                    {category.name}
+                                </Link>
+                            </li>
+                        );
+                    }
+                }
+            });
+            return list;
         }
-        else {
-          list.push(
-            <li key={index + Math.random()}>
-              <Link
-                pseudo
-                className="link5"
-                key={category.id}
-                onClick={navTo(`/shop/${category.id}`)}
-              >
-                {category.name}
-              </Link>
-            </li>
-          );
+    };
+
+    // *******************
+
+    const renderCategory = () => {
+        if (categories.length > 0) {
+            const list = [];
+
+            categories.map((category, index) => {
+                if (index < 5 && category.parent_id <= 0) {
+                    list.push(
+                        <li key={index + Math.random()}>
+                            <Link
+                                pseudo
+                                className="link6 link6_third"
+                                key={category.id}
+                                onClick={navTo(`/shop/${category.id}`)}
+                            >
+                                {category.name}
+                            </Link>
+                        </li>
+                    );
+                }
+            });
+            return list;
         }
-      }
-    });
-    return list;
-  }
-};
+    };
 
-  // *******************
-
-  const renderCategory = () => {
-    if (categories.length > 0) {
-      const list = [];
-      
-      categories.map((category, index) => {
-        if (index < 5 && category.parent_id <= 0) {
-          list.push(
-            <li key={index + Math.random()}>
-              <Link
-                pseudo
-                className="link6 link6_third"
-                key={category.id}
-                onClick={navTo(`/shop/${category.id}`)}
-              >
-                {category.name}
-              </Link>
-            </li>
-          );
+    const renderTeachers = () => {
+        if (teachers.length > 0) {
+            const list = [];
+            teachers.map((teacher, index) => {
+                if (index < 5) {
+                    list.push(
+                        <li key={index + Math.random()}>
+                            <Link
+                                pseudo
+                                className="link6 link6_third"
+                                key={teacher.id}
+                                onClick={navTo(`/shop/${teacher.id}`)}
+                            >
+                                {teacher.name}
+                            </Link>
+                        </li>
+                    );
+                }
+            });
+            return list;
         }
-      });
-      return list;
-    }
-  };
-
-  const renderTeachers = () => {
-    if (teachers.length > 0) {
-      const list = [];
-      teachers.map((teacher, index) => {
-        if (index < 5) {
-          list.push(
-            <li key={index + Math.random()}>
-              <Link
-                pseudo
-                className="link6 link6_third"
-                key={teacher.id}
-                onClick={navTo(`/shop/${teacher.id}`)}
-              >
-                {teacher.name}
-              </Link>
-            </li>
-          );
+    };
+    const renderCourses = () => {
+        if (courses.length > 0) {
+            const list = [];
+            courses.map((course, index) => {
+                if (index < 5) {
+                    list.push(
+                        <li key={index + Math.random()}>
+                            <Link
+                                pseudo
+                                className="link6 link6_third"
+                                key={course.id}
+                                onClick={navTo(`/good/${course.id}`)}
+                            >
+                                {course.title}
+                            </Link>
+                        </li>
+                    );
+                }
+            });
+            return list;
         }
-      });
-      return list;
-    }
-  };
-  const renderCourses = () => {
-    if (courses.length > 0) {
-      const list = [];
-      courses.map((course, index) => {
-        if (index < 5) {
-          list.push(
-            <li key={index + Math.random()}>
-              <Link
-                pseudo
-                className="link6 link6_third"
-                key={course.id}
-                onClick={navTo(`/good/${course.id}`)}
-              >
-                {course.title}
-              </Link>
-            </li>
-          );
-        }
-      });
-      return list;
-    }
-  };
+    };
 
-  // const renderSection = () => {
-  //   if (courses.length > 0) {
-  //     const list = [];
-  //     courses.map((course, index) => {
-  //       if (index < 5) {
-  //         let description;
-  //         // let courseName;
-  //         try {
-  //           description = JSON.parse(course.description);
-  //           // courseName = course.category[0].name;
-  //         } catch (e) {
-  //           console.log(e);
-  //         }
+    // const renderSection = () => {
+    //   if (courses.length > 0) {
+    //     const list = [];
+    //     courses.map((course, index) => {
+    //       if (index < 5) {
+    //         let description;
+    //         // let courseName;
+    //         try {
+    //           description = JSON.parse(course.description);
+    //           // courseName = course.category[0].name;
+    //         } catch (e) {
+    //           console.log(e);
+    //         }
 
-  //         list.push(
-  //           <li key={index + Math.random()}>
-  //             <Link
-  //               pseudo
-  //               className="link6 link6_third"
-  //               key={course.id}
-  //               onClick={navTo(`/good/${course.id}`)}
-  //             >
-  //               {description && description.subject}
-  //             </Link>
-  //             {/* <p>{course.name}</p> */}
-  //           </li>
-  //         );
-  //       }
-  //     });
-  //     return list;
-  //   }
-  // };
+    //         list.push(
+    //           <li key={index + Math.random()}>
+    //             <Link
+    //               pseudo
+    //               className="link6 link6_third"
+    //               key={course.id}
+    //               onClick={navTo(`/good/${course.id}`)}
+    //             >
+    //               {description && description.subject}
+    //             </Link>
+    //             {/* <p>{course.name}</p> */}
+    //           </li>
+    //         );
+    //       }
+    //     });
+    //     return list;
+    //   }
+    // };
 
-  const [idSubMenu, setIdSubMenu] = useState('');
-  const handleClickMenuItem = newIdSubMenu => event => {
-    event.preventDefault();
-    setIdSubMenu(newIdSubMenu !== idSubMenu ? newIdSubMenu : '');
-  };
+    const [idSubMenu, setIdSubMenu] = useState('');
+    const handleClickMenuItem = newIdSubMenu => event => {
+        event.preventDefault();
+        setIdSubMenu(newIdSubMenu !== idSubMenu ? newIdSubMenu : '');
+    };
 
-  return (
-    // <div
-    //   className={`header-menu${isOpen ? ' header-menu-open' : ''}`}
-    //   // onClick={onClose}
-    // >
-    <div
-      className={`header-menu-mobiles${
-        isOpen ? ' header-menu-mobiles-open' : ''
-      }`}
-    >
-      {/* <section className="section header-menu-wrapper"> */}
-      <section className="section section_fullwidth header-menu-mobiles-wrapper">
-        <GridRow>
-          <GridCol width={{ mobile: 3, tablet: 3, desktop: 3 }}>
-            {/* <ul className="header-menu-menu"> */}
-            <ul className="header-menu-mobiles-menu">
-              <li>
-                {/* <Link pseudo className="link_third" onClick={handleClickMenuItem('teachers')}>Разделы (Отделы)</Link> */}
-                <Link
-                  pseudo
-                  className="link5"
-                  onClick={handleClickMenuItem('subjects')}
-                >
-                  <b>Разделы</b>
-                </Link>
-                <ul
-                  className={`header-menu-mobiles-sub-menu ${
-                    idSubMenu === 'subjects'
-                      ? 'header-menu-mobiles-sub-menu-open'
-                      : ''
-                  }`}
-                >
-                  <li>
-                    <Link
-                      pseudo
-                      className="link6 link6_third"
-                      onClick={navTo('/shops')}
-                    >
-                      Все разделы
-                    </Link>
-                    <ul>
-                      <li className="bold14">Популярные разделы</li>
-                      {/* {renderSection()}  */}
-                      {renderCategory()} 
-                    </ul>
-                  </li>
-                  {/* <li>
+    return (
+        // <div
+        //   className={`header-menu${isOpen ? ' header-menu-open' : ''}`}
+        //   // onClick={onClose}
+        // >
+        <div
+            className={`header-menu-mobiles${
+                isOpen ? ' header-menu-mobiles-open' : ''
+            }`}
+        >
+            {/* <section className="section header-menu-wrapper"> */}
+            <section className="section section_fullwidth header-menu-mobiles-wrapper">
+                <GridRow>
+                    <GridCol width={{mobile: 3, tablet: 3, desktop: 3}}>
+                        {/* <ul className="header-menu-menu"> */}
+                        <ul className="header-menu-mobiles-menu">
+                            <li>
+                                {/* <Link pseudo className="link_third" onClick={handleClickMenuItem('teachers')}>Разделы (Отделы)</Link> */}
+                                <Link
+                                    pseudo
+                                    className="link5"
+                                    onClick={handleClickMenuItem('subjects')}
+                                >
+                                    <b>Разделы</b>
+                                </Link>
+                                <ul
+                                    className={`header-menu-mobiles-sub-menu ${
+                                        idSubMenu === 'subjects'
+                                            ? 'header-menu-mobiles-sub-menu-open'
+                                            : ''
+                                    }`}
+                                >
+                                    <li>
+                                        <Link
+                                            pseudo
+                                            className="link6 link6_third"
+                                            onClick={navTo('/shops')}
+                                        >
+                                            Все разделы
+                                        </Link>
+                                        <ul>
+                                            <li className="bold14">Популярные разделы</li>
+                                            {/* {renderSection()}  */}
+                                            {renderCategory()}
+                                        </ul>
+                                    </li>
+                                    {/* <li>
                     <Link
                       pseudo
                       className="link6 link6_third"
@@ -449,86 +448,86 @@ const thirdCol = () => {
                       Поп/ный Раздел 5
                     </Link>
                   </li> */}
-                </ul>
-              </li>
-              <li>
-                <Link
-                  pseudo
-                  className="link5"
-                  onClick={handleClickMenuItem('teachers')}
-                >
-                  <b>Витрины</b>
-                </Link>
-                <ul
-                  className={`header-menu-mobiles-sub-menu ${
-                    idSubMenu === 'teachers'
-                      ? 'header-menu-mobiles-sub-menu-open'
-                      : ''
-                  }`}
-                >
-                  <li>
-                    <Link
-                      pseudo
-                      className="link6 link6_third"
-                      onClick={navTo('/shops')}
-                    >
-                      <b>Все витрины</b>
-                    </Link>
-                  </li>
-                  <li className="bold14">Популярные витрины</li>
-                  {renderTeachers()}
-                </ul>
-              </li>
-              <li>
-                <Link
-                  pseudo
-                  className="link5"
-                  onClick={handleClickMenuItem('courses')}
-                >
-                  <b>Товары</b>
-                </Link>
-                <ul
-                  className={`header-menu-mobiles-sub-menu ${
-                    idSubMenu === 'courses'
-                      ? 'header-menu-mobiles-sub-menu-open'
-                      : ''
-                  }`}
-                >
-                  <li>
-                    <Link
-                      pseudo
-                      className="link6 link6_third"
-                      onClick={navTo('/goods')}
-                    >
-                      <b>Все товары</b>
-                    </Link>
-                  </li>
-                  <li className="bold14">Популярные товары</li>
-                  {renderCourses()}
-                </ul>
-              </li>
-            </ul>
-          </GridCol>
+                                </ul>
+                            </li>
+                            <li>
+                                <Link
+                                    pseudo
+                                    className="link5"
+                                    onClick={handleClickMenuItem('teachers')}
+                                >
+                                    <b>Витрины</b>
+                                </Link>
+                                <ul
+                                    className={`header-menu-mobiles-sub-menu ${
+                                        idSubMenu === 'teachers'
+                                            ? 'header-menu-mobiles-sub-menu-open'
+                                            : ''
+                                    }`}
+                                >
+                                    <li>
+                                        <Link
+                                            pseudo
+                                            className="link6 link6_third"
+                                            onClick={navTo('/shops')}
+                                        >
+                                            <b>Все витрины</b>
+                                        </Link>
+                                    </li>
+                                    <li className="bold14">Популярные витрины</li>
+                                    {renderTeachers()}
+                                </ul>
+                            </li>
+                            <li>
+                                <Link
+                                    pseudo
+                                    className="link5"
+                                    onClick={handleClickMenuItem('courses')}
+                                >
+                                    <b>Товары</b>
+                                </Link>
+                                <ul
+                                    className={`header-menu-mobiles-sub-menu ${
+                                        idSubMenu === 'courses'
+                                            ? 'header-menu-mobiles-sub-menu-open'
+                                            : ''
+                                    }`}
+                                >
+                                    <li>
+                                        <Link
+                                            pseudo
+                                            className="link6 link6_third"
+                                            onClick={navTo('/goods')}
+                                        >
+                                            <b>Все товары</b>
+                                        </Link>
+                                    </li>
+                                    <li className="bold14">Популярные товары</li>
+                                    {renderCourses()}
+                                </ul>
+                            </li>
+                        </ul>
+                    </GridCol>
 
-          <GridCol width={{ mobile: 3, tablet: 3, desktop: 3 }}>
-            <ul className="header-menu-menu">
-              <li>
-                {/* <Link
+                    <GridCol width={{mobile: 3, tablet: 3, desktop: 3}}>
+                        <ul className="header-menu-menu">
+                            <li>
+                                {/* <Link
                   pseudo
                   className="link5"
                   onClick={handleClickMenuItem('subjects1')}
                 > */}
-                {/* <b>Раздел 1u</b> */}
-                {/* {renderCategory(categories.id)} */}
-                {/* {categories[2].name}  */}
-                  
-                  
-                {/* </Link> */}
-                               
-                {/* console.log(firstName); */}
-                {/* <li>{firstName}</li> */}
-  
-                {/* <ul
+                                {/* <b>Раздел 1u</b> */}
+                                {/* {renderCategory(categories.id)} */}
+                                {/* {categories[2].name}  */}
+
+
+                                {/* </Link> */}
+
+                                {/* console.log(firstName); */}
+                                {/* <li>{firstName}</li> */}
+
+                                {/* <ul
                   className={`header-menu-mobiles-sub-menu ${
                     idSubMenu === 'subjects1'
                       ? 'header-menu-mobiles-sub-menu-open'
@@ -537,10 +536,10 @@ const thirdCol = () => {
                 >
                   {renderTeachers()}
                 </ul> */}
-                {firstCol()}
-              </li>
+                                {firstCol()}
+                            </li>
 
-              {/* <li>
+                            {/* <li>
                 <ul className="header-menu-menu">
                   <li>
                     <Link pseudo className="link5">
@@ -565,12 +564,12 @@ const thirdCol = () => {
                 </ul>
               </li> */}
 
-            </ul>
-          </GridCol>
-          <GridCol width={{ mobile: 3, tablet: 3, desktop: 3 }}>
-            <ul className="header-menu-menu">
-              <li>
-                {/* <Link
+                        </ul>
+                    </GridCol>
+                    <GridCol width={{mobile: 3, tablet: 3, desktop: 3}}>
+                        <ul className="header-menu-menu">
+                            <li>
+                                {/* <Link
                   pseudo
                   className="link5"
                   onClick={handleClickMenuItem('subjects2')}
@@ -586,10 +585,10 @@ const thirdCol = () => {
                 >
                   {renderTeachers()}
                 </ul> */}
-                {secondCol()}
-              </li>
+                                {secondCol()}
+                            </li>
 
-              {/* <li>
+                            {/* <li>
                 <ul className="header-menu-menu">
                   <li>
                     <Link pseudo className="link5">
@@ -613,12 +612,12 @@ const thirdCol = () => {
                   </li>
                 </ul>
               </li> */}
-            </ul>
-          </GridCol>
-          <GridCol width={{ mobile: 3, tablet: 3, desktop: 3 }}>
-            <ul className="header-menu-menu">
-              <li>
-                {/* <Link
+                        </ul>
+                    </GridCol>
+                    <GridCol width={{mobile: 3, tablet: 3, desktop: 3}}>
+                        <ul className="header-menu-menu">
+                            <li>
+                                {/* <Link
                   pseudo
                   className="link5"
                   onClick={handleClickMenuItem('subjects3')}
@@ -634,10 +633,10 @@ const thirdCol = () => {
                 >
                   {renderTeachers()}
                 </ul> */}
-                {thirdCol()}
-              </li>
+                                {thirdCol()}
+                            </li>
 
-              {/* <li>
+                            {/* <li>
                 <ul className="header-menu-menu">
                   <li>
                     <Link pseudo className="link5">
@@ -661,10 +660,10 @@ const thirdCol = () => {
                   </li>
                 </ul>
               </li> */}
-            </ul>
-          </GridCol>
+                        </ul>
+                    </GridCol>
 
-          {/* 
+                    {/*
           <GridCol width={{ mobile: 3, tablet: 3, desktop: 3 }}>
             <ul className="header-menu-menu">
               <li>
@@ -681,7 +680,7 @@ const thirdCol = () => {
             </ul>
           </GridCol> */}
 
-          {/* <GridCol width={{ mobile: 3, tablet: 3, desktop: 3 }}>
+                    {/* <GridCol width={{ mobile: 3, tablet: 3, desktop: 3 }}>
             <ul className="header-menu-menu">
               <li>
                 Витрины
@@ -696,10 +695,10 @@ const thirdCol = () => {
               </li>
             </ul>
           </GridCol> */}
-        </GridRow>
-      </section>
-    </div>
-  );
+                </GridRow>
+            </section>
+        </div>
+    );
 }
 
 export default HeaderMenu;
