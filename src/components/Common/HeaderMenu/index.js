@@ -11,7 +11,10 @@ function HeaderMenu({ isOpen, navTo, onClose }) {
   const teachers = useSelector(state => state.teachers.inputData);
   const categories = useSelector(state => state.categories.inputCategories);
   const list1 = [];
+  const list2 = [];
+  const list3 = [];
   
+  // --------первая колонка меню
   const firstCol = () => {
     if (categories.length > 0) {
       const list = [];
@@ -37,7 +40,7 @@ function HeaderMenu({ isOpen, navTo, onClose }) {
                           pseudo
                           className="link6 link6_third"
                           key={category.id}
-                          onClick={navTo(`/shop/${category.id}`)}
+                          onClick={navTo(`/showcase/${category.id}`)}
                         >
                           {category.name}
                         </Link>
@@ -97,6 +100,171 @@ function HeaderMenu({ isOpen, navTo, onClose }) {
       return list;
     }
   };
+
+// ---- вторая колонка меню
+const secondCol = () => {
+  if (categories.length > 0) {
+    const list = [];
+     categories.map((category, index) => {
+      if (index < 5 && category.id <= 2) {
+        if (category.children.length !== 0) {
+// --- Children вывод начало
+          let child1;
+          child1 = category.id;
+          // alert((child))
+          const renderCategoryChild = () => {
+            if (categories.length > 0) {
+              categories.map((category, index) => {
+                if (category.parent_id == child1) {
+                  list2.push(
+                    <li key={index + Math.random()}>
+                      <Link
+                        pseudo
+                        className="link6 link6_third"
+                        key={category.id}
+                        onClick={navTo(`/shop/${category.id}`)}
+                      >
+                        {category.name}
+                      </Link>
+                    </li>
+                  );
+                }
+              });
+              return list2;
+            }
+          };
+// --- Children вывод ОКОНЧАНИЕ
+
+          list.push(
+            <li key={index + Math.random()}>
+              <Link
+                pseudo
+                className="link5"
+                key={category.id}
+                // onClick={navTo(`/shop/${category.id}`)}
+                onClick={handleClickMenuItem('subjects4')}
+              >
+                <b>{category.name}</b>
+              </Link>
+              <ul
+                className={`header-menu-mobiles-sub-menu ${
+                idSubMenu === 'subjects4'
+                ? 'header-menu-mobiles-sub-menu-open'
+                : ''
+              }`}
+              >
+                <li>
+                  <ul>
+                    {renderCategoryChild()} 
+                  </ul>
+                </li>
+              </ul>
+
+            </li>
+          );
+        }
+        else {
+          list.push(
+            <li key={index + Math.random()}>
+              <Link
+                pseudo
+                className="link5"
+                key={category.id}
+                onClick={navTo(`/shop/${category.id}`)}
+              >
+                {category.name}
+              </Link>
+            </li>
+          );
+        }
+      }
+    });
+    return list;
+  }
+};
+// --------- третья колонка меню
+const thirdCol = () => {
+  if (categories.length > 0) {
+    const list = [];
+     categories.map((category, index) => {
+      if (index < 5 && category.id <= 2) {
+        if (category.children.length !== 0) {
+// --- Children вывод начало
+          let child2;
+          child2 = category.id;
+          // alert((child))
+          const renderCategoryChild = () => {
+            if (categories.length > 0) {
+              categories.map((category, index) => {
+                if (category.parent_id == child2) {
+                  list3.push(
+                    <li key={index + Math.random()}>
+                      <Link
+                        pseudo
+                        className="link6 link6_third"
+                        key={category.id}
+                        onClick={navTo(`/shop/${category.id}`)}
+                      >
+                        {category.name}
+                      </Link>
+                    </li>
+                  );
+                }
+              });
+              return list3;
+            }
+          };
+// --- Children вывод ОКОНЧАНИЕ
+
+          list.push(
+            <li key={index + Math.random()}>
+              <Link
+                pseudo
+                className="link5"
+                key={category.id}
+                // onClick={navTo(`/shop/${category.id}`)}
+                onClick={handleClickMenuItem('subjects5')}
+              >
+                <b>{category.name}</b>
+              </Link>
+              <ul
+                className={`header-menu-mobiles-sub-menu ${
+                idSubMenu === 'subjects5'
+                ? 'header-menu-mobiles-sub-menu-open'
+                : ''
+              }`}
+              >
+                <li>
+                  <ul>
+                    {renderCategoryChild()} 
+                  </ul>
+                </li>
+              </ul>
+
+            </li>
+          );
+        }
+        else {
+          list.push(
+            <li key={index + Math.random()}>
+              <Link
+                pseudo
+                className="link5"
+                key={category.id}
+                onClick={navTo(`/shop/${category.id}`)}
+              >
+                {category.name}
+              </Link>
+            </li>
+          );
+        }
+      }
+    });
+    return list;
+  }
+};
+
+  // *******************
 
   const renderCategory = () => {
     if (categories.length > 0) {
@@ -402,7 +570,7 @@ function HeaderMenu({ isOpen, navTo, onClose }) {
           <GridCol width={{ mobile: 3, tablet: 3, desktop: 3 }}>
             <ul className="header-menu-menu">
               <li>
-                <Link
+                {/* <Link
                   pseudo
                   className="link5"
                   onClick={handleClickMenuItem('subjects2')}
@@ -417,11 +585,11 @@ function HeaderMenu({ isOpen, navTo, onClose }) {
                   }`}
                 >
                   {renderTeachers()}
-                </ul>
-                
+                </ul> */}
+                {secondCol()}
               </li>
 
-              <li>
+              {/* <li>
                 <ul className="header-menu-menu">
                   <li>
                     <Link pseudo className="link5">
@@ -444,13 +612,13 @@ function HeaderMenu({ isOpen, navTo, onClose }) {
                     </Link>
                   </li>
                 </ul>
-              </li>
+              </li> */}
             </ul>
           </GridCol>
           <GridCol width={{ mobile: 3, tablet: 3, desktop: 3 }}>
             <ul className="header-menu-menu">
               <li>
-                <Link
+                {/* <Link
                   pseudo
                   className="link5"
                   onClick={handleClickMenuItem('subjects3')}
@@ -465,10 +633,11 @@ function HeaderMenu({ isOpen, navTo, onClose }) {
                   }`}
                 >
                   {renderTeachers()}
-                </ul>
+                </ul> */}
+                {thirdCol()}
               </li>
 
-              <li>
+              {/* <li>
                 <ul className="header-menu-menu">
                   <li>
                     <Link pseudo className="link5">
@@ -491,7 +660,7 @@ function HeaderMenu({ isOpen, navTo, onClose }) {
                     </Link>
                   </li>
                 </ul>
-              </li>
+              </li> */}
             </ul>
           </GridCol>
 
