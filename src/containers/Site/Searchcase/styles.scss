@@ -1,0 +1,44 @@
+.select-subject {
+  font-size: 14px;
+  font-weight: 600;
+  padding-bottom: 20px;
+}
+.select-subject-icon {
+  margin-left: 8px;
+}
+.button-center {
+  text-align: center;
+  margin-top: 36px;
+  margin-bottom: 28px;
+}
+.courses-more-popup {
+  font-size: 16px;
+  li{
+    cursor: pointer;
+    transition: background-color 0.2s ease-in;
+  }
+  li:hover {
+    background-color: #B4B4B4;
+  }
+
+}
+.courses-more-popup a.link {
+  font-size: 16px;
+  color: #322aed;
+}
+.courses-more-popup a.link:hover {
+  font-size: 16px;
+  color: #352fb9;
+}
+.select-subject button.button_link {
+  border: 0;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+}

@@ -67,16 +67,16 @@ const Course = ({ courses, getCourse, match }) => {
     }
   };
 
-  // const doSignCourse1 = () => {
-  //   if (!session.authenticated) {
-  //     dispatch({
-  //       type: 'AUTH_SHOW_DIALOG',
-  //       payload: true,
-  //     });
-  //   } else if (session.user.type === 'student') {
-  //     setSignModalOpen1(true);
-  //   }
-  // };
+   const doSignCourse1 = () => {
+     if (!session.authenticated) {
+       dispatch({
+         type: 'AUTH_SHOW_DIALOG',
+         payload: true,
+       });
+     } else if (session.user.type === 'student') {
+       setSignModalOpen1(true);
+     }
+   };
 
   if (courses.courseFetching) {
     return <Loader />;

@@ -9,6 +9,7 @@ export const types = {
     CATEGORY_SUCCESS: 'CATEGORY_SUCCESS',
     CATEGORIES_CLOSE: 'CATEGORIES_CLOSE',
     GET_CATEGORIES_BY_TITLE: 'GET_CATEGORIES_BY_TITLE',
+    GET_CATEGORIES_BY_ID: 'GET_CATEGORIES_BY_ID',
     SEARCH_CATEGORIES_BY_PART_OF_TITLE_OR_TAG:
         'SEARCH_CATEGORIES_BY_PART_OF_TITLE_OR_TAG',
 };
@@ -66,4 +67,15 @@ export const searchCategoriesByPartOfTitleOrTag = (
     } else {
         dispatch({ type: types.CATEGORIES_CLOSE });
     }
+};
+
+export const getItemsByCategory = id => dispatch => {
+    dispatch({ type: types.CATEGORY_REQUEST });
+    CategoriesServices.getItemsByCategory(id)
+        .then(res => {
+            dispatch({ type: types.CATEGORY_SUCCESS, payload: { res } });
+        })
+        .catch(error => {
+            dispatch({ type: types.CATEGORY_FAILURE, payload: { error } });
+        });
 };

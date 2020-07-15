@@ -7,6 +7,7 @@ import Teachers from './Teachers';
 import Teacher from './Teacher';
 import Courses from './Courses';
 import Showcase from './Showcase';
+import Searchcase from './Searchcase';
 import Course from './Course';
 import NotFoundPage from './NotFound';
 import UnderDevelopment from './UnderDevelopment';
@@ -35,6 +36,7 @@ import Header from '../../components/Common/Header';
 import { getCourses } from '../../core/actions/courses';
 import { getTeachers } from '../../core/actions/teachers';
 import {getCategories} from "../../core/actions/categories";
+//import {getItemsByCategories} from "../../core/actions/categories";
 
 
 export default function Site() {
@@ -69,6 +71,7 @@ export default function Site() {
           <Route path="/shop/:id" component={Teacher} />
           <Route path="/goods" component={Courses} />
           <Route path="/showcase/:id" component={Showcase} />
+          <Route path="/searchcase/:id" component={Searchcase} />
           <Route path="/good/:id" component={Course} />
 
           <Route path="/pravila-of-our-house" component={PravilaHome} />
