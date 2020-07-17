@@ -24,7 +24,8 @@ const Searchcase = ({match}) => {
     const courses = useSelector(state => state.courses);
     let filtered=[];
     if (courses.courses && courses.courses.length) {
-        filtered = courses.courses.filter(item => item.category_id == 0); // заменить 0 на id когда база с курсами пополнится записями с id < 0
+        filtered = courses.courses.filter(item => item.category_id === id); // заменить 0 на id когда база с курсами пополнится записями с id < 0
+        console.log(id);
     }
     console.log(filtered);
     return (
