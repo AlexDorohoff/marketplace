@@ -62,8 +62,8 @@ const TeacherRequests = ({ getRequests, profile }) => {
                 {r.user.name}
               </GridCol> 
               <GridCol width={{ mobile: 12, tablet: 3, desktop: 4 }}>
-                <span>{r.course.description.subject}</span>
-                {r.course.title}
+                <span>{/*r.course.description.subject}</span>
+                {r.course.title*/}</span>
               </GridCol>
               <GridCol width={{ mobile: 12, tablet: 2, desktop: 1 }}>
                 {r.course.price}
@@ -74,7 +74,7 @@ const TeacherRequests = ({ getRequests, profile }) => {
                   value="request"
                   options={statusTypes}
                 />
-                {r.course.description.subject}
+                {/*r.course.description.subject*/}
               </GridCol>             
             </GridRow>
 

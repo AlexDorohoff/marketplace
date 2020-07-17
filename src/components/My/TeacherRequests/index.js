@@ -84,7 +84,7 @@ const TeacherRequests = ({ getRequests, profile }) => {
                 {r.user.name}
               </GridCol>
               <GridCol width={{ mobile: 12, tablet: 4, desktop: 4 }}>
-                <span>{r.course.description.subject}</span>
+                <span>{/*r.course.description.subject*/}</span>
                 {r.course.title}
               </GridCol>
               <GridCol width={{ mobile: 12, tablet: 1, desktop: 1 }}>
@@ -92,7 +92,7 @@ const TeacherRequests = ({ getRequests, profile }) => {
               </GridCol>    
               <GridCol width={{ mobile: 12, tablet: 1, desktop: 1 }}>
                 {r.purchase.label}
-                {r.course.description.subject}
+                {/*r.course.description.subject*/}
               </GridCol>             
             </GridRow>
             <br />
