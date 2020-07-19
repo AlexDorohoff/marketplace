@@ -11,9 +11,6 @@ function HeaderMenu({isOpen, navTo, onClose}) {
     const categories = useSelector(state => state.categories.inputCategories);
     let startCol = 0;
     let finishCol = 5;
-    let stCol = 0; //** начальная категория
-    let finCol = 2; //** конечная категория
-    let sumCat = 3; //** КОЛИЧЕСТВО ВЫВОДИМЫХ подкатегорий в КАТЕГОРИИ
 
     // --------первая колонка меню
     const firstCol = () => {
@@ -40,7 +37,7 @@ function HeaderMenu({isOpen, navTo, onClose}) {
                                               pseudo
                                               className="link6 link6_third"
                                               key={child.id}
-                                              onClick={navTo(`/searchcase/${child.id}`)}
+                                              onClick={navTo(`/showcase/${child.id}`)}
                                             >
                                               {child.name}
                                             </Link>
@@ -88,6 +85,7 @@ function HeaderMenu({isOpen, navTo, onClose}) {
                               className="link5"
                               key={category.id}
                               onClick={navTo(`/shop/${category.id}`)}
+                              // onClick={navTo(`/shops`)}
                             >
                               {category.name}
                             </Link>
@@ -101,64 +99,13 @@ function HeaderMenu({isOpen, navTo, onClose}) {
     };
 
     // *******************
-    const fCol = () => {
-      if (categories.length > 0) {
-        const list = [];
-        categories.map((category, index) => {
-          if (index >= stCol && index < finCol) { //** КОЛИЧЕСТВО ВЫВОДИМЫХ КАТЕГОРИЙ
-          // if (index < 2) { //** КОЛИЧЕСТВО ВЫВОДИМЫХ КАТЕГОРИЙ
-                if (category.children.length !== 0) {
-// --- вывод начало
-                    let parent;
-                    parent = category.id;
-                    const childs = category.children;
-                    const renderCategoryChild = () => {
-                        if (childs.length > 0) {
-                            const list1 = [];
-                            childs.map((child, index) => {
-                                if (index < sumCat && child.parent_id == parent ) { //** КОЛИЧЕСТВО ВЫВОДИМЫХ подкатегорий в КАТЕГОРИИ
-                                    list1.push(
-                                      <li key={index + Math.random()}>
-                                        <Link
-                                          pseudo
-                                          className="link6 link6_third"
-                                          key={child.id}
-                                          onClick={navTo(`/searchcase/${child.id}`)}
-                                        >
-                                          {child.name}
-                                        </Link>
-                                      </li>
-                                    );
-                                }
-                            });
-                            return list1;
-                        }
-                    };
-// ---  вывод ОКОНЧАНИЕ
-                    list.push(
-                      <li>
-                        <ul>
-                          {renderCategoryChild()}
-                        </ul>
-                      </li>
-                    );
-                }
-            }
-        });
-        return list;
-    }
-};
 
-// ********************
-// Вывод ТОЛЬКО категорий
     const renderCategory = () => {
         if (categories.length > 0) {
             const list = [];
 
             categories.map((category, index) => {
-                // if (index < 5 && category.parent_id <= 0) {
                 if (index < 5 && category.parent_id <= 0) {
-                  console.log(category.children.name);
                     list.push(
                       <li key={index + Math.random()}>
                         <Link
@@ -166,6 +113,7 @@ function HeaderMenu({isOpen, navTo, onClose}) {
                           className="link6 link6_third"
                           key={category.id}
                           onClick={navTo(`/shop/${category.id}`)}
+                          // onClick={navTo(`/shops`)}
                         >
                           {category.name}
                         </Link>
@@ -176,8 +124,6 @@ function HeaderMenu({isOpen, navTo, onClose}) {
             return list;
         }
     };
-// *********** 
-
 
     const renderTeachers = () => {
         if (teachers.length > 0) {
@@ -261,13 +207,11 @@ function HeaderMenu({isOpen, navTo, onClose}) {
                         className="link6 link6_third"
                         onClick={navTo('/shops')}
                       >
-                        Все разделы
+                                          Все разделы
                       </Link>
                       <ul>
                         <li className="bold14">Популярные разделы</li>
-                        {/* {renderCategory()} */}
-                        {fCol()}
-
+                        {renderCategory()}
                       </ul>
                     </li>
                   </ul>
@@ -340,14 +284,14 @@ function HeaderMenu({isOpen, navTo, onClose}) {
             <GridCol width={{mobile: 3, tablet: 3, desktop: 3}}>
               <ul className="header-menu-menu">
                 <li>
-                  {firstCol(startCol+=5, finishCol+=5)}
+                  {firstCol(startCol=startCol+5, finishCol=finishCol+5)}
                 </li>
               </ul>
             </GridCol>
             <GridCol width={{mobile: 3, tablet: 3, desktop: 3}}>
               <ul className="header-menu-menu">
                 <li>
-                  {firstCol(startCol+=5, finishCol+=5)}
+                  {firstCol(startCol=startCol+5, finishCol=finishCol+5)}
                 </li>
               </ul>
             </GridCol>

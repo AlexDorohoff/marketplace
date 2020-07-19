@@ -24,7 +24,7 @@ const Showcase = ({ getCoursesByTitle, match }) => {
   }
 
   const [isOpenPopup, setIsOpenPopup] = useState(false);
-  const [step, setStep] = useState(6);
+  const [step, setStep] = useState(8);
 
   const refPopup = useRef(null);
   const refTarget = useRef(null);
@@ -67,7 +67,7 @@ const Showcase = ({ getCoursesByTitle, match }) => {
         <meta name="description" content="Море" />
         <meta name="keywords" content="Море" />
       </Helmet>
-      <section className="section">
+      <section className="section section_fullwidth1">
         <div className="select-subject">
           Выбрать товар
           <Button
@@ -95,7 +95,7 @@ const Showcase = ({ getCoursesByTitle, match }) => {
                 <li
                   onClick={() => {
                     getCoursesByTitle();
-                    setStep(6);
+                    setStep(8);
                   }}
                 >
                   Все товары
@@ -106,7 +106,7 @@ const Showcase = ({ getCoursesByTitle, match }) => {
                       key={`${title}${Math.random()}`}
                       onClick={() => {
                         getCoursesByTitle(title);
-                        setStep(6);
+                        setStep(8);
                       }}
                     >
                       {title}
@@ -126,7 +126,7 @@ const Showcase = ({ getCoursesByTitle, match }) => {
             outputCourses.map(course => (
               <GridCol
                 key={`${course.id}${Math.random()}`}
-                width={{ mobile: 12, tablet: 6, desktop: 4 }}
+                width={{ mobile: 12, tablet: 4, desktop: 3 }}
               >
                 <CourseBlock course={course} />
               </GridCol>

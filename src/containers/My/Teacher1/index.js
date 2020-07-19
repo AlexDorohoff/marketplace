@@ -242,7 +242,8 @@ const Teacher1 = ({ getProfile, profile, history }) => {
         <TeacherChat items={[]} />
       </section>
 
-      <section className="section section_profile">
+      {/* <section className="section section_profile"> */}
+      <section className="section section_fullwidth1">
         <h2 className="settings-h2">Галерея товаров</h2>
         <div className="docs-browser-carousel-wrapper">
           {materials.length > 0 && (
@@ -256,8 +257,9 @@ const Teacher1 = ({ getProfile, profile, history }) => {
         {/* <DocsBrowser title="Материалы" files={files} /> */}
       </section>
 
-      <section className="section section_profile">
-        <h2 className="settings-h2">
+      {/* <section className="section section_profile"> */}
+      <section className="section section_fullwidth1">
+          <h2 className="settings-h2">
           Товары (создание и редактирование)
           {/* <div className="course-create-title-controls">
             <button type="button">

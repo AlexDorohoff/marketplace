@@ -108,7 +108,7 @@ const MainSections = () => {
                   return (
                     <GridCol
                       key={`col${Math.random()}`}
-                      width={{ mobile: 12, tablet: 3, desktop: width }}
+                      width={{ mobile: 12, tablet: width, desktop: width }}
                       className="m-b20"
                     >
                       <MainSectionsCourseItem id={id} big={big} />

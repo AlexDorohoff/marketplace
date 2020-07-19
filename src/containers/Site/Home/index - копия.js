@@ -125,24 +125,19 @@ function Home({ search, teachers, courses }) {
       <section className="section section_home_carousel">
         <CarouselHome />
       </section>
-      {/* <section className="section"> */}
-      <section className="section section_fullwidth1">
+      <section className="section">
         <MainSections />
       </section>
-      {/* <section className="section"> */}
-      <section className="section section_fullwidth1">
+      <section className="section">
         <OnlineLearning />
       </section>
-      {/* <section className="secpadding: 20px;tion"> */}
-      <section className="section section_fullwidth1">
+      <section className="section">
         <OurAdvantages />
       </section>
       <section className="section">
-      {/* <section className="section section_fullwidth1"> */}
         <HowWork />
       </section>
-      {/* <section className="section"> */}
-      <section className="section section_fullwidth1">
+      <section className="section">
         <WhereToBegin />
       </section>
       {/* <div id="scroller" className="b-top" style={{display: 'none'}}>

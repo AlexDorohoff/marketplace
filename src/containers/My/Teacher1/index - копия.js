@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import Helmet from 'react-helmet';
+import ScrollTop from "react-scrolltop-button";
 import GridRow from 'arui-feather/grid-row';
 import GridCol from 'arui-feather/grid-col';
 
@@ -28,12 +29,39 @@ import UseProfile from '../../../core/connectors/profile';
 import Carousel from '../../../components/Site/Carousel/CarouselBase';
 
 const settings = {
-  dots: false,
+  dots: true,
   arrows: true,
   infinite: false,
-  speed: 300,
-  slidesToShow: 4,
-  margin: 0,
+  speed: 500,
+  slidesToShow: 3,
+  slidesToScroll: 2,
+    
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 2,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        initialSlide: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
 };
 
 /**
@@ -99,6 +127,15 @@ const Teacher1 = ({ getProfile, profile, history }) => {
         <meta name="description" content="Море" />
         <meta name="keywords" content="Море" />
       </Helmet>
+      <ScrollTop
+        text="Наверх"
+        distance={50}
+        breakpoint={900}
+        style={{ backgroundColor: "#ffffff", color: '#1B60FF', border: '1px solid #1B60FF' }}
+        className="scroll-your-role"
+        speed={250}
+        target={0}
+      />
       {profileData ? <TeacherHeader profile={profileData} /> : <TeacherHeader profile={{fetching: profile.fetching}} />}
 
       <section className="section section_profile">
@@ -135,9 +172,11 @@ const Teacher1 = ({ getProfile, profile, history }) => {
             profileData.user.profile &&
             profileData.user.profile.documents &&
             profileData.user.profile.documents.length > 0 && (
+              // <Carousel settings={settings} className="docs-browser-carousel">
               <Carousel settings={settings} className="docs-browser-carousel">
+
                 {profileData.user.profile.documents.map(item => (
-                  <img key={item.id} src={item.img} alt="" />
+                  <img key={item.id} style={{height: '10px'}} className="" src={item.img} alt="" />
                 ))}
               </Carousel>
             )}
@@ -165,7 +204,7 @@ const Teacher1 = ({ getProfile, profile, history }) => {
       </section>
 
       <section className="section section_profile">
-        <h2 className="settings-h2">11Финансы и Статистика</h2>
+        <h2 className="settings-h2">Финансы и Статистика</h2>
         <TeacherFinance items={[]} />
         {/* <GridRow className="stats-wrap">
           <GridCol width={{ mobile: 12, tablet: 6, desktop: 6 }}>
@@ -209,7 +248,7 @@ const Teacher1 = ({ getProfile, profile, history }) => {
           {materials.length > 0 && (
             <Carousel settings={settings} className="docs-browser-carousel">
               {materials.map(item => (
-                <img key={`${item}material`} src={item} alt="Материал" />
+                <img key={`${item}material`} src={item} alt="Галерея товаров" />
               ))}
             </Carousel>
           )}

@@ -8,7 +8,6 @@ import Popup from 'arui-feather/popup';
 import Type from 'prop-types';
 import { FiChevronDown } from 'react-icons/fi';
 import { useSelector } from 'react-redux';
-import Breadcrumbs from '../../../components/Common/Breadcrumbs';
 import connectorCourses from '../../../core/connectors/courses';
 import CourseBlock from '../../../components/Site/CourseBlock';
 import Footer from '../../../components/Common/Footer';
@@ -23,15 +22,15 @@ const Courses = ({ getCoursesByTitle }) => {
   const courses = useSelector(state => state.courses);
 
   const [isOpenPopup, setIsOpenPopup] = useState(false);
-  const [step, setStep] = useState(8);
+  const [step, setStep] = useState(6);
 
   const refPopup = useRef(null);
   const refTarget = useRef(null);
 
   const getCoursesTitles = (courses, number) => {
     if (courses.length > 0) {
-      const titles = [];
-      const multiTitles = [];
+      let titles = [];
+      let multiTitles = [];
       const allTitles = courses
         .map(course => course.title);
       allTitles.forEach(title => {
@@ -60,14 +59,7 @@ const Courses = ({ getCoursesByTitle }) => {
   if (courses.fetching) {
     return <Loader />;
   }
-  const list111 = [{
-    title: 'Главная',
-    link: '/',
-  },{
-    title: 'Все товары',
-    link: '',
-  },
-];
+
   return (
     <>
       <Helmet>
@@ -84,10 +76,7 @@ const Courses = ({ getCoursesByTitle }) => {
         speed={250}
         target={0}
       />
-      <section className="section section_fullwidth1 breadcrumbs">
-        <Breadcrumbs items={list111} />  
-      </section>
-      <section className="section section_fullwidth1">
+      <section className="section">
         <div className="select-subject">
           Выбрать товар
           <Button
@@ -98,7 +87,7 @@ const Courses = ({ getCoursesByTitle }) => {
           >
             <FiChevronDown className="select-subject-icon" />
           </Button>
-          {isOpenPopup && <div className="popup-overlay" />}
+          {isOpenPopup && <div className="popup-overlay"></div>}
           <Popup
             ref={refPopup}
             visible={isOpenPopup}
@@ -111,7 +100,7 @@ const Courses = ({ getCoursesByTitle }) => {
                 <li
                   onClick={() => {
                     getCoursesByTitle();
-                    setStep(8);
+                    setStep(6);
                   }}
                 >
                   Все товары
@@ -122,7 +111,7 @@ const Courses = ({ getCoursesByTitle }) => {
                       key={`${title}${Math.random()}`}
                       onClick={() => {
                         getCoursesByTitle(title);
-                        setStep(8);
+                        setStep(6);
                       }}
                     >
                       {title}
@@ -137,14 +126,12 @@ const Courses = ({ getCoursesByTitle }) => {
           </Popup>
         </div>
 
-        {/* <GridRow justify="left" style={{ border: '1px solid #FC8A15' }}> */}
         <GridRow justify="left">
           {isOutputCourses &&
             outputCourses.map(course => (
               <GridCol
                 key={`${course.id}${Math.random()}`}
-                // width={{ mobile: 12, tablet: 6, desktop: 4 }}
-                width={{ mobile: 12, tablet: 4, desktop: 3 }}
+                width={{ mobile: 12, tablet: 6, desktop: 4 }}
               >
                 <CourseBlock course={course} />
               </GridCol>

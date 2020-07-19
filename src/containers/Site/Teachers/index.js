@@ -7,6 +7,7 @@ import Button from 'arui-feather/button';
 import Popup from 'arui-feather/popup';
 import Type from 'prop-types';
 import { useSelector } from 'react-redux';
+import Breadcrumbs from '../../../components/Common/Breadcrumbs';
 import TeacherBlock from '../../../components/Site/TeacherBlock';
 import ChevronBottom2 from '../../../theme/images/chevronBottom2.svg';
 import Footer from '../../../components/Common/Footer';
@@ -23,7 +24,7 @@ const Teachers = ({ getTeachersByTitle }) => {
   const teachers = useSelector(state => state.teachers);
 
   const [isOpenPopup, setIsOpenPopup] = useState(false);
-  const [step, setStep] = useState(6);
+  const [step, setStep] = useState(8);
 
   const refPopup = useRef(null);
   const refTarget = useRef(null);
@@ -54,6 +55,14 @@ const Teachers = ({ getTeachersByTitle }) => {
   if (teachers.fetching) {
     return <Loader />;
   }
+  const list111 = [{
+    title: 'Главная',
+    link: '/',
+  },{
+    title: 'Все витрины',
+    link: '',
+  },
+];
 
   return (
     <>
@@ -71,7 +80,10 @@ const Teachers = ({ getTeachersByTitle }) => {
         speed={250}
         target={0}
       />
-      <section className="section">
+      <section className="section section_fullwidth1 breadcrumbs">
+        <Breadcrumbs items={list111} />  
+      </section>
+      <section className="section section_fullwidth1">
         <div className="select-subject">
           Выбрать витрину
           <Button
@@ -103,7 +115,7 @@ const Teachers = ({ getTeachersByTitle }) => {
                 <li
                   onClick={() => {
                     getTeachersByTitle();
-                    setStep(6);
+                    setStep(8);
                   }}
                 >
                   Все витрины
@@ -114,7 +126,7 @@ const Teachers = ({ getTeachersByTitle }) => {
                       key={`${title}${Math.random()}`}
                       onClick={() => {
                         getTeachersByTitle(title, courses.inputCourses);
-                        setStep(6);
+                        setStep(8);
                       }}
                     >
                       {title}
@@ -130,7 +142,7 @@ const Teachers = ({ getTeachersByTitle }) => {
             outputData.map(teacher => (
               <GridCol
                 key={`${teacher.id}${Math.random()}`}
-                width={{ mobile: 12, tablet: 6, desktop: 4 }}
+                width={{ mobile: 12, tablet: 4, desktop: 3 }}
               >
                 <TeacherBlock teacher={teacher} />
               </GridCol>

@@ -51,7 +51,7 @@ const TeacherRequests = ({ getRequests, profile }) => {
           Дата
         </GridCol>
         <GridCol width={{ mobile: 12, tablet: 3, desktop: 3 }}>
-          Покупатель
+          Продавец
         </GridCol>
         <GridCol width={{ mobile: 12, tablet: 4, desktop: 4 }}>
           Товар
@@ -82,6 +82,7 @@ const TeacherRequests = ({ getRequests, profile }) => {
                   alt="r.user.name"
                 />
                 {r.user.name}
+                {/* {noname.teachers.name} */}
               </GridCol>
               <GridCol width={{ mobile: 12, tablet: 4, desktop: 4 }}>
                 <span>{/*r.course.description.subject*/}</span>

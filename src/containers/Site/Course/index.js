@@ -7,6 +7,8 @@ import GridCol from 'arui-feather/grid-col';
 import GridRow from 'arui-feather/grid-row';
 import {NavLink, useLocation} from 'react-router-dom';
 import Type from 'prop-types';
+import {withFormik} from "formik";
+import Breadcrumbs from '../../../components/Common/Breadcrumbs';
 import config from '../../../config';
 import UseCourses from '../../../core/connectors/courses';
 // import RequestForm from '../../../components/Site/Forms/RequestForm';
@@ -20,7 +22,6 @@ import './styles.scss';
 import {hoursPlural} from '../../../core/utils/common';
 import Loader from '../../../components/Common/Loader';
 import courseService from '../../../core/services/courses';
-import {withFormik} from "formik";
 
 
 /**
@@ -29,6 +30,7 @@ import {withFormik} from "formik";
 const Course = ({courses, getCourse, match}) => {
     const location = useLocation();
     const dispatch = useDispatch();
+    let ddd;
     const session = useSelector(state => state.session);
     useEffect(() => {
         getCourse(match.params.id);
@@ -38,12 +40,14 @@ const Course = ({courses, getCourse, match}) => {
         });
     }, [location]);
 
+
     const [signModalOpen, setSignModalOpen, sendRequest] = useState(false);
 
-    // const { setSignModalOpen1 } = setSignModalOpen;
     const {course} = courses;
+
     let description;
     let contents;
+    let list111
 
     if (course) {
         try {
@@ -56,6 +60,17 @@ const Course = ({courses, getCourse, match}) => {
         } catch (e) {
             contents = course.contents;
         }
+        list111 = [{
+            title: 'Главная',
+            link: '/',
+        }, {
+            title: 'Все товары',
+            link: '/goods',
+        }, {
+            title: `${course.title}`,
+            link: '',
+        },
+        ];
     }
 
     const doSignCourse = () => {
@@ -79,8 +94,8 @@ const Course = ({courses, getCourse, match}) => {
         const YYYY = date.getFullYear();
 
         const dt = `${YYYY}-${mm}-${dd}`;
-        const reqTime = new  Date().toLocaleTimeString();
-        const reqDate = dt + ' ' + reqTime;
+        const reqTime = new Date().toLocaleTimeString();
+        const reqDate = `${dt} ${reqTime}`;
         const data = {
             teacher_id: course.user.id,
             course_id: course.id,
@@ -88,7 +103,7 @@ const Course = ({courses, getCourse, match}) => {
             requested_date: reqDate,
             id_purchase_status: 1,
         }
-        console.log(data);
+        // console.log(data);
         if (!session.authenticated) {
             dispatch({
                 type: 'AUTH_SHOW_DIALOG',
@@ -108,7 +123,6 @@ const Course = ({courses, getCourse, match}) => {
             <Modal
                 open={signModalOpen}
                 onClose={() => setSignModalOpen(false)}
-                // title="Купить 147товар?"
             >
                 <ModalStudentCourseRequest
                     course={course}
@@ -140,7 +154,9 @@ const Course = ({courses, getCourse, match}) => {
                 speed={250}
                 target={0}
             />
-
+            <section className="section section_fullwidth1 breadcrumbs">
+                <Breadcrumbs items={list111}/>
+            </section>
             <section className="section section_fullwidth">
                 <GridRow>
                     <GridCol

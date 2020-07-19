@@ -7,6 +7,7 @@ import GridRow from 'arui-feather/grid-row';
 import Button from 'arui-feather/button';
 import Popup from 'arui-feather/popup';
 import { NavLink, useLocation } from 'react-router-dom';
+import Breadcrumbs from '../../../components/Common/Breadcrumbs';
 import TeacherCourses from '../../../components/Site/TeacherCourses';
 import HowWork from '../../../components/Site/HowWork';
 import UseNavigation from '../../../core/connectors/navigation';
@@ -50,7 +51,17 @@ const Teacher = ({ navigationTo, getTeacher, teachers, match }) => {
   if (teachers.teacherFetching) {
     return <Loader />;
   }
-
+  const list111 = [{
+      title: 'Главная',
+      link: '/',
+    },{
+      title: 'Все витрины',
+      link: '/shops',
+    },{
+      title: `${fio[0]} ${fio[1]} ${fio[2]}`,
+      link: '',
+    },
+  ];
   return (
     <>
       <Helmet>
@@ -67,6 +78,9 @@ const Teacher = ({ navigationTo, getTeacher, teachers, match }) => {
         speed={250}
         target={0}
       />
+      <section className="section section_fullwidth1 breadcrumbs">
+        <Breadcrumbs items={list111} />  
+      </section>
       <section className="section section_fullwidth">
         <GridRow>
           <GridCol width={{ mobile: 0, tablet: 6 }}>

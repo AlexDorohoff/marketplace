@@ -47,7 +47,7 @@ class Teacher extends React.Component {
           speed={250}
           target={0}
         />
-        <section className="section breadcrumbs">
+        <section className="section section_fullwidth1 breadcrumbs">
           <Breadcrumbs items={pravBreadcrumbs} />             
           <Scroll />
         </section>

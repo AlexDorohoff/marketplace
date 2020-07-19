@@ -16,6 +16,11 @@
   apiBaseUrl: 'http://localhost:8000/api',
 
   /**
+     * Back-end server base url for images
+   */
+  baseUrl: 'http://localhost:8000/',
+
+  /**
    * Site base url
    */
   siteBaseUrl: 'http://localhost:8000',

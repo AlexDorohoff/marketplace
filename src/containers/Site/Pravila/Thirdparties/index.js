@@ -28,7 +28,7 @@ const Experts = () => (
       speed={250}
       target={0}
     />
-    <section className="section breadcrumbs">
+    <section className="section section_fullwidth1 breadcrumbs">
       <Breadcrumbs items={thirdBreadcrumbs} />             
       <Scroll />
     </section>

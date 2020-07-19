@@ -38,7 +38,7 @@ export default function HeaderMenu({ isOpen, navTo, onClose }) {
                                             pseudo
                                             className="link6 link6_third"
                                             key={child.id}
-                                            onClick={navTo(`/searchcase/${child.id}`)}
+                                            onClick={navTo(`/showcase/${child.id}`)}
                                           >
                                             {child.name}
                                           </Link>
