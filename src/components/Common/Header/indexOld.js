@@ -11,6 +11,7 @@ import TopLinks from '../TopLinks';
 import UseNavigation from '../../../core/connectors/navigation';
 import SignInOrSignUpDialog from '../../Site/Dialogs/SignInOrSignUp';
 import './styles.scss';
+import Lk from '../../../theme/images/lk.jpg';
 import HeaderMenu from '../HeaderMenu';
 import HeaderMenuMobile from '../HeaderMenuMobile';
 import { getSelf, logout } from '../../../core/actions/session';
@@ -24,7 +25,6 @@ import {
 } from '../../../core/actions/teachers';
 import { searching } from '../../../core/actions/search';
 import closeIcon from '../../../theme/images/menu/close.svg';
-import config from '../../../config';
 
 function Header({ navigationTo, router: { location }, isUser = false }) {
   const session = useSelector(state => state.session);
@@ -32,6 +32,8 @@ function Header({ navigationTo, router: { location }, isUser = false }) {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const [isOpenMenuMobile, setIsOpenMenuMobile] = useState(false);
   let searchInput;
+  // const [radioValue, setRadioValue] = useState('');
+  // const profile = useSelector(state => state.profile);
 
   useEffect(() => {
     if (
@@ -100,7 +102,6 @@ function Header({ navigationTo, router: { location }, isUser = false }) {
     }
   };
 
-
   return (
     <>
       <AppBar position={isOpenMenu ? 'sticky' : 'static'}>
@@ -131,12 +132,7 @@ function Header({ navigationTo, router: { location }, isUser = false }) {
                 </Link>
               </div>
               <div className="top-controls-search">
-                <Link
-                  pseudo
-                  onClick={() => {
-                        setSearchText('');
-                      }}
-                >
+                <Link pseudo>
                   <FaSearch className="search-pic" onClick={() => doSearch()} />
                   <input
                     ref={input => {
@@ -158,6 +154,9 @@ function Header({ navigationTo, router: { location }, isUser = false }) {
                     <img
                       alt="close"
                       src={closeIcon}
+                      onClick={() => {
+                        setSearchText('');
+                      }}
                     />
                   )}
                 </Link>
@@ -196,25 +195,17 @@ function Header({ navigationTo, router: { location }, isUser = false }) {
                       </NavLink>  
                     </div> */}
                     {session.user.type && session.user.type === 'teacher' ? (
-                        
                       <div className="login-links desktop">
                         <NavLink
                           to="/my/lk"
                           className="link link_toplinklk login-links-lk"
                         >
-
-                          {/* {data && */}
-                          {/* data.map(r => ( */}
-
-                          <div className="login-pic">
-
-                            {/* <NavLink to="/my/teacher1" className="link login-links-lk"> */}
-                            { <img className="" src={`${config.baseUrl}/avatars/${session.user.image}`} alt="Личный кабинет" /> }
-                            {/* <img className="" src={session.user.image} alt="Личный кабинет" />
-                            <img className="" src={Lk} alt="Личный кабинет" /> */}
-                            {/* <img className="" src={userAvatar} alt="Личный кабинет" /> */}
-                            {/* </NavLink> */}
-                          </div>
+                    <div className="login-pic">
+                      {/* <NavLink to="/my/teacher1" className="link login-links-lk"> */}
+                        { <img className="" src={`${config.baseUrl}/avatars/${profile.user.image}`} alt="Личный кабинет" />}
+                        <img className="" src={Lk} alt="Личный кабинет" />
+                      {/* </NavLink>   */}
+                    </div>
                           Личный кабинет
                         </NavLink>
                         <NavLink
@@ -244,12 +235,15 @@ function Header({ navigationTo, router: { location }, isUser = false }) {
                 )
               ) : (
                 <div className="login-links">
-                  <Link pseudo className="login-links-enter" onClick={handleAuth}>
+                  <Link
+                    pseudo
+                    className="login-links-enter"
+                    onClick={handleAuth}
+                  >
                     Вход
                   </Link>
                 </div>
               )}
-
               <Link
                 pseudo
                 onClick={handleClickMenuMobile}

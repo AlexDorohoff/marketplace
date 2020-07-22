@@ -1,15 +1,22 @@
 .select-popup {
   cursor: pointer;
+  
+  // &-title{
+  //   font-size: 12px;
+  //   font-weight: 600;
+  //   padding-bottom: 20px;
+  // }
 }
 
 .teacher-online-list {
   padding: 5px;
   li {
-    padding-left: 25px;
-    font-size: 20px;
+    padding-left: 5px;
+    font-size: 14px;
   }
   li:hover {
     background-color: #dddddd;
     cursor: pointer;
   }
 }
+

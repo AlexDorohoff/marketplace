@@ -1,14 +1,14 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Popup from 'arui-feather/popup';
+import OkIcon from 'arui-feather/icon/ui/ok';
 import './styles.scss';
 
 // const operations = [
-//   { type: 'all', name: 'Все операции'},
-//   { type: 'lessons', name: 'Занятия'},
-//   { type: 'applications', name: 'Заявки'},
-//   { type: 'passes', name: 'Пропуски'},
-//   { type: 'reviews', name: 'Отзывы'},
-//   { type: 'conflicts', name: 'Конфликты'},
+//   { type: 'request', name: 'Заявка' },
+//   { type: 'accepted', name: 'Принят' },
+//   { type: 'rejected', name: 'Отклонен' },
+//   { type: 'moved', name: 'Перенесен' },
+//   { type: 'delete', name: 'Удаление' },
 // ];
 
 const SelectPopup = ({ onChange, value, options }) => {
@@ -34,7 +34,9 @@ const SelectPopup = ({ onChange, value, options }) => {
         className="select-popup-title"
         onClick={() => setIsOpen(true)}
       >
-        {selected.name}
+        <OkIcon size='s' />
+        {' '}
+        {/* {selected.name} */}
       </span>
       <Popup
         ref={(popup) => { refPopup = popup; }}
@@ -45,7 +47,11 @@ const SelectPopup = ({ onChange, value, options }) => {
         <div className="teacher-online-list">
           <ul>
             {options.map(item => (
-              <li key={item.type} className={item.type === value ? 'active' : ''} onClick={() => handleChange(item.type)}>{item.name}</li>
+              <li key={item.type} 
+              className={item.type === value ? 'active' : ''} 
+              onClick={() => handleChange(item.type)}>
+                {item.name}
+              </li>
             ))}
           </ul>
         </div>

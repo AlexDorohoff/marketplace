@@ -13,7 +13,7 @@ import ImgChat2 from '../../../theme/images/account/img-chat2.svg';
 import Dialog from '../../Common/Dialog';
 import ModalStudentMessage from '../Forms/ModalStudentMessage';
 import CountDown from '../CountDown/CountDown';
-import TeacherRequests from '../TeacherRequests';
+import StudentRequests from '../StudentRequests';
 import '../../../theme/styles/settings.scss';
 
 /**
@@ -169,7 +169,7 @@ const StudentAcademicPlan = ({ items = [] }) => {
               <div className="academ-lesson-detail-5">1500₽</div>
               <div className="academ-lesson-detail-6">Принят</div>
             </div> */}
-            <TeacherRequests />
+            <StudentRequests />
 
 
             {/* <Link pseudo>
@@ -198,7 +198,7 @@ const StudentAcademicPlan = ({ items = [] }) => {
         }
         isExpanded={openPanelNumber === 3}
         onClickExpand={() => handleClickExpand(3)}
-        content={<TeacherRequests />}
+        content={<StudentRequests />}
 
       /> */}
       <Dialog

@@ -27,8 +27,7 @@ import Link from 'arui-feather/link';
 const Teacher = ({ navigationTo, getTeacher, teachers, match }) => {
   const [isOpenPopup, setIsOpenPopup] = useState(false);
   const teachers1 = useSelector(state => state.teachers.inputData);
-  const {id} = match.params;
-
+  // const teachers1 = useSelector(state => state.teachers.categories.inputData);
   const location = useLocation();
 
   const navTo = to => () => {
@@ -67,55 +66,75 @@ const Teacher = ({ navigationTo, getTeacher, teachers, match }) => {
     },
   ];
 
-// ***************************
-const renderTeach = () => {
-  if (teachers1.length > 0) {
-      const list = [];
-      teachers1.map((teacher, index) => {
-          if (index < 5 && teacher.id == id) {
-            if (teacher.categories.length !== 0) {
-              // --- Children вывод начало
-                                      const childs = teacher.categories;
-                                      const renderCatChild = () => {
-                                      if (childs.length > 0) {
-                                        const list1 = [];
-                                        childs.map((child, index) => {
-                                              if (child.pivot.user_id == id ) {
-                                                list1.push(
-                                                  <li key={index + Math.random()}>
-                                                    {/* <Link
-                                                      pseudo
-                                                      className="link6 link6_third"
-                                                      key={child.id}
-                                                      onClick={navTo(`/searchcase/${child.id}`)}
-                                                    > */}
-                                                    {child.name}
-                                                    {/* </Link> */}
-                                                  </li>
-                                                );
-                                            }
-                                        });
-                                        return list1;
-                                      }
-                                    };
-                // ---  вывод ОКОНЧАНИЕ
-                                    list.push(
-                                      <p>
-                                        {renderCatChild()}
-                                      </p>
-                                    );
-                                }
-                            }
-                        });
-                        return list;
-                    }
-                };
+  const renderTeachers = () => {
+    if (teachers1.length > 0) {
+        const list = [];
+        teachers1.map((teacher, index) => {
+            if (index < 5) {
 
-// ******************************
+
+              if (teacher.categories.length !== 0) {
+                // --- Children вывод начало
+                                        // let parent;
+                                        // parent = category.id;
+                                        // alert((child));
+                                        // alert('GHBDTN')
+                                        // alert(teachers);
+
+
+
+                                        const childs = teacher.categories;
+                                        // alert((childs));
+                                        // console.log(teacher.categories);
+                                        const renderCategoryChild = () => {
+                                        if (childs.length > 0) {
+                                          const list1 = [];
+                                          childs.map((child, index) => {
+                                              if (child.parent_id == parent ) {
+                                                  list1.push(
+                                                    <li key={index + Math.random()}>
+                                                      <Link
+                                                        pseudo
+                                                        className="link6 link6_third"
+                                                        key={child.id}
+                                                        onClick={navTo(`/searchcase/${child.id}`)}
+                                                      >
+                                                        {child.name}
+                                                      </Link>
+                                                    </li>
+                                                  );
+                                              }
+                                          });
+                                          return list1;
+                                        }
+                                      };
+                  // ---  вывод ОКОНЧАНИЕ
+                                      list.push(
+                                        <li>
+                                          <ul>
+                                            {renderCategoryChild()}
+                                          </ul>
+                                        </li>
+                                      );
+                                  }
+                              }
+                          });
+                          return list;
+                      }
+                  };
+
+
+
+  // alert(teacher.categories.name);
+  // alert( teachers1 );
+  // const aaa = teachers1[0].categories[0].name;
+  // console.log(aaa)
+  // console.log(teachers1[0]);
+  // console.log(teachers1[0].categories[0].name);
   return (
     <>
       <Helmet>
-        <title>Море-витрина</title>
+        <title>777Море-витрина</title>
         <meta name="description" content="Море" />
         <meta name="keywords" content="Море" />
       </Helmet>
@@ -155,7 +174,7 @@ const renderTeach = () => {
                 </h1>
               )}
               <div className="teacher-expir">
-                Стаж работы:&nbsp;
+                Стаж работы&nbsp;
                 {teacher &&
                   teacher.profile &&
                   yearsPlural(teacher.profile.experience)}
@@ -200,8 +219,14 @@ const renderTeach = () => {
                 </button>
               </div>
               <div className="teacher-subject">
-                {/* // ---- КАТЕГОРИИ */}
-                {renderTeach()}
+                Канцелярские товары
+                {renderTeachers()}
+               
+                <br />
+                Сувенирная продукция
+                <br />
+                Персональные подарки
+                <br />
               </div>
             </div>
           </GridCol>

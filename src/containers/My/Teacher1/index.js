@@ -165,7 +165,8 @@ const Teacher1 = ({ getProfile, profile, history }) => {
         </GridRow>
       </section>
 
-      <section className="section section_profile">
+      {/* <section className="section section_profile"> */}
+      <section className="section section_fullwidth1">
         <h2 className="settings-h2">Документы</h2>
         <div className="docs-browser-carousel-wrapper">
           {profileData && profileData.user.type === 'teacher' && 
@@ -198,12 +199,14 @@ const Teacher1 = ({ getProfile, profile, history }) => {
         <TeacherTasks items={[]} />
       </section> */}
 
-      <section className="section section_profile">
+      {/* <section className="section section_profile"> */}
+      <section className="section section_fullwidth1">
         <h2 className="settings-h2">Реализация</h2>
         {profileData && profileData.user.type === 'teacher' && <TeacherAcademicPlan profile={profileData} />}
       </section>
 
-      <section className="section section_profile">
+      {/* <section className="section section_profile"> */}
+      <section className="section section_fullwidth1">
         <h2 className="settings-h2">Финансы и Статистика</h2>
         <TeacherFinance items={[]} />
         {/* <GridRow className="stats-wrap">
@@ -220,7 +223,8 @@ const Teacher1 = ({ getProfile, profile, history }) => {
         </GridRow> */}
       </section>
 
-      <section className="section section_profile">
+      {/* <section className="section section_profile"> */}
+      <section className="section section_fullwidth1">
         <h2 className="settings-h2">Отзывы</h2>
         <GridRow className="stats-wrap">
           <GridCol width={{ mobile: 12, tablet: 6, desktop: 6 }}>
@@ -237,7 +241,8 @@ const Teacher1 = ({ getProfile, profile, history }) => {
         </GridRow>
       </section>
 
-      <section className="section section_profile">
+      {/* <section className="section section_profile"> */}
+      <section className="section section_fullwidth1">
         <h2 className="settings-h2">Чат</h2>
         <TeacherChat items={[]} />
       </section>

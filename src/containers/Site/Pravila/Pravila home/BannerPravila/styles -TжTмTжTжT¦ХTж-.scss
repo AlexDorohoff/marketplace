@@ -1,0 +1,60 @@
+@import '../../../../../theme/styles/settings';
+
+.banner-container {
+  width: 100%;
+  max-width: 766px;
+  height: 496px;
+  background-image: url("../../../../../theme/images/pravila/Banner.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.search {
+  width: 700px;
+  border: 1px solid #979797;
+  min-height: 54px;
+  font-size: 14px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 48px;
+  right: 40px;
+}
+
+input[type="search"] {
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  width: 660px;
+  vertical-align: middle;
+}
+
+input[type=text]::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+input[type=text]::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+input[type="submit"] {
+  width: 20px;
+  height: 20px;
+  border: none;
+  background: url(../../../../../theme/images/pravila/searchBanner.svg) no-repeat 50% 50%;
+}

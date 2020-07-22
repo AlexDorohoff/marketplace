@@ -8,16 +8,15 @@ import config from '../../../config';
 import SelectPopup from '../../Common/SelectPopup';
 import UseProfile from '../../../core/connectors/profile';
 import Loader from '../../Common/Loader';
-import {logout} from "../../../core/actions/session";
 // import { getRequests } from './../../../core/actions/profile';
 
 
-const statusTypes = [
+const statusTypes2 = [
   { type: 'request', name: 'Заявка' },
-  { type: 'accepted', name: 'Принят' },
-  { type: 'rejected', name: 'Отклонен' },
   { type: 'moved', name: 'Перенесен' },
+  { type: 'rejected', name: 'Отказ' },
   { type: 'delete', name: 'Удаление' },
+  { type: 'message', name: 'Сообщение' },
 ];
 // statusTypes[4].name = 'Константин'
 // console.log(statusTypes[4].name);
@@ -31,7 +30,7 @@ const statusTypes = [
 //   { value: '06', text: 'Реализация', props: { disabled: true } }
 // ];
 
-const TeacherRequests = ({ getRequests, profile }) => {
+const StudentRequests = ({ getRequests, profile }) => {
   useEffect(() => {
     getRequests();
   }, []);
@@ -46,9 +45,6 @@ const TeacherRequests = ({ getRequests, profile }) => {
     data = requests.slice(0, listCount);
   }
 
-  const handleChange = (value) => {
-    console.log(value);
-  };
 
   return (
     <div className="academ-request-detail">
@@ -69,7 +65,7 @@ const TeacherRequests = ({ getRequests, profile }) => {
           Дата
         </GridCol>
         <GridCol width={{ mobile: 12, tablet: 3, desktop: 3 }}>
-          Покупатель (поменять файл для Покупателя)
+          Покупателя)
         </GridCol>
         <GridCol width={{ mobile: 12, tablet: 4, desktop: 4 }}>
           Товар
@@ -96,11 +92,11 @@ const TeacherRequests = ({ getRequests, profile }) => {
               <GridCol width={{ mobile: 12, tablet: 3, desktop: 3 }}>
                 <img
                   className="academ-lesson-detail-avatar"
-                  src={`${config.baseUrl}/avatars/${r.user.image}`}
+                  src={`${config.baseUrl}/avatars/${r.teacher.image}`}
                   alt="r.user.name"
                 />
-                {r.user.name}
-                {/* {noname.teachers.name} */}
+                {/* {r.user.name} */}
+                {r.teacher.name}
               </GridCol>
               <GridCol width={{ mobile: 12, tablet: 4, desktop: 4 }}>
                 <img
@@ -116,9 +112,9 @@ const TeacherRequests = ({ getRequests, profile }) => {
               </GridCol>
               <GridCol width={{ mobile: 12, tablet: 1, desktop: 2 }}>
                 <SelectPopup
-                  onChange={handleChange}
-                  value=""
-                  options={statusTypes}
+                  onChange={value => {}}
+                  value="request"
+                  options={statusTypes2}
                 />
                 {r.purchase.label}
                 {/* r.course.description.subject */}
@@ -164,4 +160,4 @@ const TeacherRequests = ({ getRequests, profile }) => {
   );
 };
 
-export default UseProfile(TeacherRequests);
+export default UseProfile(StudentRequests);

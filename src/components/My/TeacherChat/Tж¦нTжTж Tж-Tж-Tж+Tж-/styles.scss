@@ -1,0 +1,91 @@
+@import '../../../theme/styles/settings';
+.teacherchat {
+
+  .expansion-panel-title .link .link__icon {
+    top: 0px;
+  }
+  &-item {
+    margin-bottom: 16px;
+    padding-top: 10px;
+    padding-bottom: 24px;
+  }
+  &-block a {
+    width: 40px;
+  }
+  &-block-pic {
+    display: inline-block;
+    width: 72px;
+  }
+  &-block-title {
+    margin-right: 6px;
+    font-weight: 600;
+    font-size: 18px;
+    display: inline-block;
+  }
+  &-block-date {
+    display: inline-block;
+    font-weight: normal;
+    font-size: 14px;
+    margin-right: 18px;
+  }
+  &-block-reading {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 18px;
+    color: #FC8A15;
+  }
+  &-block img {
+    margin-bottom: -22px;
+    display: inline-block;
+  }
+  &-frame {
+    border: 1px solid #979797;
+    padding: 8px;
+    margin-top: 30px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  &-teacher {
+    background: #E3F8FF;
+    border-radius: 14px;
+    padding: 2px;
+  }
+  &-student {
+    background: #F9E7F5;
+    border-radius: 14px;
+    padding: 2px;
+  }
+  &-student-time {
+    text-align: right;
+  }
+  &-notreading {
+    font-size: 14px;
+    color: #979797;
+    margin-top: 90px;
+    text-align: center;
+  }
+  &-send {
+    border: 1px solid #979797;
+    border-radius: 40px;
+    height: 62px;
+    color: #979797;
+    padding: 15px 10px;
+    margin: 10px;
+  }
+  &-send-pic {
+    margin-top: 16px;
+  }
+}
+.teacherchat-h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.expansion-panel-title a, .expansion-panel-title a:link, .expansion-panel-title a:hover, .expansion-panel-title a:active  {
+  color: #000000;
+  font-size: 18px;
+  font-weight: 600;
+}

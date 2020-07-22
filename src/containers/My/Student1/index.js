@@ -134,16 +134,19 @@ const Student1 = ({ profile, getProfile, history }) => {
         <StudentsTasks items={[]} />
       </section> */}
 
-      <section className="section section_profile">
+      {/* <section className="section section_profile"> */}
+      <section className="section section_fullwidth1">
         <DocsBrowser title="Галерея покупок" files={files} />
       </section>
 
-      <section className="section section_profile">
+      {/* <section className="section section_profile"> */}
+      <section className="section section_fullwidth1">
         <h2 className="settings-h2">Мои покупки</h2>
         <StudentAcademicPlan items={[]} />
       </section>
 
-      <section className="section section_profile">
+      {/* <section className="section section_profile"> */}
+      <section className="section section_fullwidth1">
         <h2 className="settings-h2">Финансы и Статистика</h2>
         <StudentFinance items={[]} />
         <GridRow className="stats-wrap">
@@ -173,7 +176,8 @@ const Student1 = ({ profile, getProfile, history }) => {
         </GridRow>
       </section>
 
-      <section className="section section_profile">
+      {/* <section className="section section_profile"> */}
+      <section className="section section_fullwidth1">
         <h2 className="settings-h2">Отзывы</h2>
         <GridRow className="stats-wrap">
         <GridCol width={{ mobile: 12, tablet: 6, desktop: 6 }}>
@@ -189,12 +193,14 @@ const Student1 = ({ profile, getProfile, history }) => {
         </GridRow>
       </section>
 
-      <section className="section section_profile">
+      {/* <section className="section section_profile"> */}
+      <section className="section section_fullwidth1">
         <h2 className="settings-h2">Чат</h2>
         <StudentChat items={[]} />
       </section>
 
-      <section className="section section_profile">
+      {/* <section className="section section_profile"> */}
+      <section className="section section_fullwidth1">
         <DocsBrowser title="Интересные товары" files={files} />
       </section>
 
