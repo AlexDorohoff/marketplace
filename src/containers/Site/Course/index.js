@@ -30,7 +30,6 @@ import courseService from '../../../core/services/courses';
 const Course = ({courses, getCourse, match}) => {
     const location = useLocation();
     const dispatch = useDispatch();
-    let ddd;
     const session = useSelector(state => state.session);
     useEffect(() => {
         getCourse(match.params.id);

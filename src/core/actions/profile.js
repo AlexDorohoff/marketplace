@@ -35,3 +35,4 @@ export const getRequests = () => dispatch => {
       dispatch({ type: types.REQUESTS_FAILURE, payload: { error } });
     });
 };
+

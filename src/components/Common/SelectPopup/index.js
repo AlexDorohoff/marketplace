@@ -11,7 +11,7 @@ import './styles.scss';
 //   { type: 'delete', name: 'Удаление' },
 // ];
 
-const SelectPopup = ({ onChange, value, options }) => {
+const  SelectPopup = ({ onChange, value, options }) => {
   const [ isOpen, setIsOpen ] = useState(false);
   let refPopup = useRef(null);
   const refTarget = useRef(null);

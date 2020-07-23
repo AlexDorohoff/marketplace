@@ -8,8 +8,7 @@ import config from '../../../config';
 import SelectPopup from '../../Common/SelectPopup';
 import UseProfile from '../../../core/connectors/profile';
 import Loader from '../../Common/Loader';
-import {logout} from "../../../core/actions/session";
-// import { getRequests } from './../../../core/actions/profile';
+import CourseRequest from '../CourseRequest'
 
 
 const statusTypes = [
@@ -19,17 +18,6 @@ const statusTypes = [
   { type: 'moved', name: 'Перенесен' },
   { type: 'delete', name: 'Удаление' },
 ];
-// statusTypes[4].name = 'Константин'
-// console.log(statusTypes[4].name);
-
-// const statusTypes1 = [
-//   { value: '01', text: 'Заявка' },
-//   { value: '02', text: 'Принят' },
-//   { value: '03', text: 'Отклонен' },
-//   { value: '04', text: 'Перенесен' },
-//   { value: '05', text: 'Удаление' },
-//   { value: '06', text: 'Реализация', props: { disabled: true } }
-// ];
 
 const TeacherRequests = ({ getRequests, profile }) => {
   useEffect(() => {
@@ -46,9 +34,8 @@ const TeacherRequests = ({ getRequests, profile }) => {
     data = requests.slice(0, listCount);
   }
 
-  const handleChange = (value) => {
-    console.log(value);
-  };
+
+console.log(statusTypes);
 
   return (
     <div className="academ-request-detail">
@@ -115,12 +102,7 @@ const TeacherRequests = ({ getRequests, profile }) => {
                 {r.course.price}
               </GridCol>
               <GridCol width={{ mobile: 12, tablet: 1, desktop: 2 }}>
-                <SelectPopup
-                  onChange={handleChange}
-                  value=""
-                  options={statusTypes}
-                />
-                {r.purchase.label}
+                <CourseRequest param = {r}/>
                 {/* r.course.description.subject */}
 
 
