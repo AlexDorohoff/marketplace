@@ -8,6 +8,7 @@ import config from '../../../config';
 import SelectPopup from '../../Common/SelectPopup';
 import UseProfile from '../../../core/connectors/profile';
 import Loader from '../../Common/Loader';
+import CourseRequest from "../CourseRequest";
 // import { getRequests } from './../../../core/actions/profile';
 
 
@@ -102,7 +103,7 @@ const StudentRequests = ({ getRequests, profile }) => {
                 <img
                   className="academ-lesson-detail-avatar"
                   src={`${config.baseUrl}/courses/${r.course.image}`}
-                  alt="r.user.name"
+                  alt={`${r.user.name}`}
                 />
                 {/* r.course.description.subject */}
                 {r.course.title}
@@ -111,12 +112,7 @@ const StudentRequests = ({ getRequests, profile }) => {
                 {r.course.price}
               </GridCol>
               <GridCol width={{ mobile: 12, tablet: 1, desktop: 2 }}>
-                <SelectPopup
-                  onChange={value => {}}
-                  value="request"
-                  options={statusTypes2}
-                />
-                {r.purchase.label}
+                <CourseRequest param = {r}/>
                 {/* r.course.description.subject */}
 
 
