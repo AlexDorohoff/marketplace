@@ -97,3 +97,17 @@ export function hoursPlural(hours) {
   }
   return '0 часов';
 }
+
+export  function currentDate() {
+  const date = new Date();
+  let dd = date.getDate();
+  dd = (dd > 9 ? '' : '0') + dd;
+  let mm = date.getMonth() + 1;
+  mm = (mm > 9 ? '' : '0') + mm;
+  const YYYY = date.getFullYear();
+
+  const dt = `${YYYY}-${mm}-${dd}`;
+  const reqTime = new Date().toLocaleTimeString();
+  const reqDate = `${dt} ${reqTime}`;
+  return reqDate;
+}
