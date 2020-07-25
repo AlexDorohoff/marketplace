@@ -11,26 +11,6 @@ import Loader from '../../Common/Loader';
 import CourseRequest from "../CourseRequest";
 // import { getRequests } from './../../../core/actions/profile';
 
-
-const statusTypes2 = [
-  { type: 'request', name: 'Заявка' },
-  { type: 'moved', name: 'Перенесен' },
-  { type: 'rejected', name: 'Отказ' },
-  { type: 'delete', name: 'Удаление' },
-  { type: 'message', name: 'Сообщение' },
-];
-// statusTypes[4].name = 'Константин'
-// console.log(statusTypes[4].name);
-
-// const statusTypes1 = [
-//   { value: '01', text: 'Заявка' },
-//   { value: '02', text: 'Принят' },
-//   { value: '03', text: 'Отклонен' },
-//   { value: '04', text: 'Перенесен' },
-//   { value: '05', text: 'Удаление' },
-//   { value: '06', text: 'Реализация', props: { disabled: true } }
-// ];
-
 const StudentRequests = ({ getRequests, profile }) => {
   useEffect(() => {
     getRequests();
@@ -96,7 +76,6 @@ const StudentRequests = ({ getRequests, profile }) => {
                   src={`${config.baseUrl}/avatars/${r.teacher.image}`}
                   alt="r.user.name"
                 />
-                {/* {r.user.name} */}
                 {r.teacher.name}
               </GridCol>
               <GridCol width={{ mobile: 12, tablet: 4, desktop: 4 }}>
@@ -105,7 +84,6 @@ const StudentRequests = ({ getRequests, profile }) => {
                   src={`${config.baseUrl}/courses/${r.course.image}`}
                   alt={`${r.user.name}`}
                 />
-                {/* r.course.description.subject */}
                 {r.course.title}
               </GridCol>
               <GridCol width={{ mobile: 12, tablet: 1, desktop: 1 }}>

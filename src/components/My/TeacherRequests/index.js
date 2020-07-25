@@ -11,13 +11,6 @@ import Loader from '../../Common/Loader';
 import CourseRequest from '../CourseRequest'
 
 
-const statusTypes = [
-  { type: 'request', name: 'Заявка' },
-  { type: 'accepted', name: 'Принят' },
-  { type: 'rejected', name: 'Отклонен' },
-  { type: 'moved', name: 'Перенесен' },
-  { type: 'delete', name: 'Удаление' },
-];
 
 const TeacherRequests = ({ getRequests, profile }) => {
   useEffect(() => {
@@ -34,8 +27,6 @@ const TeacherRequests = ({ getRequests, profile }) => {
     data = requests.slice(0, listCount);
   }
 
-
-console.log(statusTypes);
 
   return (
     <div className="academ-request-detail">

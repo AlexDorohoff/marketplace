@@ -14,7 +14,7 @@ class DropList extends Component {
             purchase: [
                 {id: 0, type: 'request', name: 'Заявка'},
                 {id: 1, type: 'release', name: 'Реализация'},
-                {id: 3, type: 'delete', name: 'Реализация'},
+                {id: 3, type: 'delete', name: 'Удалить'},
             ]
         }
         this.handleChange = this.handleChange.bind(this);
@@ -24,17 +24,19 @@ class DropList extends Component {
         const newLabel = this.state.purchase.find(item => item.type == value);
         this.setState({label: newLabel.name});
         const purchaseId = newLabel.id;
-
-        const params = {
-            teacher_id: data.user_id,
-            course_id: data.course_id,
-            id_purchase_status: purchaseId,
-            request_id: data.id,
-            message: '',
-            requested_date: currentDate(),
+        if (value == 'delete') {
+            CourseService.deleteCourseRequest(data.id);
+        } else {
+            const params = {
+                teacher_id: data.user_id,
+                course_id: data.course_id,
+                id_purchase_status: purchaseId,
+                request_id: data.id,
+                message: '',
+                requested_date: currentDate(),
+            }
+            CourseService.updateCourseRequest(data.id, params);
         }
-console.log(params);
-        CourseService.updateCourseRequest(data.id, params);
     };
 
     render() {

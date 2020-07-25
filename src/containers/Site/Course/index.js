@@ -22,6 +22,7 @@ import './styles.scss';
 import {hoursPlural} from '../../../core/utils/common';
 import Loader from '../../../components/Common/Loader';
 import courseService from '../../../core/services/courses';
+import {currentDate} from '../../../core/utils/common'
 
 
 /**
@@ -85,16 +86,7 @@ const Course = ({courses, getCourse, match}) => {
 
     const doSignCourse1 = () => {
 
-        const date = new Date();
-        let dd = date.getDate();
-        dd = (dd > 9 ? '' : '0') + dd;
-        let mm = date.getMonth() + 1;
-        mm = (mm > 9 ? '' : '0') + mm;
-        const YYYY = date.getFullYear();
-
-        const dt = `${YYYY}-${mm}-${dd}`;
-        const reqTime = new Date().toLocaleTimeString();
-        const reqDate = `${dt} ${reqTime}`;
+        const reqDate = currentDate();
         const data = {
             teacher_id: course.user.id,
             course_id: course.id,
@@ -102,7 +94,7 @@ const Course = ({courses, getCourse, match}) => {
             requested_date: reqDate,
             id_purchase_status: 1,
         }
-        // console.log(data);
+
         if (!session.authenticated) {
             dispatch({
                 type: 'AUTH_SHOW_DIALOG',
