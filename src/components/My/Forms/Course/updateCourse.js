@@ -18,6 +18,7 @@ export default useCourses(withRouter(
         annotation: data.annotation,
         image: `${config.baseUrl}/courses/${data.image}?${Date.now().toString()}`,
       };
+
       let description;
       try {
         description = JSON.parse(data.description);

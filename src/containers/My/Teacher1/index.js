@@ -27,6 +27,7 @@ import TeacherHeader from '../../../components/My/TeacherHeader';
 import UseProfile from '../../../core/connectors/profile';
 // import Modal from '../../../components/Common/Modal';
 import Carousel from '../../../components/Site/Carousel/CarouselBase';
+import {useSelector} from "react-redux";
 
 const settings = {
   dots: true,
@@ -119,7 +120,7 @@ const Teacher1 = ({ getProfile, profile, history }) => {
       }
     });
   }
-
+  
   return (
     <>
       <Helmet>

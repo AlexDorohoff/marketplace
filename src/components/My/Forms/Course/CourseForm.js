@@ -80,6 +80,10 @@ export default function CourseForm({
     }
   };
 
+  const handleCategory = () => {
+
+  }
+
   const teacherPhoto = () => {
     let result = '';
     if (values.teacherPhoto) {
@@ -120,19 +124,13 @@ export default function CourseForm({
         </div>
         <label htmlFor="subject">Раздел (отдел)</label>
         <div className="title-textarea">
-          <Input
-            name="subject"
-            id="subject"
-            maxLength={200}
+          <select
+            name="category"
+            id="category"
             placeholder="Введите название раздела"
-            autocomplete={false}
-            view="line"
-            value={values.subject}
-            onChange={value => setFieldValue('subject', value)}
+            value={values.category}
+            onChange={value => setFieldValue('category', value)}
             onBlur={handleBlur}
-            error={
-              errors.subject && touched.subject && <span>{errors.subject}</span>
-            }
             disabled={isSubmitting}
           />
         </div>

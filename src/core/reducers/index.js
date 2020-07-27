@@ -8,6 +8,7 @@ import courses from './courses';
 import categories from './categories';
 import profile from './profile';
 import search from './search';
+import documents from './documents'
 
 
 const reducers = {
@@ -16,6 +17,7 @@ const reducers = {
   notification,
   teachers,
   courses,
+  documents,
   categories,
   profile,
   search

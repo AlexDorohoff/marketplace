@@ -190,11 +190,6 @@ function Header({ navigationTo, router: { location }, isUser = false }) {
                   </div>
                 ) : (
                   <>
-                    {/* <div className="login-pic">
-                      <NavLink to="/my/teacher1" className="link login-links-lk">
-                        <img className="" src={Lk} alt="Личный кабинет" />
-                      </NavLink>  
-                    </div> */}
                     {session.user.type && session.user.type === 'teacher' ? (
                         
                       <div className="login-links desktop">
