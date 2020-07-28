@@ -120,7 +120,7 @@ const Teacher1 = ({ getProfile, profile, history }) => {
       }
     });
   }
-  
+
   return (
     <>
       <Helmet>
