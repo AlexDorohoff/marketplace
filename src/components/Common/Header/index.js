@@ -190,8 +190,8 @@ function Header({ navigationTo, router: { location }, isUser = false }) {
                   </div>
                 ) : (
                   <>
-                    {session.user.type && session.user.type === 'teacher' ? (
-                        
+                    {session.user && session.user.type === 'teacher' ? (
+
                       <div className="login-links desktop">
                         <NavLink
                           to="/my/lk"
